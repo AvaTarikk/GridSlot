@@ -1,0 +1,112 @@
+[
+  {
+    "id": "cp_001",
+    "code": "NL_LIA_AMS_001",
+    "name": "Amsterdam West — Sloterdijk Industrial",
+    "operator": "Liander",
+    "region": "Noord-Holland",
+    "latitude": 52.3888,
+    "longitude": 4.8371,
+    "severity": "RED",
+    "notes": "High industrial electrification demand. Data centres + EV logistics fleet charging."
+  },
+  {
+    "id": "cp_002",
+    "code": "NL_LIA_AMS_002",
+    "name": "Amsterdam Noord — NDSM Wharf",
+    "operator": "Liander",
+    "region": "Noord-Holland",
+    "latitude": 52.4003,
+    "longitude": 4.9036,
+    "severity": "AMBER",
+    "notes": "Creative industry cluster + growing residential EV charging demand."
+  },
+  {
+    "id": "cp_003",
+    "code": "NL_STE_RTD_001",
+    "name": "Rotterdam Maasvlakte — Port Industrial Zone",
+    "operator": "Stedin",
+    "region": "Zuid-Holland",
+    "latitude": 51.9553,
+    "longitude": 4.0207,
+    "severity": "RED",
+    "notes": "Port electrification (shore power for shipping). One of highest congestion nodes in NL."
+  },
+  {
+    "id": "cp_004",
+    "code": "NL_STE_RTD_002",
+    "name": "Rotterdam Centrum — Alexanderpolder",
+    "operator": "Stedin",
+    "region": "Zuid-Holland",
+    "latitude": 51.9244,
+    "longitude": 4.5310,
+    "severity": "AMBER",
+    "notes": "Mixed residential-commercial. Solar feed-in congestion during summer peaks."
+  },
+  {
+    "id": "cp_005",
+    "code": "NL_ENX_EIN_001",
+    "name": "Eindhoven — High Tech Campus",
+    "operator": "Enexis",
+    "region": "Noord-Brabant",
+    "latitude": 51.4081,
+    "longitude": 5.4583,
+    "severity": "RED",
+    "notes": "ASML + Philips R&D expansion. Semiconductor manufacturing electrification."
+  },
+  {
+    "id": "cp_006",
+    "code": "NL_ENX_GRN_001",
+    "name": "Groningen — Eemshaven Energy Port",
+    "operator": "Enexis",
+    "region": "Groningen",
+    "latitude": 53.4326,
+    "longitude": 6.8348,
+    "severity": "AMBER",
+    "notes": "Wind energy feed-in excess. Hydrogen electrolysis projects seeking capacity."
+  },
+  {
+    "id": "cp_007",
+    "code": "NL_TEN_UTR_001",
+    "name": "Utrecht — Lage Weide Industrial",
+    "operator": "TenneT",
+    "region": "Utrecht",
+    "latitude": 52.1051,
+    "longitude": 5.0673,
+    "severity": "GREEN",
+    "notes": "Moderate demand. Some capacity available. HV substation recently upgraded."
+  },
+  {
+    "id": "cp_008",
+    "code": "NL_LIA_HAA_001",
+    "name": "Haarlem — Waarderpolder Business Park",
+    "operator": "Liander",
+    "region": "Noord-Holland",
+    "latitude": 52.3922,
+    "longitude": 4.6681,
+    "severity": "AMBER",
+    "notes": "Mixed industrial park. EV fleet depot seeking additional feed-in capacity."
+  },
+  {
+    "id": "cp_009",
+    "code": "NL_STE_DEN_001",
+    "name": "Den Haag — Binckhorst",
+    "operator": "Stedin",
+    "region": "Zuid-Holland",
+    "latitude": 52.0624,
+    "longitude": 4.3374,
+    "severity": "GREEN",
+    "notes": "Redevelopment zone. New grid capacity recently installed. Low current utilisation."
+  },
+  {
+    "id": "cp_010",
+    "code": "NL_ENX_TIL_001",
+    "name": "Tilburg — Logistics Zone Katsbogten",
+    "operator": "Enexis",
+    "region": "Noord-Brabant",
+    "latitude": 51.5676,
+    "longitude": 5.1124,
+    "severity": "RED",
+    "notes": "Amazon + Zalando distribution. EV fleet charging surge. Waiting list 18+ months."
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "scenario_baseline",
+    "name": "Baseline",
+    "description": "Average weekday demand pattern. No unusual weather or events.",
+    "congestion_adjustments": {
+      "cp_001": 0,
+      "cp_003": 0,
+      "cp_005": 0,
+      "cp_010": 0
+    }
+  },
+  {
+    "id": "scenario_heat_wave",
+    "name": "Heat Wave",
+    "description": "Extended heat event (>32°C). Cooling demand surge increases consumption at all nodes.",
+    "congestion_adjustments": {
+      "cp_001": 2,
+      "cp_002": 1,
+      "cp_003": 2,
+      "cp_004": 2,
+      "cp_005": 1,
+      "cp_007": 1,
+      "cp_008": 1,
+      "cp_009": 1,
+      "cp_010": 1
+    },
+    "note": "Severity scale: 1 = one level worse (GREEN->AMBER), 2 = two levels (GREEN->RED)"
+  },
+  {
+    "id": "scenario_solar_peak",
+    "name": "Solar Peak",
+    "description": "Cloudless summer afternoon. Maximum solar feed-in at southern nodes.",
+    "congestion_adjustments": {
+      "cp_003": 1,
+      "cp_004": 1,
+      "cp_006": -1
+    },
+    "note": "Negative = improvement. Groningen wind node benefits from reduced demand relative to supply."
+  },
+  {
+    "id": "scenario_ev_fleet_charging",
+    "name": "EV Fleet Night Charging",
+    "description": "22:00-06:00 window when logistics fleets plug in simultaneously.",
+    "congestion_adjustments": {
+      "cp_001": 1,
+      "cp_010": 2
+    }
+  },
+  {
+    "id": "scenario_grid_outage",
+    "name": "Adjacent Substation Outage",
+    "description": "Planned maintenance on adjacent substation forces rerouting. Temporary severity increase.",
+    "congestion_adjustments": {
+      "cp_001": 2,
+      "cp_002": 2
+    },
+    "duration_hours": 8
+  }
+]

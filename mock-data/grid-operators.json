@@ -1,0 +1,38 @@
+[
+  {
+    "id": "op_liander",
+    "name": "Liander",
+    "type": "DSO",
+    "coverage": ["Noord-Holland", "Friesland", "Gelderland", "Zuid-Holland (partial)"],
+    "api_base": "https://api.liander.nl/usef/v1",
+    "mock_only": true,
+    "note": "MVP uses mock data only. Live API integration planned for v2."
+  },
+  {
+    "id": "op_stedin",
+    "name": "Stedin",
+    "type": "DSO",
+    "coverage": ["Zuid-Holland", "Utrecht", "Zeeland"],
+    "api_base": "https://api.stedin.net/usef/v1",
+    "mock_only": true,
+    "note": "MVP uses mock data only. Live API integration planned for v2."
+  },
+  {
+    "id": "op_enexis",
+    "name": "Enexis",
+    "type": "DSO",
+    "coverage": ["Noord-Brabant", "Limburg", "Overijssel", "Drenthe", "Groningen", "Flevoland"],
+    "api_base": "https://api.enexis.nl/usef/v1",
+    "mock_only": true,
+    "note": "MVP uses mock data only. Live API integration planned for v2."
+  },
+  {
+    "id": "op_tennet",
+    "name": "TenneT",
+    "type": "TSO",
+    "coverage": ["National high-voltage grid (110kV+)"],
+    "api_base": "https://api.tennet.eu/usef/v1",
+    "mock_only": true,
+    "note": "MVP uses mock data only. HV connections only — most GridSlot participants connect via DSOs."
+  }
+]

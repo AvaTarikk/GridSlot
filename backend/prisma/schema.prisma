@@ -1,0 +1,306 @@
+// GridSlot — Prisma Schema
+// PostgreSQL database schema for the electricity grid capacity marketplace.
+// All monetary values stored as integers in EUR cents (never Float).
+// Run: npx prisma migrate dev --name init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Enums ────────────────────────────────────────────────────────────────────
+
+enum KybStatus {
+  PENDING
+  VERIFIED
+  ACTIVE
+  SUSPENDED
+}
+
+enum UserRole {
+  SELLER
+  BUYER
+  BOTH
+  ADMIN
+}
+
+enum ScuStatus {
+  ACTIVE       // Listed and accepting bids
+  MATCHED      // Winning bid found; awaiting settlement
+  WITHDRAWN    // Seller withdrew before match
+  EXPIRED      // Time window passed with no match
+}
+
+enum BidStatus {
+  OPEN         // Active bid, waiting for matching cycle
+  WON          // This bid was selected by the matching engine
+  LOST         // Outbid or SCU withdrawn
+  WITHDRAWN    // Buyer withdrew before matching
+}
+
+enum TradeStatus {
+  ACTIVE       // Trade confirmed, settlement in progress
+  SETTLED      // Successfully completed
+  DISPUTED     // Under dispute resolution
+  CANCELLED    // Cancelled before settlement
+}
+
+enum SettlementStatus {
+  MATCHED          // Trade created; funds not yet captured
+  PAYMENT_HELD     // Buyer payment captured in escrow simulation
+  DELIVERY_PENDING // Delivery window is open; awaiting seller confirmation
+  CONFIRMED        // Seller confirmed delivery
+  SETTLED          // All funds released; trade complete
+  NON_DELIVERY     // Seller failed to deliver within window
+  REFUNDED         // Buyer refunded; seller collateral partially forfeited
+}
+
+enum CongestionSeverity {
+  GREEN   // Capacity available
+  AMBER   // Approaching congestion; limited availability
+  RED     // Congested; waiting list in effect
+}
+
+enum AuditAction {
+  // Company actions
+  COMPANY_REGISTERED
+  COMPANY_KYB_UPDATED
+  // SCU actions
+  SCU_LISTED
+  SCU_WITHDRAWN
+  SCU_EXPIRED
+  // Bid actions
+  BID_PLACED
+  BID_WITHDRAWN
+  BID_WON
+  BID_LOST
+  // Trade actions
+  TRADE_MATCHED
+  // Settlement transitions
+  SETTLEMENT_PAYMENT_HELD
+  SETTLEMENT_DELIVERY_PENDING
+  SETTLEMENT_CONFIRMED
+  SETTLEMENT_SETTLED
+  SETTLEMENT_NON_DELIVERY
+  SETTLEMENT_REFUNDED
+}
+
+// ─── Core Models ──────────────────────────────────────────────────────────────
+
+/// A company registered on the GridSlot platform.
+/// Can be a seller (has GTO), buyer, or both.
+model Company {
+  id                    String    @id @default(cuid())
+  name                  String
+  kvk_number            String    @unique
+  email                 String    @unique
+  password_hash         String
+
+  role                  UserRole
+  kyb_status            KybStatus @default(PENDING)
+
+  grid_operator         String    // e.g. "Liander", "Stedin", "Enexis", "TenneT"
+  gto_reference         String?   // Group Transport Agreement reference number
+  gto_capacity_mwh      Int?      // Max tradeable capacity in MWh (from GTO)
+
+  /// Percentage of successful deliveries out of all trades as seller.
+  /// Visible to counterparties. Range 0.0–1.0.
+  delivery_score        Float     @default(1.0)
+
+  created_at            DateTime  @default(now())
+  updated_at            DateTime  @updatedAt
+
+  // Relations
+  scus          Scu[]
+  bids          Bid[]
+  trades_sold   Trade[]     @relation("TradeSeller")
+  trades_bought Trade[]     @relation("TradeBuyer")
+  audit_logs    AuditLog[]
+
+  @@index([kvk_number])
+  @@index([kyb_status])
+  @@map("companies")
+}
+
+/// A Standardised Capacity Unit — the core tradeable instrument.
+/// Represents the right to use [mwh_amount] MWh of transmission capacity
+/// at [congestion_point] during [time_window_start..time_window_end].
+model Scu {
+  id                          String    @id @default(cuid())
+  company_id                  String
+  congestion_point_id         String
+
+  time_window_start           DateTime
+  time_window_end             DateTime
+
+  /// Integer MWh. Must not exceed company's gto_capacity_mwh.
+  mwh_amount                  Int
+
+  /// Ask price per MWh in EUR cents. Stored as integer — never Float.
+  ask_price_cents             Int
+
+  /// 10% of (ask_price_cents × mwh_amount), locked on listing.
+  /// Forfeited (partially) on non-delivery.
+  collateral_held_cents       Int
+
+  status                      ScuStatus @default(ACTIVE)
+
+  created_at                  DateTime  @default(now())
+  updated_at                  DateTime  @updatedAt
+
+  // Relations
+  company          Company         @relation(fields: [company_id], references: [id])
+  congestion_point CongestionPoint @relation(fields: [congestion_point_id], references: [id])
+  bids             Bid[]
+  trade            Trade?
+
+  @@index([company_id])
+  @@index([congestion_point_id])
+  @@index([status])
+  @@index([time_window_start, time_window_end])
+  @@map("scus")
+}
+
+/// A bid placed by a buyer on an active SCU.
+model Bid {
+  id          String    @id @default(cuid())
+  scu_id      String
+  company_id  String
+
+  /// Bid price per MWh in EUR cents.
+  price_cents Int
+
+  status      BidStatus @default(OPEN)
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
+
+  // Relations
+  scu     Scu     @relation(fields: [scu_id], references: [id])
+  company Company @relation(fields: [company_id], references: [id])
+  trade   Trade?  // Set if this bid won
+
+  @@index([scu_id, status])
+  @@index([company_id])
+  @@index([scu_id, price_cents(sort: Desc), created_at(sort: Asc)]) // Matching engine index
+  @@map("bids")
+}
+
+/// A confirmed trade created when the matching engine pairs a bid with an SCU.
+/// Prices are frozen at match time and never recalculated.
+model Trade {
+  id             String      @id @default(cuid())
+  scu_id         String      @unique
+  winning_bid_id String      @unique
+  seller_id      String
+  buyer_id       String
+
+  /// Price per MWh in EUR cents, frozen at match time.
+  clearing_price_cents  Int
+
+  /// MWh amount, frozen at match time.
+  mwh_amount            Int
+
+  /// clearing_price_cents × mwh_amount. Pre-computed; never recalculate.
+  total_value_cents     Int
+
+  status         TradeStatus @default(ACTIVE)
+  matched_at     DateTime    @default(now())
+  updated_at     DateTime    @updatedAt
+
+  // Relations
+  scu         Scu        @relation(fields: [scu_id], references: [id])
+  winning_bid Bid        @relation(fields: [winning_bid_id], references: [id])
+  seller      Company    @relation("TradeSeller", fields: [seller_id], references: [id])
+  buyer       Company    @relation("TradeBuyer", fields: [buyer_id], references: [id])
+  settlement  Settlement?
+
+  @@index([seller_id])
+  @@index([buyer_id])
+  @@index([status])
+  @@map("trades")
+}
+
+/// Settlement tracks payment and delivery lifecycle for a trade.
+/// Transitions: MATCHED → PAYMENT_HELD → DELIVERY_PENDING → CONFIRMED → SETTLED
+///              or: DELIVERY_PENDING → NON_DELIVERY → REFUNDED
+model Settlement {
+  id          String           @id @default(cuid())
+  trade_id    String           @unique
+  status      SettlementStatus @default(MATCHED)
+
+  delivery_window_opens_at  DateTime?
+  delivery_window_closes_at DateTime?
+  delivery_confirmed_at     DateTime?
+  settled_at                DateTime?
+
+  /// Amount refunded to buyer on non-delivery (equals total_value_cents).
+  buyer_refund_cents        Int?
+
+  /// Amount forfeited from seller collateral on non-delivery (5% of total value).
+  collateral_forfeited_cents Int?
+
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  // Relations
+  trade      Trade      @relation(fields: [trade_id], references: [id])
+  audit_logs AuditLog[]
+
+  @@index([status])
+  @@map("settlements")
+}
+
+/// Physical congestion point on the Dutch electricity grid.
+model CongestionPoint {
+  id       String             @id @default(cuid())
+  /// Internal code, e.g. "NL_LIA_AMS_001"
+  code     String             @unique
+  name     String
+  operator String             // Grid operator name
+  region   String             // Dutch province/area
+
+  latitude  Float
+  longitude Float
+
+  severity  CongestionSeverity @default(GREEN)
+
+  updated_at DateTime @updatedAt
+
+  // Relations
+  scus Scu[]
+
+  @@index([severity])
+  @@index([operator])
+  @@map("congestion_points")
+}
+
+/// Immutable audit trail for all significant actions.
+/// Every financial state change must create an audit record in the same transaction.
+model AuditLog {
+  id            String      @id @default(cuid())
+  action        AuditAction
+
+  // Polymorphic references — at least one will be set
+  company_id    String?
+  settlement_id String?
+
+  /// Structured JSON: captures old_status, new_status, amounts, computed values.
+  /// Use this for debugging and compliance review — never delete records.
+  metadata      Json?
+
+  created_at    DateTime @default(now())
+
+  // Relations
+  company    Company?    @relation(fields: [company_id], references: [id])
+  settlement Settlement? @relation(fields: [settlement_id], references: [id])
+
+  @@index([company_id])
+  @@index([settlement_id])
+  @@index([action])
+  @@index([created_at])
+  @@map("audit_log")
+}
