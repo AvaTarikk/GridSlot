@@ -1,6 +1,6 @@
 import { format, formatDistanceToNow, parseISO } from 'date-fns'
 import { nl } from 'date-fns/locale'
-import type { CongestionSeverity, TradeStatus, SettlementStatus, ScuStatus } from '@/types'
+import type { CongestionSeverity, TradeStatus, SettlementStatus, ScuStatus, BidStatus } from '@/types'
 
 // ─── Money ────────────────────────────────────────────────────────────────────
 
@@ -59,65 +59,77 @@ export function formatCountdown(targetIso: string): string {
   return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`
 }
 
-// ─── Status labels + colors ───────────────────────────────────────────────────
+// ─── Congestion severity (GREEN/AMBER/RED from backend) ───────────────────────
 
 export const congestionColor: Record<CongestionSeverity, string> = {
-  LOW: 'text-congestion-low',
-  MEDIUM: 'text-congestion-medium',
-  HIGH: 'text-congestion-high',
-  CRITICAL: 'text-red-300',
+  GREEN: 'text-congestion-low',
+  AMBER: 'text-congestion-medium',
+  RED: 'text-congestion-high',
 }
 
 export const congestionBg: Record<CongestionSeverity, string> = {
-  LOW: 'bg-congestion-low/15 border-congestion-low/30',
-  MEDIUM: 'bg-congestion-medium/15 border-congestion-medium/30',
-  HIGH: 'bg-congestion-high/15 border-congestion-high/30',
-  CRITICAL: 'bg-red-500/20 border-red-400/40',
+  GREEN: 'bg-congestion-low/15 border-congestion-low/30',
+  AMBER: 'bg-congestion-medium/15 border-congestion-medium/30',
+  RED: 'bg-congestion-high/15 border-congestion-high/30',
 }
 
 export const congestionDot: Record<CongestionSeverity, string> = {
-  LOW: 'bg-congestion-low',
-  MEDIUM: 'bg-congestion-medium',
-  HIGH: 'bg-congestion-high',
-  CRITICAL: 'bg-red-400',
+  GREEN: 'bg-congestion-low',
+  AMBER: 'bg-congestion-medium',
+  RED: 'bg-congestion-high',
 }
 
-export const tradeStatusLabel: Record<TradeStatus, string> = {
-  MATCHED: 'Matched',
-  PAYMENT_HELD: 'Payment Held',
-  DELIVERY_PENDING: 'Awaiting Delivery',
-  CONFIRMED: 'Confirmed',
-  SETTLED: 'Settled',
-  NON_DELIVERY: 'Non-Delivery',
-  REFUNDED: 'Refunded',
-}
-
-export const settlementStatusLabel: Record<SettlementStatus, string> = {
-  PENDING: 'Pending',
-  PAYMENT_HELD: 'Payment Held',
-  DELIVERY_PENDING: 'Awaiting Delivery',
-  CONFIRMED: 'Confirmed',
-  SETTLED: 'Settled',
-  NON_DELIVERY: 'Non-Delivery',
-  REFUNDED: 'Refunded',
-}
+// ─── SCU status (ACTIVE/MATCHED/WITHDRAWN/EXPIRED from backend) ───────────────
 
 export const scuStatusLabel: Record<ScuStatus, string> = {
-  LISTED: 'Listed',
-  RESERVED: 'Reserved',
+  ACTIVE: 'Active',
   MATCHED: 'Matched',
-  SETTLED: 'Settled',
   WITHDRAWN: 'Withdrawn',
   EXPIRED: 'Expired',
 }
 
 export const scuStatusColor: Record<ScuStatus, string> = {
-  LISTED: 'text-grid-400',
-  RESERVED: 'text-amber-400',
+  ACTIVE: 'text-grid-400',
   MATCHED: 'text-emerald-400',
-  SETTLED: 'text-emerald-300',
   WITHDRAWN: 'text-slate-400',
   EXPIRED: 'text-slate-500',
+}
+
+// ─── Bid status (OPEN/WON/LOST/WITHDRAWN from backend) ───────────────────────
+
+export const bidStatusColor: Record<BidStatus, string> = {
+  OPEN: 'bg-amber-400',
+  WON: 'bg-emerald-400',
+  LOST: 'bg-red-400',
+  WITHDRAWN: 'bg-slate-500',
+}
+
+// ─── Trade status (ACTIVE/SETTLED/DISPUTED/CANCELLED from backend) ────────────
+
+export const tradeStatusLabel: Record<TradeStatus, string> = {
+  ACTIVE: 'Active',
+  SETTLED: 'Settled',
+  DISPUTED: 'Disputed',
+  CANCELLED: 'Cancelled',
+}
+
+export const tradeStatusDot: Record<TradeStatus, string> = {
+  ACTIVE: 'bg-amber-400',
+  SETTLED: 'bg-emerald-400',
+  DISPUTED: 'bg-red-400',
+  CANCELLED: 'bg-slate-400',
+}
+
+// ─── Settlement status ────────────────────────────────────────────────────────
+
+export const settlementStatusLabel: Record<SettlementStatus, string> = {
+  MATCHED: 'Matched',
+  PAYMENT_HELD: 'Payment Held',
+  DELIVERY_PENDING: 'Awaiting Delivery',
+  CONFIRMED: 'Confirmed',
+  SETTLED: 'Settled',
+  NON_DELIVERY: 'Non-Delivery',
+  REFUNDED: 'Refunded',
 }
 
 // ─── Delivery score ───────────────────────────────────────────────────────────

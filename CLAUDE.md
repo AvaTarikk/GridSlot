@@ -160,5 +160,3 @@ Do not implement these — they are out of scope for v1:
 - Blockchain/Hyperledger settlement (PostgreSQL state machine only)
 
 ---
-
-*Last updated: 2026 — Team Seven, MSc FinTech, University of Amsterdam*

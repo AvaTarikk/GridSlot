@@ -15,6 +15,7 @@ import {
   scuStatusLabel,
   scuStatusColor,
   tradeStatusLabel,
+  bidStatusColor,
   cn,
 } from '@/lib/utils'
 
@@ -46,12 +47,11 @@ export default function PortfolioPage() {
       .finally(() => setLoading(false))
   }, [])
 
-  async function handleConfirmDelivery(settlementId: string, tradeId: string) {
+  async function handleConfirmDelivery(settlementId: string) {
     setConfirmingId(settlementId)
     try {
       await settlementsApi.confirmDelivery(settlementId)
       addNotification({ type: 'success', title: 'Delivery confirmed', message: 'Settlement will complete shortly.' })
-      // Refresh trades
       const updated = await tradesApi.list({ limit: 100 })
       setMyTrades(updated.data)
     } catch (err: unknown) {
@@ -75,7 +75,6 @@ export default function PortfolioPage() {
           <p className="text-slate-400 text-sm mt-1">Your capacity listings, bids, and settlement history.</p>
         </div>
 
-        {/* Tabs */}
         <div className="flex gap-1 bg-surface-2 p-1 rounded-xl mb-6 w-fit">
           {tabs.map((t) => (
             <button
@@ -83,9 +82,7 @@ export default function PortfolioPage() {
               onClick={() => setTab(t.key)}
               className={cn(
                 'px-4 py-2 rounded-lg text-sm font-medium transition-all',
-                tab === t.key
-                  ? 'bg-surface-4 text-white'
-                  : 'text-slate-400 hover:text-slate-200',
+                tab === t.key ? 'bg-surface-4 text-white' : 'text-slate-400 hover:text-slate-200',
               )}
             >
               {t.label}
@@ -98,21 +95,16 @@ export default function PortfolioPage() {
 
         {loading ? (
           <div className="space-y-3 animate-pulse">
-            {[...Array(4)].map((_, i) => (
-              <div key={i} className="card px-5 py-4 h-16" />
-            ))}
+            {[...Array(4)].map((_, i) => <div key={i} className="card px-5 py-4 h-16" />)}
           </div>
         ) : (
           <>
-            {/* SCUs Tab */}
             {tab === 'listings' && (
               <div className="space-y-3">
                 {myScus.length === 0 && (
                   <div className="card px-5 py-12 text-center">
                     <p className="text-slate-400">No SCUs listed yet.</p>
-                    <a href="/marketplace" className="btn-primary text-sm mt-4 inline-block">
-                      List your first SCU →
-                    </a>
+                    <a href="/marketplace" className="btn-primary text-sm mt-4 inline-block">List your first SCU →</a>
                   </div>
                 )}
                 {myScus.map((scu) => (
@@ -128,19 +120,17 @@ export default function PortfolioPage() {
                           </span>
                         </div>
                         <p className="text-xs text-slate-500 font-mono">
-                          {formatTimeWindow(scu.start_time, scu.end_time)}
+                          {formatTimeWindow(scu.start_time ?? scu.time_window_start, scu.end_time ?? scu.time_window_end)}
                         </p>
                       </div>
                       <div className="text-right shrink-0">
                         <p className="text-sm font-medium text-white tabular">
                           {formatEuros(scu.ask_price_cents)}<span className="text-slate-500 font-normal">/MWh</span>
                         </p>
-                        <p className="text-xs text-slate-500">{scu.mwh} MWh</p>
+                        <p className="text-xs text-slate-500">{scu.mwh ?? scu.mwh_amount} MWh</p>
                       </div>
-                      {scu.status === 'LISTED' && (
-                        <a href={`/marketplace/${scu.id}`} className="btn-secondary text-xs shrink-0">
-                          View
-                        </a>
+                      {scu.status === 'ACTIVE' && (
+                        <a href={`/marketplace/${scu.id}`} className="btn-secondary text-xs shrink-0">View</a>
                       )}
                     </div>
                   </div>
@@ -148,45 +138,30 @@ export default function PortfolioPage() {
               </div>
             )}
 
-            {/* Bids Tab */}
             {tab === 'bids' && (
               <div className="space-y-3">
                 {myBids.length === 0 && (
                   <div className="card px-5 py-12 text-center">
                     <p className="text-slate-400">No bids placed yet.</p>
-                    <a href="/marketplace" className="btn-primary text-sm mt-4 inline-block">
-                      Browse marketplace →
-                    </a>
+                    <a href="/marketplace" className="btn-primary text-sm mt-4 inline-block">Browse marketplace →</a>
                   </div>
                 )}
                 {myBids.map((bid) => (
                   <div key={bid.id} className="card px-5 py-4">
                     <div className="flex items-center gap-4">
-                      <span className={cn('w-2 h-2 rounded-full shrink-0',
-                        bid.status === 'MATCHED' ? 'bg-emerald-400' :
-                        bid.status === 'LOST' ? 'bg-red-400/60' :
-                        bid.status === 'WITHDRAWN' ? 'bg-slate-600' : 'bg-amber-400'
-                      )} />
+                      <span className={cn('w-2 h-2 rounded-full shrink-0', bidStatusColor[bid.status])} />
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          <p className="text-sm text-white tabular font-medium">
-                            {formatEuros(bid.price_cents)}
-                          </p>
-                          <span className="text-xs text-slate-500 capitalize">
-                            {bid.status.toLowerCase()}
-                          </span>
+                          <p className="text-sm text-white tabular font-medium">{formatEuros(bid.price_cents)}</p>
+                          <span className="text-xs text-slate-500 capitalize">{bid.status.toLowerCase()}</span>
                         </div>
                         <p className="text-xs text-slate-500 mt-0.5">
                           {bid.scu?.congestion_point?.name ?? `SCU #${bid.scu_id.slice(-8).toUpperCase()}`}
                         </p>
                       </div>
-                      <div className="text-right text-xs text-slate-600">
-                        {formatRelative(bid.created_at)}
-                      </div>
-                      {bid.status === 'PENDING' && (
-                        <a href={`/marketplace/${bid.scu_id}`} className="btn-secondary text-xs">
-                          View SCU
-                        </a>
+                      <div className="text-right text-xs text-slate-600">{formatRelative(bid.created_at)}</div>
+                      {bid.status === 'OPEN' && (
+                        <a href={`/marketplace/${bid.scu_id}`} className="btn-secondary text-xs">View SCU</a>
                       )}
                     </div>
                   </div>
@@ -194,7 +169,6 @@ export default function PortfolioPage() {
               </div>
             )}
 
-            {/* Trades Tab */}
             {tab === 'trades' && (
               <div className="space-y-5">
                 {myTrades.length === 0 && (
@@ -217,10 +191,9 @@ export default function PortfolioPage() {
                             <p className="text-sm font-medium text-white tabular">
                               {formatEuros(trade.clearing_price_cents)}
                             </p>
-                            <span className="text-slate-500 text-xs">clearing price</span>
                           </div>
                           <p className="text-xs text-slate-500">
-                            Trade #{trade.id.slice(-8).toUpperCase()} · {formatDateTime(trade.created_at)}
+                            Trade #{trade.id.slice(-8).toUpperCase()} · {formatDateTime(trade.created_at ?? trade.matched_at)}
                           </p>
                         </div>
                         <span className="text-xs text-slate-400">{tradeStatusLabel[trade.status]}</span>
@@ -233,7 +206,7 @@ export default function PortfolioPage() {
                             status={trade.settlement.status}
                             onConfirmDelivery={
                               !isBuyer && trade.settlement.status === 'DELIVERY_PENDING'
-                                ? () => handleConfirmDelivery(trade.settlement!.id, trade.id)
+                                ? () => handleConfirmDelivery(trade.settlement!.id)
                                 : undefined
                             }
                             isConfirming={confirmingId === trade.settlement.id}

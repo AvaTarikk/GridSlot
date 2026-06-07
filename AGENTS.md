@@ -143,4 +143,3 @@ The CI pipeline is the final arbiter. If CI is red, do not merge regardless of a
 
 ---
 
-*Last updated: 2026 — Team Seven, MSc FinTech, University of Amsterdam*

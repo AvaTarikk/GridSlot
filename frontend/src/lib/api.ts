@@ -5,7 +5,6 @@ import type {
   Trade,
   Settlement,
   CongestionPoint,
-  DashboardSummary,
   LoginForm,
   RegisterForm,
   PlaceBidForm,
@@ -38,7 +37,7 @@ interface RequestOptions {
   auth?: boolean
 }
 
-class ApiClientError extends Error {
+export class ApiClientError extends Error {
   constructor(
     public status: number,
     public code: string,
@@ -68,7 +67,7 @@ async function request<T>(path: string, opts: RequestOptions = {}): Promise<T> {
 
   if (!res.ok) {
     const err = await res.json().catch(() => ({ error: 'Unknown error' }))
-    throw new ApiClientError(res.status, err.code ?? 'UNKNOWN', err.error ?? 'Request failed')
+    throw new ApiClientError(res.status, err.code ?? 'UNKNOWN', err.error ?? err.message ?? 'Request failed')
   }
 
   return res.json() as Promise<T>
@@ -86,7 +85,7 @@ export const auth = {
   me: () => request<AuthResponse['company']>('/api/auth/me'),
 }
 
-// ─── SCUs ─────────────────────────────────────────────────────────────────────
+// ─── SCUs — GET / and GET /:id and POST / and PATCH /:id ─────────────────────
 
 export interface ScuFilters {
   congestion_point_id?: string
@@ -112,30 +111,33 @@ export const scus = {
   create: (body: CreateScuForm) =>
     request<Scu>('/api/scus', { method: 'POST', body }),
 
+  // Backend uses PATCH /:id with { status: 'WITHDRAWN' }
   withdraw: (id: string) =>
-    request<Scu>(`/api/scus/${id}/withdraw`, { method: 'POST' }),
+    request<Scu>(`/api/scus/${id}`, { method: 'PATCH', body: { status: 'WITHDRAWN' } }),
 }
 
-// ─── Bids ─────────────────────────────────────────────────────────────────────
+// ─── Bids — POST / and GET /my and DELETE /:id ───────────────────────────────
 
 export const bids = {
   place: (scuId: string, body: PlaceBidForm) =>
-    request<Bid>(`/api/bids`, { method: 'POST', body: { scu_id: scuId, ...body } }),
+    request<Bid>('/api/bids', { method: 'POST', body: { scu_id: scuId, ...body } }),
 
+  // Backend route is GET /api/bids/my (not /api/bids)
   list: (filters: { scu_id?: string; status?: string } = {}) => {
     const params = new URLSearchParams()
     Object.entries(filters).forEach(([k, v]) => {
       if (v !== undefined) params.set(k, String(v))
     })
     const qs = params.toString()
-    return request<PaginatedResponse<Bid>>(`/api/bids${qs ? `?${qs}` : ''}`)
+    return request<PaginatedResponse<Bid>>(`/api/bids/my${qs ? `?${qs}` : ''}`)
   },
 
+  // Backend uses DELETE /:id
   withdraw: (id: string) =>
-    request<Bid>(`/api/bids/${id}/withdraw`, { method: 'POST' }),
+    request<Bid>(`/api/bids/${id}`, { method: 'DELETE' }),
 }
 
-// ─── Trades ───────────────────────────────────────────────────────────────────
+// ─── Trades — GET / and GET /:id ─────────────────────────────────────────────
 
 export const trades = {
   list: (filters: { status?: string; page?: number } = {}) => {
@@ -150,7 +152,7 @@ export const trades = {
   get: (id: string) => request<Trade>(`/api/trades/${id}`),
 }
 
-// ─── Settlements ──────────────────────────────────────────────────────────────
+// ─── Settlements — POST /:id/confirm-delivery and GET /:id ───────────────────
 
 export const settlements = {
   get: (id: string) => request<Settlement>(`/api/settlements/${id}`),
@@ -171,13 +173,3 @@ export const congestion = {
       `/api/congestion/points/${id}/forecast`,
     ),
 }
-
-// ─── Dashboard ────────────────────────────────────────────────────────────────
-
-export const dashboard = {
-  summary: () => request<DashboardSummary>('/api/dashboard/summary'),
-}
-
-// ─── Utility ──────────────────────────────────────────────────────────────────
-
-export { ApiClientError }

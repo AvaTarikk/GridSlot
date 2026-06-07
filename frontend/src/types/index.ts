@@ -1,12 +1,12 @@
-// ─── Enums ────────────────────────────────────────────────────────────────────
+// ─── Enums (must match backend prisma/schema.prisma exactly) ──────────────────
 
-export type KybStatus = 'PENDING' | 'ACTIVE' | 'SUSPENDED' | 'REJECTED'
+export type KybStatus = 'PENDING' | 'VERIFIED' | 'ACTIVE' | 'SUSPENDED'
 export type UserRole = 'SELLER' | 'BUYER' | 'BOTH' | 'ADMIN'
-export type ScuStatus = 'LISTED' | 'RESERVED' | 'MATCHED' | 'SETTLED' | 'WITHDRAWN' | 'EXPIRED'
-export type BidStatus = 'PENDING' | 'MATCHED' | 'LOST' | 'WITHDRAWN'
-export type TradeStatus = 'MATCHED' | 'PAYMENT_HELD' | 'DELIVERY_PENDING' | 'CONFIRMED' | 'SETTLED' | 'NON_DELIVERY' | 'REFUNDED'
-export type SettlementStatus = 'PENDING' | 'PAYMENT_HELD' | 'DELIVERY_PENDING' | 'CONFIRMED' | 'SETTLED' | 'NON_DELIVERY' | 'REFUNDED'
-export type CongestionSeverity = 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL'
+export type ScuStatus = 'ACTIVE' | 'MATCHED' | 'WITHDRAWN' | 'EXPIRED'
+export type BidStatus = 'OPEN' | 'WON' | 'LOST' | 'WITHDRAWN'
+export type TradeStatus = 'ACTIVE' | 'SETTLED' | 'DISPUTED' | 'CANCELLED'
+export type SettlementStatus = 'MATCHED' | 'PAYMENT_HELD' | 'DELIVERY_PENDING' | 'CONFIRMED' | 'SETTLED' | 'NON_DELIVERY' | 'REFUNDED'
+export type CongestionSeverity = 'GREEN' | 'AMBER' | 'RED'
 
 // ─── Entities ─────────────────────────────────────────────────────────────────
 
@@ -83,7 +83,18 @@ export interface Settlement {
   created_at: string
 }
 
-// ─── API Response shapes ───────────────────────────────────────────────────────
+export interface PaginatedResponse<T> {
+  data: T[]
+  total?: number
+  page?: number
+  limit?: number
+  pagination?: {
+    total: number
+    page: number
+    limit: number
+    pages: number
+  }
+}
 
 export interface AuthResponse {
   token: string
@@ -96,14 +107,6 @@ export interface PaginatedResponse<T> {
   page: number
   limit: number
 }
-
-export interface ApiError {
-  error: string
-  code?: string
-  details?: unknown
-}
-
-// ─── Form types ───────────────────────────────────────────────────────────────
 
 export interface LoginForm {
   email: string
@@ -131,27 +134,7 @@ export interface CreateScuForm {
   ask_price_cents: number
 }
 
-// ─── Dashboard summary ────────────────────────────────────────────────────────
-
-export interface DashboardSummary {
-  active_listings: number
-  open_bids: number
-  total_revenue_cents: number
-  total_spend_cents: number
-  delivery_score: number
-  pending_settlements: number
-  recent_trades: Trade[]
-  recent_bids: Bid[]
-}
-
-// ─── WebSocket events ─────────────────────────────────────────────────────────
-
-export type WsEventType =
-  | 'trade:matched'
-  | 'bid:lost'
-  | 'settlement:update'
-  | 'congestion:update'
-  | 'scu:listed'
+export type WsEventType = 'trade:matched' | 'bid:lost' | 'settlement:update' | 'congestion:update' | 'scu:listed'
 
 export interface WsEvent<T = unknown> {
   type: WsEventType
