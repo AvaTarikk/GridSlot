@@ -168,8 +168,8 @@ export const congestion = {
 
   get: (id: string) => request<CongestionPoint>(`/api/congestion/points/${id}`),
 
-  forecast: (id: string) =>
+  forecast: (id?: string) =>
     request<{ hour: string; severity: string; load_pct: number }[]>(
-      `/api/congestion/points/${id}/forecast`,
+      id ? `/api/congestion/points/${id}/forecast` : `/api/congestion/forecast`,
     ),
 }

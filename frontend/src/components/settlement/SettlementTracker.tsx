@@ -1,126 +1,139 @@
-import type { SettlementStatus } from '@/types'
-import { settlementStatusLabel, cn } from '@/lib/utils'
+'use client';
+import { useState } from 'react';
+import { settlements } from '@/lib/api';
+import { useToastStore } from '@/stores/toasts';
+import type { Settlement } from '@/types';
 
-const STEPS: { status: SettlementStatus; label: string }[] = [
-  { status: 'PAYMENT_HELD', label: 'Payment held' },
-  { status: 'DELIVERY_PENDING', label: 'Awaiting delivery' },
-  { status: 'CONFIRMED', label: 'Confirmed' },
-  { status: 'SETTLED', label: 'Settled' },
-]
-
-const STEP_ORDER: SettlementStatus[] = [
-  'PENDING',
+const STEPS = [
+  'MATCHED',
   'PAYMENT_HELD',
   'DELIVERY_PENDING',
   'CONFIRMED',
   'SETTLED',
-]
+] as const;
 
-const FAILURE_STATES: SettlementStatus[] = ['NON_DELIVERY', 'REFUNDED']
+const STEP_LABELS: Record<string, string> = {
+  MATCHED: 'Matched',
+  PAYMENT_HELD: 'Payment Held',
+  DELIVERY_PENDING: 'Awaiting Delivery',
+  CONFIRMED: 'Confirmed',
+  SETTLED: 'Settled',
+  NON_DELIVERY: 'Non-Delivery',
+  REFUNDED: 'Refunded',
+};
 
-interface SettlementTrackerProps {
-  status: SettlementStatus
-  onConfirmDelivery?: () => void
-  isConfirming?: boolean
+interface Props {
+  settlement: Settlement;
+  isSeller: boolean;
+  onUpdate: (s: Settlement) => void;
 }
 
-export function SettlementTracker({
-  status,
-  onConfirmDelivery,
-  isConfirming,
-}: SettlementTrackerProps) {
-  const failed = FAILURE_STATES.includes(status)
-  const currentIdx = STEP_ORDER.indexOf(status)
+export default function SettlementTracker({ settlement, isSeller, onUpdate }: Props) {
+  const { add } = useToastStore();
+  const [loading, setLoading] = useState(false);
 
-  if (failed) {
-    return (
-      <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center">
-            <svg viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 text-red-400">
-              <path d="M8 1a7 7 0 100 14A7 7 0 008 1zM6.47 6.47a.75.75 0 011.06 0L8 6.94l.47-.47a.75.75 0 111.06 1.06L9.06 8l.47.47a.75.75 0 11-1.06 1.06L8 9.06l-.47.47a.75.75 0 01-1.06-1.06L6.94 8l-.47-.47a.75.75 0 010-1.06z" />
-            </svg>
-          </div>
-          <div>
-            <p className="text-sm font-medium text-red-400">{settlementStatusLabel[status]}</p>
-            {status === 'NON_DELIVERY' && (
-              <p className="text-xs text-slate-500 mt-0.5">
-                Seller failed to deliver. 5% collateral forfeited. Refund processing.
-              </p>
-            )}
-          </div>
-        </div>
-      </div>
-    )
-  }
+  const isTerminal = ['NON_DELIVERY', 'REFUNDED', 'SETTLED'].includes(settlement.status);
+  const isFailed = ['NON_DELIVERY', 'REFUNDED'].includes(settlement.status);
+
+  const currentIdx = STEPS.indexOf(settlement.status as typeof STEPS[number]);
+
+  const handleConfirm = async () => {
+    setLoading(true);
+    try {
+      const updated = await settlements.confirmDelivery(settlement.id);
+      onUpdate(updated);
+      add({ type: 'success', title: 'Delivery confirmed' });
+    } catch {
+      add({ type: 'error', title: 'Failed to confirm delivery' });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <div className="space-y-3">
+    <div>
       {/* Progress steps */}
-      <div className="relative flex items-center justify-between">
-        {/* Connector line */}
-        <div className="absolute left-4 right-4 top-4 h-px bg-surface-4" />
-        <div
-          className="absolute left-4 top-4 h-px bg-grid-500 transition-all duration-700"
-          style={{
-            width: `calc(${Math.max(0, currentIdx - 1) / (STEPS.length - 1)} * (100% - 32px))`,
-          }}
-        />
-
-        {STEPS.map((step, i) => {
-          const stepIdx = STEP_ORDER.indexOf(step.status)
-          const done = stepIdx < currentIdx
-          const active = stepIdx === currentIdx
-
-          return (
-            <div key={step.status} className="flex flex-col items-center z-10 flex-1">
-              <div
-                className={cn(
-                  'w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-bold transition-all duration-300',
-                  done
-                    ? 'bg-grid-500 border-grid-500 text-white'
-                    : active
-                    ? 'bg-grid-500/20 border-grid-500 text-grid-400'
-                    : 'bg-surface-2 border-surface-4 text-slate-600',
-                )}
-              >
-                {done ? (
-                  <svg viewBox="0 0 12 12" fill="currentColor" className="w-3 h-3">
-                    <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
-                  </svg>
-                ) : (
-                  i + 1
+      {!isFailed && (
+        <div style={{ display: 'flex', alignItems: 'center', marginBottom: 20 }}>
+          {STEPS.map((step, i) => {
+            const done = currentIdx > i;
+            const active = currentIdx === i;
+            return (
+              <div key={step} style={{ display: 'flex', alignItems: 'center', flex: i < STEPS.length - 1 ? 1 : 'none' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+                  <div style={{
+                    width: 28, height: 28, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    background: done ? '#10b981' : active ? '#f59e0b' : '#1f2535',
+                    border: `2px solid ${done ? '#10b981' : active ? '#f59e0b' : '#2a3347'}`,
+                    fontSize: 11, fontWeight: 700, color: (done || active) ? '#0b0d10' : '#4a5568',
+                  }}>
+                    {done ? '✓' : i + 1}
+                  </div>
+                  <div style={{ fontSize: 9, color: active ? '#f59e0b' : done ? '#10b981' : '#4a5568', fontFamily: 'monospace', letterSpacing: '0.04em', textAlign: 'center', whiteSpace: 'nowrap' }}>
+                    {STEP_LABELS[step]}
+                  </div>
+                </div>
+                {i < STEPS.length - 1 && (
+                  <div style={{ flex: 1, height: 2, background: done ? '#10b981' : '#1f2535', margin: '0 4px', marginBottom: 20 }} />
                 )}
               </div>
-              <p
-                className={cn(
-                  'text-[10px] mt-2 text-center',
-                  active ? 'text-grid-400 font-medium' : done ? 'text-slate-300' : 'text-slate-600',
-                )}
-              >
-                {step.label}
-              </p>
-            </div>
-          )
-        })}
+            );
+          })}
+        </div>
+      )}
+
+      {/* Failed state */}
+      {isFailed && (
+        <div style={{ padding: '12px 16px', background: 'rgba(239,68,68,.1)', border: '1px solid rgba(239,68,68,.3)', borderRadius: 4, marginBottom: 16 }}>
+          <div style={{ fontSize: 13, fontWeight: 600, color: '#ef4444', marginBottom: 4 }}>
+            {STEP_LABELS[settlement.status]}
+          </div>
+          <div style={{ fontSize: 12, color: '#8892a4' }}>
+            {settlement.status === 'NON_DELIVERY'
+              ? 'The seller did not confirm delivery. 5% collateral has been forfeited.'
+              : 'Payment has been refunded to the buyer.'}
+          </div>
+        </div>
+      )}
+
+      {/* Current status label */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 14px', background: '#0d0f14', border: '1px solid #1f2535', borderRadius: 4, marginBottom: 16 }}>
+        <span style={{ fontSize: 12, color: '#8892a4' }}>Current status</span>
+        <span style={{ fontSize: 13, fontWeight: 600, fontFamily: 'monospace', color: isFailed ? '#ef4444' : isTerminal ? '#10b981' : '#f59e0b' }}>
+          {STEP_LABELS[settlement.status] ?? settlement.status}
+        </span>
       </div>
 
-      {/* Confirm delivery CTA */}
-      {status === 'DELIVERY_PENDING' && onConfirmDelivery && (
-        <div className="mt-4 p-4 bg-amber-500/5 border border-amber-500/20 rounded-xl">
-          <p className="text-sm text-amber-400 font-medium mb-1">Action required</p>
-          <p className="text-xs text-slate-400 mb-3">
-            Confirm that you have delivered the contracted grid capacity to the buyer.
-          </p>
-          <button
-            onClick={onConfirmDelivery}
-            disabled={isConfirming}
-            className="btn-primary text-sm"
-          >
-            {isConfirming ? 'Confirming…' : 'Confirm delivery'}
-          </button>
+      {/* Seller confirm delivery button */}
+      {isSeller && settlement.status === 'DELIVERY_PENDING' && (
+        <button
+          onClick={handleConfirm}
+          disabled={loading}
+          style={{
+            width: '100%', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 600,
+            cursor: loading ? 'not-allowed' : 'pointer', border: 'none',
+            background: loading ? '#2a3347' : '#10b981', color: loading ? '#4a5568' : '#0b0d10',
+          }}
+        >
+          {loading ? 'Confirming…' : 'Confirm Delivery'}
+        </button>
+      )}
+
+      {/* Payment details */}
+      {settlement.payment_held_cents !== undefined && settlement.payment_held_cents > 0 && (
+        <div style={{ marginTop: 12, fontSize: 12, color: '#4a5568', display: 'flex', justifyContent: 'space-between' }}>
+          <span>Payment held</span>
+          <span style={{ fontFamily: 'monospace', color: '#8892a4' }}>
+            €{(settlement.payment_held_cents / 100).toFixed(2)}
+          </span>
+        </div>
+      )}
+      {settlement.collateral_forfeited_cents !== undefined && settlement.collateral_forfeited_cents > 0 && (
+        <div style={{ fontSize: 12, color: '#ef4444', display: 'flex', justifyContent: 'space-between', marginTop: 4 }}>
+          <span>Collateral forfeited</span>
+          <span style={{ fontFamily: 'monospace' }}>€{(settlement.collateral_forfeited_cents / 100).toFixed(2)}</span>
         </div>
       )}
     </div>
-  )
+  );
 }

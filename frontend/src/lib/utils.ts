@@ -1,5 +1,3 @@
-import { format, formatDistanceToNow, parseISO } from 'date-fns'
-import { nl } from 'date-fns/locale'
 import type { CongestionSeverity, TradeStatus, SettlementStatus, ScuStatus, BidStatus } from '@/types'
 
 // ─── Money ────────────────────────────────────────────────────────────────────
@@ -27,28 +25,44 @@ export function eurosToCents(euros: number): number {
   return Math.round(euros * 100)
 }
 
-// ─── Dates ────────────────────────────────────────────────────────────────────
+// ─── Dates (no external dependencies) ────────────────────────────────────────
+
+const NL_MONTHS = ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec']
 
 export function formatDate(iso: string): string {
-  return format(parseISO(iso), 'dd MMM yyyy', { locale: nl })
+  const d = new Date(iso)
+  return `${String(d.getDate()).padStart(2, '0')} ${NL_MONTHS[d.getMonth()]} ${d.getFullYear()}`
 }
 
 export function formatDateTime(iso: string): string {
-  return format(parseISO(iso), 'dd MMM yyyy HH:mm', { locale: nl })
+  const d = new Date(iso)
+  const date = `${String(d.getDate()).padStart(2, '0')} ${NL_MONTHS[d.getMonth()]} ${d.getFullYear()}`
+  const time = `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`
+  return `${date} ${time}`
 }
 
 export function formatTimeWindow(start: string, end: string): string {
-  const s = parseISO(start)
-  const e = parseISO(end)
-  const sameDay = format(s, 'yyyy-MM-dd') === format(e, 'yyyy-MM-dd')
-  if (sameDay) {
-    return `${format(s, 'dd MMM yyyy')} · ${format(s, 'HH:mm')}–${format(e, 'HH:mm')}`
-  }
-  return `${format(s, 'dd MMM')} ${format(s, 'HH:mm')} – ${format(e, 'dd MMM')} ${format(e, 'HH:mm')}`
+  const s = new Date(start)
+  const e = new Date(end)
+  const sameDay = s.toDateString() === e.toDateString()
+  const sDate = `${String(s.getDate()).padStart(2, '0')} ${NL_MONTHS[s.getMonth()]} ${s.getFullYear()}`
+  const sTime = `${String(s.getHours()).padStart(2, '0')}:${String(s.getMinutes()).padStart(2, '0')}`
+  const eTime = `${String(e.getHours()).padStart(2, '0')}:${String(e.getMinutes()).padStart(2, '0')}`
+  if (sameDay) return `${sDate} · ${sTime}–${eTime}`
+  const eDate = `${String(e.getDate()).padStart(2, '0')} ${NL_MONTHS[e.getMonth()]}`
+  return `${sDate} ${sTime} – ${eDate} ${eTime}`
 }
 
 export function formatRelative(iso: string): string {
-  return formatDistanceToNow(parseISO(iso), { addSuffix: true, locale: nl })
+  const diff = Date.now() - new Date(iso).getTime()
+  const abs = Math.abs(diff)
+  const future = diff < 0
+  const prefix = future ? 'over ' : ''
+  const suffix = future ? '' : ' geleden'
+  if (abs < 60_000) return `${prefix}zojuist${suffix}`
+  if (abs < 3_600_000) return `${prefix}${Math.floor(abs / 60_000)} min${suffix}`
+  if (abs < 86_400_000) return `${prefix}${Math.floor(abs / 3_600_000)} uur${suffix}`
+  return `${prefix}${Math.floor(abs / 86_400_000)} dagen${suffix}`
 }
 
 export function formatCountdown(targetIso: string): string {
@@ -59,7 +73,7 @@ export function formatCountdown(targetIso: string): string {
   return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`
 }
 
-// ─── Congestion severity (GREEN/AMBER/RED from backend) ───────────────────────
+// ─── Congestion severity ──────────────────────────────────────────────────────
 
 export const congestionColor: Record<CongestionSeverity, string> = {
   GREEN: 'text-congestion-low',
@@ -79,7 +93,7 @@ export const congestionDot: Record<CongestionSeverity, string> = {
   RED: 'bg-congestion-high',
 }
 
-// ─── SCU status (ACTIVE/MATCHED/WITHDRAWN/EXPIRED from backend) ───────────────
+// ─── SCU status ───────────────────────────────────────────────────────────────
 
 export const scuStatusLabel: Record<ScuStatus, string> = {
   ACTIVE: 'Active',
@@ -95,7 +109,7 @@ export const scuStatusColor: Record<ScuStatus, string> = {
   EXPIRED: 'text-slate-500',
 }
 
-// ─── Bid status (OPEN/WON/LOST/WITHDRAWN from backend) ───────────────────────
+// ─── Bid status ───────────────────────────────────────────────────────────────
 
 export const bidStatusColor: Record<BidStatus, string> = {
   OPEN: 'bg-amber-400',
@@ -104,7 +118,7 @@ export const bidStatusColor: Record<BidStatus, string> = {
   WITHDRAWN: 'bg-slate-500',
 }
 
-// ─── Trade status (ACTIVE/SETTLED/DISPUTED/CANCELLED from backend) ────────────
+// ─── Trade status ─────────────────────────────────────────────────────────────
 
 export const tradeStatusLabel: Record<TradeStatus, string> = {
   ACTIVE: 'Active',

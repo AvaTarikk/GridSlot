@@ -17,6 +17,7 @@ import {
   cn,
 } from '@/lib/utils'
 import Link from 'next/link'
+import ForecastPanel from '@/app/dashboard/ForecastPanel';
 
 interface PortfolioSnapshot {
   activeListings: number
@@ -118,6 +119,8 @@ export default function DashboardPage() {
               <StatCard label="Revenue" value={formatEurosCompact(data.totalRevenueCents)} sub="All-time settled" accent="text-emerald-400" />
               <StatCard label="Spend" value={formatEurosCompact(data.totalSpendCents)} sub="All-time" accent="text-grid-400" />
             </div>
+
+            <div className="mt-12"><ForecastPanel /></div>
 
             {company && (
               <div className="card px-5 py-4 mb-8 flex items-center gap-6">
