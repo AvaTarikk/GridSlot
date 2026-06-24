@@ -1,15 +1,15 @@
 import { Router } from 'express';
 import { z } from 'zod';
-import { prisma } from '../lib/prisma.js';
+import { prisma } from '../lib/prisma';
 import type { Prisma } from '@prisma/client';
-import { requireAuth, requireRole } from '../middleware/auth.js';
+import { requireAuth, requireRole } from '../middleware/auth';
 import {
   ValidationError,
   NotFoundError,
   AuthorisationError,
   ConflictError,
   KybNotActiveError,
-} from '../middleware/errorHandler.js';
+} from '../middleware/errorHandler';
 
 export const bidsRouter = Router();
 

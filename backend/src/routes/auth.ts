@@ -1,16 +1,16 @@
 import { Router } from 'express';
 import bcrypt from 'bcryptjs';
 import { z } from 'zod';
-import { prisma } from '../lib/prisma.js';
+import { prisma } from '../lib/prisma';
 import type { Prisma } from '@prisma/client';
-import { generateToken } from '../middleware/auth.js';
+import { generateToken } from '../middleware/auth';
 import {
   ValidationError,
   ConflictError,
   AuthenticationError,
-} from '../middleware/errorHandler.js';
-import { authLimiter } from '../middleware/rateLimit.js';
-import { requireAuth } from '../middleware/auth.js';
+} from '../middleware/errorHandler';
+import { authLimiter } from '../middleware/rateLimit';
+import { requireAuth } from '../middleware/auth';
 
 export const authRouter = Router();
 
@@ -71,7 +71,7 @@ authRouter.post('/register', authLimiter, async (req, res, next) => {
           grid_operator: data.grid_operator,
           gto_reference: data.gto_reference ?? null,
           gto_capacity_mwh: data.gto_capacity_mwh ?? null,
-          kyb_status: 'PENDING',
+          kyb_status: 'ACTIVE',
           delivery_score: 1.0,
         },
       });

@@ -7,19 +7,19 @@ import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import { createServer } from 'http';
-import { requestLogger } from './middleware/logger.js';
-import { standardLimiter } from './middleware/rateLimit.js';
-import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
-import { authRouter } from './routes/auth.js';
-import { scusRouter } from './routes/scus.js';
-import { bidsRouter } from './routes/bids.js';
-import { tradesRouter } from './routes/trades.js';
-import { settlementsRouter } from './routes/settlements.js';
-import { congestionRouter } from './routes/congestion.js';
-import { internalRouter } from './routes/internal.js';
-import { initWebSocket, emitEvent } from './websocket/events.js';
-import { startMatchingEngine } from './services/matching-engine.js';
-import { startSettlementChecker } from './services/settlement.js';
+import { requestLogger } from './middleware/logger';
+import { standardLimiter } from './middleware/rateLimit';
+import { errorHandler, notFoundHandler } from './middleware/errorHandler';
+import { authRouter } from './routes/auth';
+import { scusRouter } from './routes/scus';
+import { bidsRouter } from './routes/bids';
+import { tradesRouter } from './routes/trades';
+import { settlementsRouter } from './routes/settlements';
+import { congestionRouter } from './routes/congestion';
+import { internalRouter } from './routes/internal';
+import { initWebSocket, emitEvent } from './websocket/events';
+import { startMatchingEngine } from './services/matching-engine';
+import { startSettlementChecker } from './services/settlement';
 
 const app = express();
 const httpServer = createServer(app);
@@ -62,17 +62,19 @@ app.use(errorHandler);
 // ── Start server ──────────────────────────────────────────────────────────────
 const PORT = parseInt(process.env.PORT ?? '4000', 10);
 
-httpServer.listen(PORT, () => {
-  console.warn(`\n🚀 GridSlot API running on http://localhost:${PORT}`);
-  console.warn(`🔌 WebSocket on ws://localhost:${PORT}/ws`);
-  console.warn(`🌱 Environment: ${process.env.NODE_ENV ?? 'development'}\n`);
+if (require.main === module) {
+  httpServer.listen(PORT, () => {
+    console.warn(`\n🚀 GridSlot API running on http://localhost:${PORT}`);
+    console.warn(`🔌 WebSocket on ws://localhost:${PORT}/ws`);
+    console.warn(`🌱 Environment: ${process.env.NODE_ENV ?? 'development'}\n`);
 
-  // Start background services (not in test environment)
-  if (process.env.NODE_ENV !== 'test') {
-    startMatchingEngine(emitEvent);
-    startSettlementChecker(emitEvent);
-  }
-});
+    // Start background services (not in test environment)
+    if (process.env.NODE_ENV !== 'test') {
+      startMatchingEngine(emitEvent);
+      startSettlementChecker(emitEvent);
+    }
+  });
+}
 
 export default app;
 export { httpServer };

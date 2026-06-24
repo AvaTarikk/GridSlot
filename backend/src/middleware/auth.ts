@@ -1,6 +1,6 @@
 import type { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { AuthenticationError, AuthorisationError } from './errorHandler.js';
+import { AuthenticationError, AuthorisationError } from './errorHandler';
 import type { UserRole } from '@prisma/client';
 
 // ─── Type augmentation ────────────────────────────────────────────────────────

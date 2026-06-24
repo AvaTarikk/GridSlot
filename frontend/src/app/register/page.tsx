@@ -14,7 +14,7 @@ const ROLES: { value: UserRole; label: string; desc: string }[] = [
 ]
 
 const GRID_OPERATORS = [
-  'Liander', 'Stedin', 'Enexis', 'Westland Infra', 'Coteq', 'Rendo', 'Zebra',
+  'Liander', 'Stedin', 'Enexis', 'TenneT',
 ]
 
 export default function RegisterPage() {
@@ -155,12 +155,13 @@ export default function RegisterPage() {
 
           {/* Grid operator */}
           <div>
-            <label className="label block mb-2">Grid operator <span className="normal-case text-slate-500 font-normal">(optional)</span></label>
-            <select
-              className="input"
-              value={form.grid_operator}
-              onChange={(e) => update('grid_operator', e.target.value)}
-            >
+            <label className="label block mb-2">Grid operator</label>
+              <select
+                className="input"
+                value={form.grid_operator}
+                onChange={(e) => update('grid_operator', e.target.value)}
+                required
+              >
               <option value="">Select grid operator…</option>
               {GRID_OPERATORS.map((op) => (
                 <option key={op} value={op}>{op}</option>

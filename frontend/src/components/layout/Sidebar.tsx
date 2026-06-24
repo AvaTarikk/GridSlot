@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useAuthStore } from '@/stores/auth'
 import { cn, formatDeliveryScore, deliveryScoreColor } from '@/lib/utils'
 
@@ -46,7 +46,13 @@ const navItems = [
 
 export function Sidebar() {
   const pathname = usePathname()
+  const router = useRouter()
   const { company, clearAuth } = useAuthStore()
+
+  function handleSignOut() {
+    clearAuth()
+    router.replace('/login')
+  }
 
   return (
     <aside className="w-60 shrink-0 h-screen sticky top-0 flex flex-col border-r border-white/5 bg-surface-1">
@@ -111,7 +117,7 @@ export function Sidebar() {
           </div>
 
           <button
-            onClick={() => clearAuth()}
+            onClick={handleSignOut}
             className="w-full text-left text-xs text-slate-500 hover:text-slate-300 transition-colors py-1 flex items-center gap-2"
           >
             <svg viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5">

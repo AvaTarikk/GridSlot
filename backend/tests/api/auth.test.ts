@@ -9,19 +9,19 @@ import type { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 
 const prismaMock = mockDeep<PrismaClient>();
-jest.mock('../src/lib/prisma', () => ({ prisma: prismaMock }));
+jest.mock('../../src/lib/prisma', () => ({ prisma: prismaMock }));
 
 // Mock background services so they don't start during tests
-jest.mock('../src/services/matching-engine', () => ({
+jest.mock('../../src/services/matching-engine', () => ({
   startMatchingEngine: jest.fn(),
   runMatchingCycle: jest.fn(),
 }));
-jest.mock('../src/services/settlement', () => ({
+jest.mock('../../src/services/settlement', () => ({
   startSettlementChecker: jest.fn(),
   runSettlementChecks: jest.fn(),
 }));
 
-import app from '../src/app';
+import app from '../../src/app';
 
 const demoCompany = {
   id: 'co_001',
@@ -152,7 +152,8 @@ describe('GET /api/auth/me', () => {
     });
     const token = loginRes.body.token;
 
-    prismaMock.company.findUnique.mockResolvedValueOnce(demoCompany); // for /me
+    const { password_hash, ...companyForMe } = demoCompany;
+    prismaMock.company.findUnique.mockResolvedValueOnce(companyForMe as typeof demoCompany); // for /me
     const res = await request(app)
       .get('/api/auth/me')
       .set('Authorization', `Bearer ${token}`);

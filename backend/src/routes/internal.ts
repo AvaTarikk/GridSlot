@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { requireInternal } from '../middleware/auth.js';
+import { requireInternal } from '../middleware/auth';
 
 export const internalRouter = Router();
 

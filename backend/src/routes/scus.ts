@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import { z } from 'zod';
-import { prisma } from '../lib/prisma.js';
+import { prisma } from '../lib/prisma';
 import type { Prisma } from '@prisma/client';
-import { requireAuth, requireRole } from '../middleware/auth.js';
+import { requireAuth, requireRole } from '../middleware/auth';
 import {
   ValidationError,
   NotFoundError,
@@ -11,7 +11,7 @@ import {
   CapacityExceededError,
   InsufficientCollateralError,
   ConflictError,
-} from '../middleware/errorHandler.js';
+} from '../middleware/errorHandler';
 
 export const scusRouter = Router();
 
@@ -126,7 +126,7 @@ scusRouter.post('/', requireAuth, requireRole('SELLER', 'BOTH'), async (req, res
 
     // Calculate collateral: 10% of total value
     const totalValue = data.ask_price_cents * data.mwh_amount;
-    const collateral = Math.ceil(totalValue * 0.1);
+    const collateral = Math.ceil(totalValue * 0.05);
 
     // In production: verify seller has funds for collateral via payment provider
     // MVP: simulate — always succeed

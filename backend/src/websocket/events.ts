@@ -13,7 +13,7 @@
 import { Server as HttpServer } from 'http';
 import { Server as SocketServer, Socket } from 'socket.io';
 import jwt from 'jsonwebtoken';
-import type { JwtPayload } from '../middleware/auth.js';
+import type { JwtPayload } from '../middleware/auth';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 

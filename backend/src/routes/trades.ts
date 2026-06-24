@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { prisma } from '../lib/prisma.js';
-import { requireAuth } from '../middleware/auth.js';
-import { NotFoundError, AuthorisationError } from '../middleware/errorHandler.js';
+import { prisma } from '../lib/prisma';
+import { requireAuth } from '../middleware/auth';
+import { NotFoundError, AuthorisationError } from '../middleware/errorHandler';
 
 export const tradesRouter = Router();
 

@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import { prisma } from '../lib/prisma.js';
+import { prisma } from '../lib/prisma';
 import type { Prisma } from '@prisma/client';
-import { requireAuth, requireRole } from '../middleware/auth.js';
+import { requireAuth, requireRole } from '../middleware/auth';
 import {
   NotFoundError,
   AuthorisationError,
   InvalidStateTransitionError,
-} from '../middleware/errorHandler.js';
+} from '../middleware/errorHandler';
 
 export const settlementsRouter = Router();
 

@@ -37,15 +37,28 @@ export interface Scu {
   congestion_point_id: string
   congestion_point?: CongestionPoint
   company?: Pick<Company, 'id' | 'name' | 'delivery_score'>
-  start_time: string
-  end_time: string
-  mwh: number
+  // backend field names
+  time_window_start: string
+  time_window_end: string
+  mwh_amount: number
+  // legacy aliases (some components still use these)
+  start_time?: string
+  end_time?: string
+  mwh?: number
   ask_price_cents: number
   status: ScuStatus
   collateral_held_cents: number
   bid_count?: number
   highest_bid_cents?: number
   created_at: string
+}
+
+export interface CreateScuForm {
+  congestion_point_id: string
+  time_window_start: string
+  time_window_end: string
+  mwh_amount: number
+  ask_price_cents: number
 }
 
 export interface Bid {
@@ -124,14 +137,6 @@ export interface RegisterForm {
 
 export interface PlaceBidForm {
   price_cents: number
-}
-
-export interface CreateScuForm {
-  congestion_point_id: string
-  start_time: string
-  end_time: string
-  mwh: number
-  ask_price_cents: number
 }
 
 export type WsEventType = 'trade:matched' | 'bid:lost' | 'settlement:update' | 'congestion:update' | 'scu:listed'
