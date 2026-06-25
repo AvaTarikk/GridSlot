@@ -1,184 +1,270 @@
-# .claude/instructions.md — Extended Agent Instructions
+# GridSlot — CLAUDE.md
 
-This file extends CLAUDE.md with module-specific guidance for Claude Code.
-Read CLAUDE.md first, then this file.
-
----
-
-## Module-by-Module Guidance
-
-### Matching Engine (`backend/src/services/matching-engine.ts`)
-
-The matching engine is the most critical service. When working on it:
-
-**Algorithm summary:**
-```
-FOR each active SCU:
-  bids = all open bids for that SCU, ordered by price DESC, created_at ASC
-  IF bids[0].price >= SCU.ask_price_cents:
-    create trade, mark SCU as MATCHED, mark winning bid as WON, rest as LOST
-    emit 'trade:matched' WebSocket event to both parties
-    create settlement record with status PAYMENT_HELD
-  ELSE:
-    no action this cycle
-```
-
-**Key invariants to preserve:**
-- Price-time priority: highest price wins; ties go to earliest `created_at`
-- A bid can only win once (check `status = 'OPEN'` before matching)
-- The SCU's `ask_price_cents` is the floor — bids below it never match
-- All DB writes in a single `prisma.$transaction`
-
-**Testing requirements for this module:**
-- Every new function needs a corresponding test
-- Edge cases that MUST be covered: no bids, single bid below ask, tie on price, SCU withdrawn mid-cycle
+You are working on **GridSlot**, an electricity grid capacity marketplace MVP.
+Sellers list standardised capacity units (SCUs). Buyers bid on them. A matching
+engine clears auctions every 60 s. Post-trade settlement follows a state machine.
 
 ---
 
-### Settlement State Machine (`backend/src/services/settlement.ts`)
+## Non-negotiable rules
 
-Valid state transitions only:
-
-```
-MATCHED → PAYMENT_HELD         (automatic on trade creation)
-PAYMENT_HELD → DELIVERY_PENDING (automatic when delivery window opens)
-DELIVERY_PENDING → CONFIRMED   (seller calls confirm-delivery endpoint)
-CONFIRMED → SETTLED            (automatic after confirmation grace period)
-DELIVERY_PENDING → NON_DELIVERY (system detects missed window)
-NON_DELIVERY → REFUNDED        (automatic — forfeit 5% seller collateral, refund buyer)
-```
-
-**Forbidden transitions** (must throw `InvalidStateTransitionError`):
-- Any backward transition
-- Skipping states
-- Transitioning from SETTLED or REFUNDED
-
-When implementing a transition function:
-1. Validate current state
-2. Apply business logic (calculate forfeit amounts, etc.)
-3. Update settlement + audit_log in a single `prisma.$transaction`
-4. Emit the appropriate WebSocket event
+- **Money is always integer cents.** Never store or compute with floats.
+  Use `Math.ceil` when dividing. Display-only formatting is the only exception.
+- **Every financial state change writes an AuditLog** inside the same
+  `prisma.$transaction`. If you add a transition and skip the audit log, revert it.
+- **Routes are thin.** No business logic in `routes/`. If a handler exceeds ~20
+  lines, extract to `services/`.
+- **Never call `fetch` directly in frontend components.** Always use `lib/api.ts`.
+- **Never commit `.env`.** Only edit `.env.example`.
+- **Never edit `prisma/schema.prisma` without running `npx prisma migrate dev`.**
+- **Never use `any` in TypeScript** unless mocking in tests.
+- **Tests are required** for every new service function. Mock Prisma with
+  `jest-mock-extended`. Never hit a real DB in unit tests.
 
 ---
 
-### SCU Registry (`backend/src/services/scu-registry.ts`)
+## Project layout
 
-When creating an SCU listing:
-1. Verify the company's KYB status is `ACTIVE`
-2. Verify `mwh_amount` does not exceed the company's GTO capacity ceiling (mock validation in MVP)
-3. Calculate and lock `seller_collateral_held_cents` = 10% of `ask_price_cents * mwh_amount`
-4. Set status to `ACTIVE`
-
-The GTO validation in MVP is a simple mock check against `mock-data/demo-companies.json`.
-Do NOT attempt to call a real grid operator API.
+```
+gridslot/
+├── frontend/          Next.js 14 App Router
+│   └── src/
+│       ├── app/       Pages (page.tsx per route)
+│       ├── components/
+│       ├── hooks/     useWebSocket, useCountdown
+│       ├── lib/api.ts All HTTP calls
+│       └── stores/    Zustand (auth, marketplace)
+├── backend/
+│   └── src/
+│       ├── routes/    Thin HTTP handlers
+│       ├── services/  Business logic
+│       ├── middleware/ auth, errorHandler, logger, rateLimit
+│       ├── websocket/ Socket.io events
+│       └── prisma/    Schema + seed
+└── mock-data/         JSON source of truth for demo data
+```
 
 ---
 
-### API Routes (`backend/src/routes/`)
+## Stack
 
-Route handlers must be thin. The pattern:
+| Layer | Tech |
+|---|---|
+| Frontend | Next.js 14, Tailwind, Zustand, Socket.io-client |
+| Backend | Express, Prisma, PostgreSQL, Socket.io |
+| Auth | JWT (HS256), 7d expiry |
+| Testing | Jest, jest-mock-extended, Supertest |
+| Money | Integer cents throughout |
+
+---
+
+## Key data models
+
+```
+Company      id, name, kvk_number, kyb_status, role, delivery_score
+Scu          id, company_id, congestion_point_id, ask_price_cents, mwh_amount, status
+Bid          id, scu_id, company_id, price_cents, status
+Trade        id, scu_id, buyer_id, seller_id, clearing_price_cents, status
+Settlement   id, trade_id, status, collateral_forfeited_cents, buyer_refund_cents
+AuditLog     id, action, company_id, settlement_id, metadata (JSON)
+```
+
+`ScuStatus`        ACTIVE | MATCHED | WITHDRAWN | EXPIRED
+`BidStatus`        OPEN | WON | LOST | WITHDRAWN
+`TradeStatus`      ACTIVE | SETTLED | CANCELLED
+`SettlementStatus` MATCHED | PAYMENT_HELD | DELIVERY_PENDING | CONFIRMED | SETTLED | NON_DELIVERY | REFUNDED
+
+---
+
+## Matching engine (`services/matching-engine.ts`)
+
+Algorithm per cycle:
+```
+for each ACTIVE SCU (FIFO by created_at):
+  bids = OPEN bids for SCU ordered by price DESC, created_at ASC
+  if bids[0].price >= scu.ask_price_cents:
+    transaction:
+      scu       → MATCHED
+      winning bid → WON
+      other bids  → LOST
+      create Trade (clearing_price frozen at match time)
+      create Settlement (PAYMENT_HELD)
+      write AuditLog TRADE_MATCHED
+    emit trade:matched + bid:lost via WebSocket
+```
+
+Invariants:
+- Price-time priority. Ties go to earliest `created_at`.
+- Re-check `status = ACTIVE` inside the transaction (race condition guard).
+- `clearing_price_cents` is frozen at match time, never recomputed.
+- One trade per SCU — enforced by DB unique constraint + status check.
+
+---
+
+## Settlement state machine (`services/settlement.ts`)
+
+```
+MATCHED → PAYMENT_HELD → DELIVERY_PENDING → CONFIRMED → SETTLED
+                                         ↘ NON_DELIVERY → REFUNDED
+```
+
+- CONFIRMED → SETTLED: auto after grace period (runSettlementChecks)
+- DELIVERY_PENDING → NON_DELIVERY: auto when window expires (runSettlementChecks)
+- NON_DELIVERY → REFUNDED: forfeit 5% seller collateral (`Math.ceil`), refund buyer 100%
+- Any backward or skipped transition → throw `InvalidStateTransitionError`
+- Every transition: assert state → compute amounts → `prisma.$transaction` (update + AuditLog) → emit `settlement:update`
+
+---
+
+## API routes (all existing — do not recreate)
+
+```
+POST   /api/auth/register
+POST   /api/auth/login
+GET    /api/auth/me
+
+GET    /api/scus
+GET    /api/scus/:id
+POST   /api/scus              (SELLER | BOTH, checks kyb_status = ACTIVE)
+PATCH  /api/scus/:id          (withdraw)
+
+POST   /api/bids
+GET    /api/bids/my
+DELETE /api/bids/:id
+
+GET    /api/trades
+GET    /api/trades/:id
+
+GET    /api/settlements/:id
+POST   /api/settlements/:id/confirm-delivery
+
+GET    /api/congestion/points
+GET    /api/congestion/points/:id
+
+GET    /api/forecast
+GET    /api/forecast/:id?range=30
+
+POST   /api/internal/match    (dev only, x-internal-key header required)
+```
+
+---
+
+## Error classes (use these, don't invent new ones without reason)
 
 ```typescript
-// ✅ Correct
-router.post('/scus', authMiddleware, async (req, res) => {
-  try {
-    const scu = await scuRegistry.createListing(req.user.companyId, req.body);
-    res.status(201).json(scu);
-  } catch (err) {
-    next(err);
-  }
-});
-
-// ❌ Wrong — business logic in route handler
-router.post('/scus', authMiddleware, async (req, res) => {
-  const company = await prisma.company.findUnique(...);
-  if (company.kyb_status !== 'ACTIVE') { ... }
-  const collateral = req.body.ask_price * 0.1;
-  // ... 40 more lines
-});
+ValidationError(message, fields?)       → 400
+AuthenticationError(message?)           → 401
+AuthorisationError(message?)            → 403
+KybNotActiveError()                     → 403
+NotFoundError(resource?)                → 404
+ConflictError(message?)                 → 409
+CapacityExceededError(requested, limit) → 422
+InsufficientCollateralError(req, avail) → 422
 ```
 
 ---
 
-### Frontend Components (`frontend/components/`)
+## WebSocket events
 
-Component guidelines:
-- Use Tailwind utility classes only — no inline `style` props except for dynamic values (e.g., map positioning)
-- All data fetching via the `lib/api.ts` client — no direct `fetch` calls in components
-- Loading and error states are required for every data-fetching component
-- Use `Zustand` stores for cross-component state; `useState` for local UI state only
+| Event | Payload |
+|---|---|
+| `trade:matched` | `{ trade_id, scu_id, clearing_price_cents, seller_id, buyer_id }` |
+| `bid:lost` | `{ bid_id, scu_id, reason: 'outbid', company_id }` |
+| `settlement:update` | `{ settlement_id, new_status }` |
+| `scu:listed` | `{ scu_id, congestion_point_id, ask_price_cents }` |
 
-Key components to build:
-- `marketplace/ScuCard.tsx` — displays a single SCU listing
-- `marketplace/BidForm.tsx` — bid submission form
-- `marketplace/AuctionTimer.tsx` — countdown to next matching cycle
-- `settlement/SettlementTracker.tsx` — visual state machine progress
-- `map/CongestionMap.tsx` — Leaflet map wrapper
-- `dashboard/PortfolioSummary.tsx` — revenue/spend summary
-
----
-
-### WebSocket Events (`backend/src/websocket/events.ts`)
-
-All WebSocket events must:
-1. Require a valid JWT (authenticate on connection, not per-event)
-2. Be documented in `docs/api-reference.md`
-3. Have a TypeScript type definition shared between frontend and backend
-
-Event payload types go in a shared `types/websocket.ts` file at the repo root,
-imported by both `frontend/` and `backend/`.
-
----
-
-### Mock Data (`mock-data/`)
-
-The mock data files are the source of truth for the MVP. Do not hardcode values
-that belong in these files. When adding demo scenarios:
-
-- `congestion-points.json` — add realistic Dutch locations (use actual postcodes/grid areas)
-- `demo-companies.json` — add companies with realistic KVK numbers and GTO references
-- `forecast-scenarios.json` — add named scenarios (e.g., `"heat_wave"`, `"solar_peak"`)
-
-Do NOT add real personal data, real KVK numbers of actual companies, or real grid operator credentials.
-
----
-
-## Prompt Patterns for Complex Tasks
-
-When asking Claude Code to implement a complex service, use this structure:
-
-```
-Context: [paste relevant schema models + any existing related code]
-
-Task: Implement [function name] in [file path] that:
-- [behaviour 1]
-- [behaviour 2]
-- [edge case handling]
-
-Constraints:
-- Must be a single prisma.$transaction
-- Must emit WebSocket event on success
-- Must write to audit_log
-- Must throw [ErrorClass] if [condition]
-
-Return the function with signature:
-async function [name](params: [Type]): Promise<[ReturnType]>
+Frontend hook pattern:
+```typescript
+useEffect(() => {
+  return on('trade:matched', handler); // always return for cleanup
+}, [on]);
 ```
 
 ---
 
-## Common Mistakes to Avoid
+## Frontend patterns
 
-1. **Race conditions in matching**: Always select SCUs with `FOR UPDATE` (Prisma: `select ... where ... AND status = 'ACTIVE'`) to prevent concurrent matching of the same SCU.
+**Data fetching — always three states:**
+```tsx
+if (loading) return <Skeleton />;
+if (error)   return <ErrorCard message={error} />;
+return <Content data={data} />;
+```
 
-2. **Floating point money**: `0.1 + 0.2 !== 0.3` in JS. All amounts in cents as integers. Division only when displaying to UI, never when storing.
+**Module-level cache (prevents data loss on navigation):**
+```typescript
+let _cache: MyType | null = null;
+export default function Page() {
+  const [data, setData] = useState<MyType | null>(_cache);
+  const [loading, setLoading] = useState(!_cache);
+  useEffect(() => {
+    if (_cache) { setData(_cache); setLoading(false); return; }
+    api.fetch().then(d => { _cache = d; setData(d); }).finally(...);
+  }, []);
+}
+```
+Use this on: Congestion Map, Forecast page, Marketplace.
 
-3. **Missing audit log**: Every financial state change needs an audit record. If you add a new state transition and don't add an audit log write, the PR will be rejected.
-
-4. **Leaking internal errors to API responses**: Use an error handler middleware that maps internal errors to safe HTTP responses. Don't `res.json(err)` directly.
-
-5. **Importing Prisma client in tests**: Use `jest-mock-extended` to mock Prisma — never hit a real database in unit tests.
+**State ownership:**
+- Zustand store: auth, marketplace SCU list, WebSocket-driven updates
+- useState: form inputs, loading/error, UI toggles
 
 ---
 
-*Last updated: 2026 — Team Seven, MSc FinTech, University of Amsterdam*
+## Environment variables
+
+```bash
+# backend/.env
+DATABASE_URL=
+JWT_SECRET=
+JWT_EXPIRES_IN=7d
+PORT=4000
+FRONTEND_URL=http://localhost:3000
+NODE_ENV=development
+INTERNAL_API_KEY=dev-internal-key
+MATCHING_ENGINE_INTERVAL_MS=60000
+SETTLEMENT_DELIVERY_WINDOW_HOURS=24
+
+# frontend/.env.local
+NEXT_PUBLIC_API_URL=http://localhost:4000
+```
+
+---
+
+## What still needs to be built (MVP gaps)
+
+### Backend
+- Bid validation: reject if bid already OPEN on same SCU by same buyer
+- Bid withdrawal: only allow if status = OPEN
+- `transitionToDeliveryPending`: set window timestamps from env var
+- `runSettlementChecks`: auto CONFIRMED → SETTLED after grace period
+- `POST /api/internal/trigger-settlement` (dev/demo use)
+- Seed: all 10 congestion points in DB, 3 seller + 3 buyer demo companies with `kyb_status: ACTIVE`
+
+### Frontend
+- Marketplace list page: filter by congestion point, paginated
+- Marketplace `[id]` page: SCU detail + bid list + bid form
+- Portfolio page: own SCUs + own bids with status badges
+- Settlement tracker: visual state machine progress on trade detail
+- Toast notifications wired to WebSocket events
+- `/forecast` page at `frontend/src/app/forecast/page.tsx`
+- Sidebar nav link for Forecast (already scaffolded in Sidebar.tsx)
+
+### Tests
+- `matching-engine.test.ts`: all invariants including race condition + cycle error isolation
+- `settlement.test.ts`: every transition, forfeit calculation, refund calculation
+- `api/scus.test.ts`: create, list, withdraw
+- `api/bids.test.ts`: place, list, withdraw
+
+---
+
+## Common mistakes — check before submitting
+
+1. Float money → always `Math.ceil` on division, always integers in DB
+2. Missing AuditLog in transaction → every financial state change needs one
+3. Business logic in route handler → extract to service
+4. `fetch` in component → use `lib/api.ts`
+5. WebSocket listener without cleanup → `return on(event, handler)` in useEffect
+6. Seeded company without `kyb_status: 'ACTIVE'` → can't list SCUs
+7. Schema change without migration → always run `npx prisma migrate dev`
+8. `res.json(err)` → always use `next(err)` and let errorHandler respond

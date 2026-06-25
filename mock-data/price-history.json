@@ -1,0 +1,7572 @@
+[
+  {
+    "congestion_point_id": "cp_001",
+    "history": [
+      {
+        "date": "2026-03-28",
+        "clearing_price_cents": 7021,
+        "volume_mwh": 38,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-03-29",
+        "clearing_price_cents": 6952,
+        "volume_mwh": 46,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-03-30",
+        "clearing_price_cents": 9258,
+        "volume_mwh": 62,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-03-31",
+        "clearing_price_cents": 11140,
+        "volume_mwh": 133,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-01",
+        "clearing_price_cents": 9960,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-02",
+        "clearing_price_cents": 8095,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-03",
+        "clearing_price_cents": 10967,
+        "volume_mwh": 136,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-04-04",
+        "clearing_price_cents": 6917,
+        "volume_mwh": 52,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-05",
+        "clearing_price_cents": 9081,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-06",
+        "clearing_price_cents": 10704,
+        "volume_mwh": 78,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-07",
+        "clearing_price_cents": 7940,
+        "volume_mwh": 51,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-08",
+        "clearing_price_cents": 10801,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-09",
+        "clearing_price_cents": 9922,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-10",
+        "clearing_price_cents": 10403,
+        "volume_mwh": 104,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-11",
+        "clearing_price_cents": 6777,
+        "volume_mwh": 41,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-12",
+        "clearing_price_cents": 6873,
+        "volume_mwh": 58,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-13",
+        "clearing_price_cents": 10765,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-14",
+        "clearing_price_cents": 8922,
+        "volume_mwh": 57,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-15",
+        "clearing_price_cents": 9156,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-16",
+        "clearing_price_cents": 8678,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-17",
+        "clearing_price_cents": 9201,
+        "volume_mwh": 71,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-18",
+        "clearing_price_cents": 9420,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-19",
+        "clearing_price_cents": 8933,
+        "volume_mwh": 77,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-20",
+        "clearing_price_cents": 9148,
+        "volume_mwh": 62,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-21",
+        "clearing_price_cents": 8494,
+        "volume_mwh": 68,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-22",
+        "clearing_price_cents": 10573,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-23",
+        "clearing_price_cents": 8918,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-24",
+        "clearing_price_cents": 11038,
+        "volume_mwh": 123,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-04-25",
+        "clearing_price_cents": 7851,
+        "volume_mwh": 40,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-26",
+        "clearing_price_cents": 8272,
+        "volume_mwh": 87,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-27",
+        "clearing_price_cents": 9698,
+        "volume_mwh": 92,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-28",
+        "clearing_price_cents": 8350,
+        "volume_mwh": 60,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-29",
+        "clearing_price_cents": 11725,
+        "volume_mwh": 130,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-30",
+        "clearing_price_cents": 9611,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-01",
+        "clearing_price_cents": 11271,
+        "volume_mwh": 137,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-02",
+        "clearing_price_cents": 7701,
+        "volume_mwh": 51,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-03",
+        "clearing_price_cents": 7977,
+        "volume_mwh": 35,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-04",
+        "clearing_price_cents": 9611,
+        "volume_mwh": 79,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-05",
+        "clearing_price_cents": 10455,
+        "volume_mwh": 90,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-06",
+        "clearing_price_cents": 10511,
+        "volume_mwh": 67,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-07",
+        "clearing_price_cents": 9853,
+        "volume_mwh": 101,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-08",
+        "clearing_price_cents": 11712,
+        "volume_mwh": 140,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-05-09",
+        "clearing_price_cents": 9633,
+        "volume_mwh": 57,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-10",
+        "clearing_price_cents": 8495,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-11",
+        "clearing_price_cents": 11994,
+        "volume_mwh": 124,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-05-12",
+        "clearing_price_cents": 9541,
+        "volume_mwh": 83,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-13",
+        "clearing_price_cents": 8601,
+        "volume_mwh": 72,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-14",
+        "clearing_price_cents": 11270,
+        "volume_mwh": 141,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-15",
+        "clearing_price_cents": 10583,
+        "volume_mwh": 71,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-16",
+        "clearing_price_cents": 8975,
+        "volume_mwh": 78,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-17",
+        "clearing_price_cents": 9154,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-18",
+        "clearing_price_cents": 11643,
+        "volume_mwh": 125,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-05-19",
+        "clearing_price_cents": 11269,
+        "volume_mwh": 112,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-05-20",
+        "clearing_price_cents": 12203,
+        "volume_mwh": 118,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-05-21",
+        "clearing_price_cents": 8745,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-22",
+        "clearing_price_cents": 9493,
+        "volume_mwh": 92,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-23",
+        "clearing_price_cents": 9931,
+        "volume_mwh": 78,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-24",
+        "clearing_price_cents": 8819,
+        "volume_mwh": 83,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-25",
+        "clearing_price_cents": 10141,
+        "volume_mwh": 84,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-26",
+        "clearing_price_cents": 9149,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-27",
+        "clearing_price_cents": 9703,
+        "volume_mwh": 83,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-28",
+        "clearing_price_cents": 12350,
+        "volume_mwh": 121,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-05-29",
+        "clearing_price_cents": 10038,
+        "volume_mwh": 90,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-30",
+        "clearing_price_cents": 9977,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-31",
+        "clearing_price_cents": 9181,
+        "volume_mwh": 92,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-01",
+        "clearing_price_cents": 9771,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-02",
+        "clearing_price_cents": 9121,
+        "volume_mwh": 72,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-03",
+        "clearing_price_cents": 11728,
+        "volume_mwh": 120,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-06-04",
+        "clearing_price_cents": 9877,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-05",
+        "clearing_price_cents": 10136,
+        "volume_mwh": 91,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-06",
+        "clearing_price_cents": 9589,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-07",
+        "clearing_price_cents": 9762,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-08",
+        "clearing_price_cents": 12228,
+        "volume_mwh": 88,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-06-09",
+        "clearing_price_cents": 10836,
+        "volume_mwh": 123,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-10",
+        "clearing_price_cents": 10548,
+        "volume_mwh": 59,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-11",
+        "clearing_price_cents": 9750,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-12",
+        "clearing_price_cents": 11494,
+        "volume_mwh": 117,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-13",
+        "clearing_price_cents": 8894,
+        "volume_mwh": 83,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-14",
+        "clearing_price_cents": 7771,
+        "volume_mwh": 40,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-15",
+        "clearing_price_cents": 12718,
+        "volume_mwh": 128,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-16",
+        "clearing_price_cents": 9820,
+        "volume_mwh": 94,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-17",
+        "clearing_price_cents": 12392,
+        "volume_mwh": 134,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-18",
+        "clearing_price_cents": 11649,
+        "volume_mwh": 138,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-06-19",
+        "clearing_price_cents": 11261,
+        "volume_mwh": 136,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-06-20",
+        "clearing_price_cents": 9836,
+        "volume_mwh": 77,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-21",
+        "clearing_price_cents": 8168,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-22",
+        "clearing_price_cents": 9988,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-23",
+        "clearing_price_cents": 9601,
+        "volume_mwh": 94,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-24",
+        "clearing_price_cents": 9967,
+        "volume_mwh": 67,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-25",
+        "clearing_price_cents": 12330,
+        "volume_mwh": 142,
+        "severity": "RED",
+        "trade_count": 5
+      }
+    ],
+    "forecast": [
+      {
+        "date": "2026-06-26",
+        "predicted_price_cents": 12293,
+        "lower_bound_cents": 10621,
+        "upper_bound_cents": 13965,
+        "predicted_severity": "RED",
+        "confidence": 89
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 9711,
+        "lower_bound_cents": 8235,
+        "upper_bound_cents": 11187,
+        "predicted_severity": "AMBER",
+        "confidence": 85
+      },
+      {
+        "date": "2026-06-28",
+        "predicted_price_cents": 7656,
+        "lower_bound_cents": 6370,
+        "upper_bound_cents": 8942,
+        "predicted_severity": "GREEN",
+        "confidence": 82
+      },
+      {
+        "date": "2026-06-29",
+        "predicted_price_cents": 7970,
+        "lower_bound_cents": 6504,
+        "upper_bound_cents": 9436,
+        "predicted_severity": "GREEN",
+        "confidence": 78
+      },
+      {
+        "date": "2026-06-30",
+        "predicted_price_cents": 7795,
+        "lower_bound_cents": 6236,
+        "upper_bound_cents": 9354,
+        "predicted_severity": "GREEN",
+        "confidence": 75
+      },
+      {
+        "date": "2026-07-01",
+        "predicted_price_cents": 7784,
+        "lower_bound_cents": 6103,
+        "upper_bound_cents": 9465,
+        "predicted_severity": "GREEN",
+        "confidence": 72
+      },
+      {
+        "date": "2026-07-02",
+        "predicted_price_cents": 7894,
+        "lower_bound_cents": 6063,
+        "upper_bound_cents": 9725,
+        "predicted_severity": "GREEN",
+        "confidence": 68
+      },
+      {
+        "date": "2026-07-03",
+        "predicted_price_cents": 7811,
+        "lower_bound_cents": 5874,
+        "upper_bound_cents": 9748,
+        "predicted_severity": "GREEN",
+        "confidence": 65
+      },
+      {
+        "date": "2026-07-04",
+        "predicted_price_cents": 6585,
+        "lower_bound_cents": 4847,
+        "upper_bound_cents": 8323,
+        "predicted_severity": "GREEN",
+        "confidence": 61
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 5303,
+        "lower_bound_cents": 3818,
+        "upper_bound_cents": 6788,
+        "predicted_severity": "GREEN",
+        "confidence": 58
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 5171,
+        "lower_bound_cents": 3640,
+        "upper_bound_cents": 6702,
+        "predicted_severity": "GREEN",
+        "confidence": 55
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 5450,
+        "lower_bound_cents": 3750,
+        "upper_bound_cents": 7150,
+        "predicted_severity": "GREEN",
+        "confidence": 51
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 5628,
+        "lower_bound_cents": 3782,
+        "upper_bound_cents": 7474,
+        "predicted_severity": "GREEN",
+        "confidence": 48
+      },
+      {
+        "date": "2026-07-09",
+        "predicted_price_cents": 5377,
+        "lower_bound_cents": 3527,
+        "upper_bound_cents": 7227,
+        "predicted_severity": "GREEN",
+        "confidence": 45
+      }
+    ],
+    "stats": {
+      "avg_price_cents": 9786,
+      "peak_price_cents": 12718,
+      "low_price_cents": 6777,
+      "trend_7d_pct": -4.8,
+      "total_volume_mwh": 7839,
+      "total_trades": 302
+    }
+  },
+  {
+    "congestion_point_id": "cp_002",
+    "history": [
+      {
+        "date": "2026-03-28",
+        "clearing_price_cents": 5272,
+        "volume_mwh": 50,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-03-29",
+        "clearing_price_cents": 5259,
+        "volume_mwh": 55,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-03-30",
+        "clearing_price_cents": 6812,
+        "volume_mwh": 86,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-03-31",
+        "clearing_price_cents": 7518,
+        "volume_mwh": 57,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-01",
+        "clearing_price_cents": 6774,
+        "volume_mwh": 69,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-02",
+        "clearing_price_cents": 7687,
+        "volume_mwh": 62,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-03",
+        "clearing_price_cents": 7474,
+        "volume_mwh": 74,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-04",
+        "clearing_price_cents": 5282,
+        "volume_mwh": 46,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-05",
+        "clearing_price_cents": 4876,
+        "volume_mwh": 45,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-06",
+        "clearing_price_cents": 7666,
+        "volume_mwh": 76,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-07",
+        "clearing_price_cents": 6914,
+        "volume_mwh": 94,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-08",
+        "clearing_price_cents": 7685,
+        "volume_mwh": 62,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-09",
+        "clearing_price_cents": 7722,
+        "volume_mwh": 71,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-10",
+        "clearing_price_cents": 7451,
+        "volume_mwh": 72,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-11",
+        "clearing_price_cents": 6067,
+        "volume_mwh": 77,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-12",
+        "clearing_price_cents": 4875,
+        "volume_mwh": 40,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-13",
+        "clearing_price_cents": 7126,
+        "volume_mwh": 99,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-14",
+        "clearing_price_cents": 6080,
+        "volume_mwh": 101,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-15",
+        "clearing_price_cents": 7775,
+        "volume_mwh": 66,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-16",
+        "clearing_price_cents": 6995,
+        "volume_mwh": 91,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-17",
+        "clearing_price_cents": 7860,
+        "volume_mwh": 133,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-18",
+        "clearing_price_cents": 5313,
+        "volume_mwh": 52,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-19",
+        "clearing_price_cents": 5480,
+        "volume_mwh": 61,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-20",
+        "clearing_price_cents": 6385,
+        "volume_mwh": 83,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-21",
+        "clearing_price_cents": 6743,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-22",
+        "clearing_price_cents": 6485,
+        "volume_mwh": 67,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-23",
+        "clearing_price_cents": 6613,
+        "volume_mwh": 62,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-24",
+        "clearing_price_cents": 7256,
+        "volume_mwh": 101,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-25",
+        "clearing_price_cents": 6212,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-26",
+        "clearing_price_cents": 5679,
+        "volume_mwh": 58,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-27",
+        "clearing_price_cents": 6024,
+        "volume_mwh": 93,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-28",
+        "clearing_price_cents": 6075,
+        "volume_mwh": 56,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-29",
+        "clearing_price_cents": 7495,
+        "volume_mwh": 64,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-30",
+        "clearing_price_cents": 7353,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-01",
+        "clearing_price_cents": 6262,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-02",
+        "clearing_price_cents": 5995,
+        "volume_mwh": 92,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-03",
+        "clearing_price_cents": 4983,
+        "volume_mwh": 38,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-04",
+        "clearing_price_cents": 6930,
+        "volume_mwh": 62,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-05",
+        "clearing_price_cents": 7950,
+        "volume_mwh": 96,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-06",
+        "clearing_price_cents": 7856,
+        "volume_mwh": 102,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-07",
+        "clearing_price_cents": 6327,
+        "volume_mwh": 76,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-08",
+        "clearing_price_cents": 7246,
+        "volume_mwh": 103,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-09",
+        "clearing_price_cents": 5694,
+        "volume_mwh": 52,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-10",
+        "clearing_price_cents": 6400,
+        "volume_mwh": 60,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-11",
+        "clearing_price_cents": 8081,
+        "volume_mwh": 133,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-12",
+        "clearing_price_cents": 6261,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-13",
+        "clearing_price_cents": 6746,
+        "volume_mwh": 60,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-14",
+        "clearing_price_cents": 6784,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-15",
+        "clearing_price_cents": 6763,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-16",
+        "clearing_price_cents": 5498,
+        "volume_mwh": 45,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-17",
+        "clearing_price_cents": 5985,
+        "volume_mwh": 78,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-18",
+        "clearing_price_cents": 6294,
+        "volume_mwh": 77,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-19",
+        "clearing_price_cents": 7407,
+        "volume_mwh": 72,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-20",
+        "clearing_price_cents": 7328,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-21",
+        "clearing_price_cents": 7633,
+        "volume_mwh": 94,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-22",
+        "clearing_price_cents": 7522,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-23",
+        "clearing_price_cents": 5173,
+        "volume_mwh": 56,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-24",
+        "clearing_price_cents": 6015,
+        "volume_mwh": 64,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-25",
+        "clearing_price_cents": 7080,
+        "volume_mwh": 91,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-26",
+        "clearing_price_cents": 6372,
+        "volume_mwh": 86,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-27",
+        "clearing_price_cents": 6760,
+        "volume_mwh": 91,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-28",
+        "clearing_price_cents": 7278,
+        "volume_mwh": 58,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-29",
+        "clearing_price_cents": 8037,
+        "volume_mwh": 136,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-30",
+        "clearing_price_cents": 6754,
+        "volume_mwh": 78,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-31",
+        "clearing_price_cents": 6737,
+        "volume_mwh": 72,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-01",
+        "clearing_price_cents": 7927,
+        "volume_mwh": 138,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-06-02",
+        "clearing_price_cents": 7579,
+        "volume_mwh": 101,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-03",
+        "clearing_price_cents": 7023,
+        "volume_mwh": 59,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-04",
+        "clearing_price_cents": 6541,
+        "volume_mwh": 91,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-05",
+        "clearing_price_cents": 7158,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-06",
+        "clearing_price_cents": 6706,
+        "volume_mwh": 65,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-07",
+        "clearing_price_cents": 5186,
+        "volume_mwh": 40,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-08",
+        "clearing_price_cents": 7883,
+        "volume_mwh": 123,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-06-09",
+        "clearing_price_cents": 7680,
+        "volume_mwh": 78,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-10",
+        "clearing_price_cents": 7590,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-11",
+        "clearing_price_cents": 7989,
+        "volume_mwh": 80,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-12",
+        "clearing_price_cents": 8113,
+        "volume_mwh": 124,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-13",
+        "clearing_price_cents": 6798,
+        "volume_mwh": 90,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-14",
+        "clearing_price_cents": 6053,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-15",
+        "clearing_price_cents": 6579,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-16",
+        "clearing_price_cents": 8077,
+        "volume_mwh": 85,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-17",
+        "clearing_price_cents": 6620,
+        "volume_mwh": 85,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-18",
+        "clearing_price_cents": 7042,
+        "volume_mwh": 83,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-19",
+        "clearing_price_cents": 7271,
+        "volume_mwh": 93,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-20",
+        "clearing_price_cents": 6185,
+        "volume_mwh": 64,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-21",
+        "clearing_price_cents": 6222,
+        "volume_mwh": 71,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-22",
+        "clearing_price_cents": 8119,
+        "volume_mwh": 99,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-23",
+        "clearing_price_cents": 7093,
+        "volume_mwh": 71,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-24",
+        "clearing_price_cents": 6484,
+        "volume_mwh": 93,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-25",
+        "clearing_price_cents": 7195,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 3
+      }
+    ],
+    "forecast": [
+      {
+        "date": "2026-06-26",
+        "predicted_price_cents": 7485,
+        "lower_bound_cents": 6467,
+        "upper_bound_cents": 8503,
+        "predicted_severity": "AMBER",
+        "confidence": 89
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 6148,
+        "lower_bound_cents": 5214,
+        "upper_bound_cents": 7082,
+        "predicted_severity": "AMBER",
+        "confidence": 85
+      },
+      {
+        "date": "2026-06-28",
+        "predicted_price_cents": 4985,
+        "lower_bound_cents": 4148,
+        "upper_bound_cents": 5822,
+        "predicted_severity": "GREEN",
+        "confidence": 82
+      },
+      {
+        "date": "2026-06-29",
+        "predicted_price_cents": 4902,
+        "lower_bound_cents": 4000,
+        "upper_bound_cents": 5804,
+        "predicted_severity": "GREEN",
+        "confidence": 78
+      },
+      {
+        "date": "2026-06-30",
+        "predicted_price_cents": 4780,
+        "lower_bound_cents": 3824,
+        "upper_bound_cents": 5736,
+        "predicted_severity": "GREEN",
+        "confidence": 75
+      },
+      {
+        "date": "2026-07-01",
+        "predicted_price_cents": 4964,
+        "lower_bound_cents": 3892,
+        "upper_bound_cents": 6036,
+        "predicted_severity": "GREEN",
+        "confidence": 72
+      },
+      {
+        "date": "2026-07-02",
+        "predicted_price_cents": 5179,
+        "lower_bound_cents": 3977,
+        "upper_bound_cents": 6381,
+        "predicted_severity": "GREEN",
+        "confidence": 68
+      },
+      {
+        "date": "2026-07-03",
+        "predicted_price_cents": 5048,
+        "lower_bound_cents": 3796,
+        "upper_bound_cents": 6300,
+        "predicted_severity": "GREEN",
+        "confidence": 65
+      },
+      {
+        "date": "2026-07-04",
+        "predicted_price_cents": 4080,
+        "lower_bound_cents": 3003,
+        "upper_bound_cents": 5157,
+        "predicted_severity": "GREEN",
+        "confidence": 61
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 3483,
+        "lower_bound_cents": 2508,
+        "upper_bound_cents": 4458,
+        "predicted_severity": "GREEN",
+        "confidence": 58
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 3548,
+        "lower_bound_cents": 2498,
+        "upper_bound_cents": 4598,
+        "predicted_severity": "GREEN",
+        "confidence": 55
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 3589,
+        "lower_bound_cents": 2469,
+        "upper_bound_cents": 4709,
+        "predicted_severity": "GREEN",
+        "confidence": 51
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 3583,
+        "lower_bound_cents": 2408,
+        "upper_bound_cents": 4758,
+        "predicted_severity": "GREEN",
+        "confidence": 48
+      },
+      {
+        "date": "2026-07-09",
+        "predicted_price_cents": 3739,
+        "lower_bound_cents": 2453,
+        "upper_bound_cents": 5025,
+        "predicted_severity": "GREEN",
+        "confidence": 45
+      }
+    ],
+    "stats": {
+      "avg_price_cents": 6773,
+      "peak_price_cents": 8119,
+      "low_price_cents": 4875,
+      "trend_7d_pct": -1.4,
+      "total_volume_mwh": 7151,
+      "total_trades": 254
+    }
+  },
+  {
+    "congestion_point_id": "cp_003",
+    "history": [
+      {
+        "date": "2026-03-28",
+        "clearing_price_cents": 8612,
+        "volume_mwh": 63,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-03-29",
+        "clearing_price_cents": 8665,
+        "volume_mwh": 65,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-03-30",
+        "clearing_price_cents": 11522,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-03-31",
+        "clearing_price_cents": 12472,
+        "volume_mwh": 64,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-01",
+        "clearing_price_cents": 10347,
+        "volume_mwh": 88,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-02",
+        "clearing_price_cents": 12873,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-03",
+        "clearing_price_cents": 12589,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-04",
+        "clearing_price_cents": 8946,
+        "volume_mwh": 41,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-05",
+        "clearing_price_cents": 7791,
+        "volume_mwh": 61,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-06",
+        "clearing_price_cents": 9012,
+        "volume_mwh": 46,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-07",
+        "clearing_price_cents": 9129,
+        "volume_mwh": 36,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-08",
+        "clearing_price_cents": 14099,
+        "volume_mwh": 114,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-09",
+        "clearing_price_cents": 10515,
+        "volume_mwh": 100,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-10",
+        "clearing_price_cents": 13502,
+        "volume_mwh": 123,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-11",
+        "clearing_price_cents": 9250,
+        "volume_mwh": 56,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-12",
+        "clearing_price_cents": 11214,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-13",
+        "clearing_price_cents": 11325,
+        "volume_mwh": 76,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-14",
+        "clearing_price_cents": 13659,
+        "volume_mwh": 132,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-15",
+        "clearing_price_cents": 12040,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-16",
+        "clearing_price_cents": 13794,
+        "volume_mwh": 115,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-17",
+        "clearing_price_cents": 12473,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-18",
+        "clearing_price_cents": 9949,
+        "volume_mwh": 58,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-19",
+        "clearing_price_cents": 11602,
+        "volume_mwh": 69,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-20",
+        "clearing_price_cents": 9898,
+        "volume_mwh": 104,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-21",
+        "clearing_price_cents": 12834,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-22",
+        "clearing_price_cents": 13657,
+        "volume_mwh": 141,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-04-23",
+        "clearing_price_cents": 11546,
+        "volume_mwh": 83,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-24",
+        "clearing_price_cents": 11903,
+        "volume_mwh": 64,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-25",
+        "clearing_price_cents": 8625,
+        "volume_mwh": 36,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-26",
+        "clearing_price_cents": 9488,
+        "volume_mwh": 62,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-27",
+        "clearing_price_cents": 12607,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-28",
+        "clearing_price_cents": 9556,
+        "volume_mwh": 101,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-29",
+        "clearing_price_cents": 12316,
+        "volume_mwh": 81,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-30",
+        "clearing_price_cents": 14734,
+        "volume_mwh": 109,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-01",
+        "clearing_price_cents": 11675,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-02",
+        "clearing_price_cents": 12206,
+        "volume_mwh": 103,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-03",
+        "clearing_price_cents": 10688,
+        "volume_mwh": 66,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-04",
+        "clearing_price_cents": 12501,
+        "volume_mwh": 94,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-05",
+        "clearing_price_cents": 11427,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-06",
+        "clearing_price_cents": 10835,
+        "volume_mwh": 81,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-07",
+        "clearing_price_cents": 14362,
+        "volume_mwh": 137,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-05-08",
+        "clearing_price_cents": 11182,
+        "volume_mwh": 103,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-09",
+        "clearing_price_cents": 12311,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-10",
+        "clearing_price_cents": 8892,
+        "volume_mwh": 55,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-11",
+        "clearing_price_cents": 9934,
+        "volume_mwh": 103,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-12",
+        "clearing_price_cents": 14624,
+        "volume_mwh": 99,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-05-13",
+        "clearing_price_cents": 13207,
+        "volume_mwh": 131,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-14",
+        "clearing_price_cents": 15014,
+        "volume_mwh": 84,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-05-15",
+        "clearing_price_cents": 10331,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-16",
+        "clearing_price_cents": 12402,
+        "volume_mwh": 66,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-17",
+        "clearing_price_cents": 10275,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-18",
+        "clearing_price_cents": 11796,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-19",
+        "clearing_price_cents": 13028,
+        "volume_mwh": 84,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-20",
+        "clearing_price_cents": 11177,
+        "volume_mwh": 56,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-21",
+        "clearing_price_cents": 12496,
+        "volume_mwh": 57,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-22",
+        "clearing_price_cents": 10735,
+        "volume_mwh": 56,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-23",
+        "clearing_price_cents": 9274,
+        "volume_mwh": 64,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-24",
+        "clearing_price_cents": 11091,
+        "volume_mwh": 94,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-25",
+        "clearing_price_cents": 13029,
+        "volume_mwh": 134,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-26",
+        "clearing_price_cents": 10497,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-27",
+        "clearing_price_cents": 11898,
+        "volume_mwh": 100,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-28",
+        "clearing_price_cents": 10847,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-29",
+        "clearing_price_cents": 12964,
+        "volume_mwh": 83,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-05-30",
+        "clearing_price_cents": 8907,
+        "volume_mwh": 36,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-31",
+        "clearing_price_cents": 10046,
+        "volume_mwh": 101,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-01",
+        "clearing_price_cents": 12781,
+        "volume_mwh": 90,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-02",
+        "clearing_price_cents": 11780,
+        "volume_mwh": 81,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-03",
+        "clearing_price_cents": 16365,
+        "volume_mwh": 108,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-06-04",
+        "clearing_price_cents": 16444,
+        "volume_mwh": 129,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-05",
+        "clearing_price_cents": 13733,
+        "volume_mwh": 94,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-06-06",
+        "clearing_price_cents": 9310,
+        "volume_mwh": 56,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-07",
+        "clearing_price_cents": 9951,
+        "volume_mwh": 73,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-08",
+        "clearing_price_cents": 14822,
+        "volume_mwh": 92,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-06-09",
+        "clearing_price_cents": 15811,
+        "volume_mwh": 92,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-10",
+        "clearing_price_cents": 15752,
+        "volume_mwh": 134,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-11",
+        "clearing_price_cents": 13335,
+        "volume_mwh": 124,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-12",
+        "clearing_price_cents": 11371,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-13",
+        "clearing_price_cents": 11022,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-14",
+        "clearing_price_cents": 13350,
+        "volume_mwh": 93,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-15",
+        "clearing_price_cents": 12601,
+        "volume_mwh": 67,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-16",
+        "clearing_price_cents": 13821,
+        "volume_mwh": 106,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-06-17",
+        "clearing_price_cents": 13411,
+        "volume_mwh": 100,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-06-18",
+        "clearing_price_cents": 10972,
+        "volume_mwh": 66,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-19",
+        "clearing_price_cents": 12961,
+        "volume_mwh": 120,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-20",
+        "clearing_price_cents": 11038,
+        "volume_mwh": 100,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-21",
+        "clearing_price_cents": 13882,
+        "volume_mwh": 85,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-22",
+        "clearing_price_cents": 13900,
+        "volume_mwh": 111,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-06-23",
+        "clearing_price_cents": 14574,
+        "volume_mwh": 133,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-06-24",
+        "clearing_price_cents": 16587,
+        "volume_mwh": 98,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-25",
+        "clearing_price_cents": 17202,
+        "volume_mwh": 138,
+        "severity": "RED",
+        "trade_count": 5
+      }
+    ],
+    "forecast": [
+      {
+        "date": "2026-06-26",
+        "predicted_price_cents": 17210,
+        "lower_bound_cents": 14869,
+        "upper_bound_cents": 19551,
+        "predicted_severity": "RED",
+        "confidence": 89
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 14852,
+        "lower_bound_cents": 12594,
+        "upper_bound_cents": 17110,
+        "predicted_severity": "RED",
+        "confidence": 85
+      },
+      {
+        "date": "2026-06-28",
+        "predicted_price_cents": 12352,
+        "lower_bound_cents": 10277,
+        "upper_bound_cents": 14427,
+        "predicted_severity": "AMBER",
+        "confidence": 82
+      },
+      {
+        "date": "2026-06-29",
+        "predicted_price_cents": 12751,
+        "lower_bound_cents": 10405,
+        "upper_bound_cents": 15097,
+        "predicted_severity": "AMBER",
+        "confidence": 78
+      },
+      {
+        "date": "2026-06-30",
+        "predicted_price_cents": 12123,
+        "lower_bound_cents": 9698,
+        "upper_bound_cents": 14548,
+        "predicted_severity": "AMBER",
+        "confidence": 75
+      },
+      {
+        "date": "2026-07-01",
+        "predicted_price_cents": 12033,
+        "lower_bound_cents": 9434,
+        "upper_bound_cents": 14632,
+        "predicted_severity": "AMBER",
+        "confidence": 72
+      },
+      {
+        "date": "2026-07-02",
+        "predicted_price_cents": 11897,
+        "lower_bound_cents": 9137,
+        "upper_bound_cents": 14657,
+        "predicted_severity": "AMBER",
+        "confidence": 68
+      },
+      {
+        "date": "2026-07-03",
+        "predicted_price_cents": 12702,
+        "lower_bound_cents": 9552,
+        "upper_bound_cents": 15852,
+        "predicted_severity": "AMBER",
+        "confidence": 65
+      },
+      {
+        "date": "2026-07-04",
+        "predicted_price_cents": 10993,
+        "lower_bound_cents": 8091,
+        "upper_bound_cents": 13895,
+        "predicted_severity": "AMBER",
+        "confidence": 61
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 9209,
+        "lower_bound_cents": 6630,
+        "upper_bound_cents": 11788,
+        "predicted_severity": "GREEN",
+        "confidence": 58
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 8831,
+        "lower_bound_cents": 6217,
+        "upper_bound_cents": 11445,
+        "predicted_severity": "GREEN",
+        "confidence": 55
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 8589,
+        "lower_bound_cents": 5909,
+        "upper_bound_cents": 11269,
+        "predicted_severity": "GREEN",
+        "confidence": 51
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 8218,
+        "lower_bound_cents": 5522,
+        "upper_bound_cents": 10914,
+        "predicted_severity": "GREEN",
+        "confidence": 48
+      },
+      {
+        "date": "2026-07-09",
+        "predicted_price_cents": 8720,
+        "lower_bound_cents": 5720,
+        "upper_bound_cents": 11720,
+        "predicted_severity": "GREEN",
+        "confidence": 45
+      }
+    ],
+    "stats": {
+      "avg_price_cents": 11989,
+      "peak_price_cents": 17202,
+      "low_price_cents": 7791,
+      "trend_7d_pct": 15.7,
+      "total_volume_mwh": 7824,
+      "total_trades": 301
+    }
+  },
+  {
+    "congestion_point_id": "cp_004",
+    "history": [
+      {
+        "date": "2026-03-28",
+        "clearing_price_cents": 4735,
+        "volume_mwh": 46,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-03-29",
+        "clearing_price_cents": 4759,
+        "volume_mwh": 44,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-03-30",
+        "clearing_price_cents": 6034,
+        "volume_mwh": 88,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-03-31",
+        "clearing_price_cents": 6032,
+        "volume_mwh": 72,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-01",
+        "clearing_price_cents": 5357,
+        "volume_mwh": 59,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-02",
+        "clearing_price_cents": 6090,
+        "volume_mwh": 60,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-03",
+        "clearing_price_cents": 6065,
+        "volume_mwh": 73,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-04",
+        "clearing_price_cents": 4808,
+        "volume_mwh": 35,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-05",
+        "clearing_price_cents": 4446,
+        "volume_mwh": 47,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-06",
+        "clearing_price_cents": 5282,
+        "volume_mwh": 71,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-07",
+        "clearing_price_cents": 5880,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-08",
+        "clearing_price_cents": 5237,
+        "volume_mwh": 56,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-09",
+        "clearing_price_cents": 6022,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-10",
+        "clearing_price_cents": 6434,
+        "volume_mwh": 58,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-11",
+        "clearing_price_cents": 4298,
+        "volume_mwh": 63,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-12",
+        "clearing_price_cents": 5064,
+        "volume_mwh": 101,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-13",
+        "clearing_price_cents": 5426,
+        "volume_mwh": 100,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-14",
+        "clearing_price_cents": 6023,
+        "volume_mwh": 92,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-15",
+        "clearing_price_cents": 5309,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-16",
+        "clearing_price_cents": 5394,
+        "volume_mwh": 77,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-17",
+        "clearing_price_cents": 5441,
+        "volume_mwh": 101,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-18",
+        "clearing_price_cents": 5106,
+        "volume_mwh": 81,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-19",
+        "clearing_price_cents": 4707,
+        "volume_mwh": 56,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-20",
+        "clearing_price_cents": 5081,
+        "volume_mwh": 76,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-21",
+        "clearing_price_cents": 6348,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-22",
+        "clearing_price_cents": 5558,
+        "volume_mwh": 90,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-23",
+        "clearing_price_cents": 5729,
+        "volume_mwh": 104,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-24",
+        "clearing_price_cents": 5443,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-25",
+        "clearing_price_cents": 4808,
+        "volume_mwh": 65,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-26",
+        "clearing_price_cents": 4485,
+        "volume_mwh": 35,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-27",
+        "clearing_price_cents": 5240,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-28",
+        "clearing_price_cents": 6375,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-29",
+        "clearing_price_cents": 5399,
+        "volume_mwh": 99,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-30",
+        "clearing_price_cents": 5334,
+        "volume_mwh": 60,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-01",
+        "clearing_price_cents": 5898,
+        "volume_mwh": 93,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-02",
+        "clearing_price_cents": 4426,
+        "volume_mwh": 41,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-03",
+        "clearing_price_cents": 4350,
+        "volume_mwh": 44,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-04",
+        "clearing_price_cents": 5794,
+        "volume_mwh": 77,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-05",
+        "clearing_price_cents": 5902,
+        "volume_mwh": 79,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-06",
+        "clearing_price_cents": 5658,
+        "volume_mwh": 87,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-07",
+        "clearing_price_cents": 5711,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-08",
+        "clearing_price_cents": 6217,
+        "volume_mwh": 56,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-09",
+        "clearing_price_cents": 4565,
+        "volume_mwh": 54,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-10",
+        "clearing_price_cents": 4623,
+        "volume_mwh": 42,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-11",
+        "clearing_price_cents": 4994,
+        "volume_mwh": 39,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-12",
+        "clearing_price_cents": 5781,
+        "volume_mwh": 91,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-13",
+        "clearing_price_cents": 6099,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-14",
+        "clearing_price_cents": 5573,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-15",
+        "clearing_price_cents": 6024,
+        "volume_mwh": 88,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-16",
+        "clearing_price_cents": 4624,
+        "volume_mwh": 37,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-17",
+        "clearing_price_cents": 4372,
+        "volume_mwh": 46,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-18",
+        "clearing_price_cents": 5643,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-19",
+        "clearing_price_cents": 5462,
+        "volume_mwh": 99,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-20",
+        "clearing_price_cents": 5969,
+        "volume_mwh": 65,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-21",
+        "clearing_price_cents": 5028,
+        "volume_mwh": 68,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-22",
+        "clearing_price_cents": 5604,
+        "volume_mwh": 62,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-23",
+        "clearing_price_cents": 4368,
+        "volume_mwh": 41,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-24",
+        "clearing_price_cents": 4638,
+        "volume_mwh": 47,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-25",
+        "clearing_price_cents": 5578,
+        "volume_mwh": 56,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-26",
+        "clearing_price_cents": 6198,
+        "volume_mwh": 87,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-27",
+        "clearing_price_cents": 5238,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-28",
+        "clearing_price_cents": 5732,
+        "volume_mwh": 93,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-29",
+        "clearing_price_cents": 6182,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-30",
+        "clearing_price_cents": 4168,
+        "volume_mwh": 54,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-31",
+        "clearing_price_cents": 4682,
+        "volume_mwh": 51,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-01",
+        "clearing_price_cents": 6123,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-02",
+        "clearing_price_cents": 5884,
+        "volume_mwh": 62,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-03",
+        "clearing_price_cents": 5636,
+        "volume_mwh": 99,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-04",
+        "clearing_price_cents": 5964,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-05",
+        "clearing_price_cents": 5660,
+        "volume_mwh": 57,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-06",
+        "clearing_price_cents": 4305,
+        "volume_mwh": 41,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-07",
+        "clearing_price_cents": 4478,
+        "volume_mwh": 52,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-08",
+        "clearing_price_cents": 5621,
+        "volume_mwh": 93,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-09",
+        "clearing_price_cents": 4853,
+        "volume_mwh": 65,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-10",
+        "clearing_price_cents": 4868,
+        "volume_mwh": 58,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-11",
+        "clearing_price_cents": 4856,
+        "volume_mwh": 46,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-12",
+        "clearing_price_cents": 5222,
+        "volume_mwh": 101,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-13",
+        "clearing_price_cents": 4910,
+        "volume_mwh": 65,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-14",
+        "clearing_price_cents": 4230,
+        "volume_mwh": 58,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-15",
+        "clearing_price_cents": 5379,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-16",
+        "clearing_price_cents": 4935,
+        "volume_mwh": 58,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-17",
+        "clearing_price_cents": 5667,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-18",
+        "clearing_price_cents": 5652,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-19",
+        "clearing_price_cents": 5036,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-20",
+        "clearing_price_cents": 4150,
+        "volume_mwh": 54,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-21",
+        "clearing_price_cents": 4244,
+        "volume_mwh": 63,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-22",
+        "clearing_price_cents": 4854,
+        "volume_mwh": 56,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-23",
+        "clearing_price_cents": 5761,
+        "volume_mwh": 74,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-24",
+        "clearing_price_cents": 5667,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-25",
+        "clearing_price_cents": 5460,
+        "volume_mwh": 99,
+        "severity": "AMBER",
+        "trade_count": 3
+      }
+    ],
+    "forecast": [
+      {
+        "date": "2026-06-26",
+        "predicted_price_cents": 5649,
+        "lower_bound_cents": 4881,
+        "upper_bound_cents": 6417,
+        "predicted_severity": "AMBER",
+        "confidence": 89
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 4540,
+        "lower_bound_cents": 3850,
+        "upper_bound_cents": 5230,
+        "predicted_severity": "GREEN",
+        "confidence": 85
+      },
+      {
+        "date": "2026-06-28",
+        "predicted_price_cents": 3803,
+        "lower_bound_cents": 3164,
+        "upper_bound_cents": 4442,
+        "predicted_severity": "GREEN",
+        "confidence": 82
+      },
+      {
+        "date": "2026-06-29",
+        "predicted_price_cents": 3704,
+        "lower_bound_cents": 3022,
+        "upper_bound_cents": 4386,
+        "predicted_severity": "GREEN",
+        "confidence": 78
+      },
+      {
+        "date": "2026-06-30",
+        "predicted_price_cents": 3839,
+        "lower_bound_cents": 3071,
+        "upper_bound_cents": 4607,
+        "predicted_severity": "GREEN",
+        "confidence": 75
+      },
+      {
+        "date": "2026-07-01",
+        "predicted_price_cents": 3945,
+        "lower_bound_cents": 3093,
+        "upper_bound_cents": 4797,
+        "predicted_severity": "GREEN",
+        "confidence": 72
+      },
+      {
+        "date": "2026-07-02",
+        "predicted_price_cents": 4021,
+        "lower_bound_cents": 3088,
+        "upper_bound_cents": 4954,
+        "predicted_severity": "GREEN",
+        "confidence": 68
+      },
+      {
+        "date": "2026-07-03",
+        "predicted_price_cents": 4101,
+        "lower_bound_cents": 3084,
+        "upper_bound_cents": 5118,
+        "predicted_severity": "GREEN",
+        "confidence": 65
+      },
+      {
+        "date": "2026-07-04",
+        "predicted_price_cents": 3353,
+        "lower_bound_cents": 2468,
+        "upper_bound_cents": 4238,
+        "predicted_severity": "GREEN",
+        "confidence": 61
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 2708,
+        "lower_bound_cents": 1950,
+        "upper_bound_cents": 3466,
+        "predicted_severity": "GREEN",
+        "confidence": 58
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 2730,
+        "lower_bound_cents": 1922,
+        "upper_bound_cents": 3538,
+        "predicted_severity": "GREEN",
+        "confidence": 55
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 2809,
+        "lower_bound_cents": 1933,
+        "upper_bound_cents": 3685,
+        "predicted_severity": "GREEN",
+        "confidence": 51
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 2874,
+        "lower_bound_cents": 1931,
+        "upper_bound_cents": 3817,
+        "predicted_severity": "GREEN",
+        "confidence": 48
+      },
+      {
+        "date": "2026-07-09",
+        "predicted_price_cents": 2948,
+        "lower_bound_cents": 1934,
+        "upper_bound_cents": 3962,
+        "predicted_severity": "GREEN",
+        "confidence": 45
+      }
+    ],
+    "stats": {
+      "avg_price_cents": 5314,
+      "peak_price_cents": 6434,
+      "low_price_cents": 4150,
+      "trend_7d_pct": -2.3,
+      "total_volume_mwh": 6403,
+      "total_trades": 229
+    }
+  },
+  {
+    "congestion_point_id": "cp_005",
+    "history": [
+      {
+        "date": "2026-03-28",
+        "clearing_price_cents": 8165,
+        "volume_mwh": 59,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-03-29",
+        "clearing_price_cents": 8340,
+        "volume_mwh": 53,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-03-30",
+        "clearing_price_cents": 10814,
+        "volume_mwh": 64,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-03-31",
+        "clearing_price_cents": 10125,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-01",
+        "clearing_price_cents": 12158,
+        "volume_mwh": 107,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-04-02",
+        "clearing_price_cents": 10347,
+        "volume_mwh": 59,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-03",
+        "clearing_price_cents": 10544,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-04",
+        "clearing_price_cents": 8891,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-05",
+        "clearing_price_cents": 7785,
+        "volume_mwh": 63,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-06",
+        "clearing_price_cents": 9152,
+        "volume_mwh": 69,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-07",
+        "clearing_price_cents": 8526,
+        "volume_mwh": 51,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-08",
+        "clearing_price_cents": 9061,
+        "volume_mwh": 77,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-09",
+        "clearing_price_cents": 12652,
+        "volume_mwh": 87,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-10",
+        "clearing_price_cents": 8543,
+        "volume_mwh": 47,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-11",
+        "clearing_price_cents": 9621,
+        "volume_mwh": 65,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-12",
+        "clearing_price_cents": 9265,
+        "volume_mwh": 71,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-13",
+        "clearing_price_cents": 8750,
+        "volume_mwh": 77,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-14",
+        "clearing_price_cents": 10600,
+        "volume_mwh": 88,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-15",
+        "clearing_price_cents": 11939,
+        "volume_mwh": 90,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-04-16",
+        "clearing_price_cents": 11120,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-17",
+        "clearing_price_cents": 12624,
+        "volume_mwh": 109,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-04-18",
+        "clearing_price_cents": 7566,
+        "volume_mwh": 65,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-19",
+        "clearing_price_cents": 7337,
+        "volume_mwh": 38,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-20",
+        "clearing_price_cents": 12820,
+        "volume_mwh": 134,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-04-21",
+        "clearing_price_cents": 9724,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-22",
+        "clearing_price_cents": 12944,
+        "volume_mwh": 106,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-04-23",
+        "clearing_price_cents": 11480,
+        "volume_mwh": 77,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-24",
+        "clearing_price_cents": 9428,
+        "volume_mwh": 87,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-25",
+        "clearing_price_cents": 11017,
+        "volume_mwh": 101,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-26",
+        "clearing_price_cents": 8262,
+        "volume_mwh": 39,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-27",
+        "clearing_price_cents": 12320,
+        "volume_mwh": 135,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-04-28",
+        "clearing_price_cents": 13428,
+        "volume_mwh": 130,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-29",
+        "clearing_price_cents": 9280,
+        "volume_mwh": 68,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-30",
+        "clearing_price_cents": 11475,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-01",
+        "clearing_price_cents": 13371,
+        "volume_mwh": 125,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-02",
+        "clearing_price_cents": 9841,
+        "volume_mwh": 77,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-03",
+        "clearing_price_cents": 10705,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-04",
+        "clearing_price_cents": 12310,
+        "volume_mwh": 83,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-05-05",
+        "clearing_price_cents": 9420,
+        "volume_mwh": 59,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-06",
+        "clearing_price_cents": 13019,
+        "volume_mwh": 130,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-05-07",
+        "clearing_price_cents": 10499,
+        "volume_mwh": 99,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-08",
+        "clearing_price_cents": 12108,
+        "volume_mwh": 79,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-05-09",
+        "clearing_price_cents": 11379,
+        "volume_mwh": 64,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-10",
+        "clearing_price_cents": 10917,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-11",
+        "clearing_price_cents": 9674,
+        "volume_mwh": 69,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-12",
+        "clearing_price_cents": 11321,
+        "volume_mwh": 62,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-13",
+        "clearing_price_cents": 10116,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-14",
+        "clearing_price_cents": 9735,
+        "volume_mwh": 68,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-15",
+        "clearing_price_cents": 12250,
+        "volume_mwh": 108,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-05-16",
+        "clearing_price_cents": 8472,
+        "volume_mwh": 63,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-17",
+        "clearing_price_cents": 8569,
+        "volume_mwh": 44,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-18",
+        "clearing_price_cents": 13436,
+        "volume_mwh": 114,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-05-19",
+        "clearing_price_cents": 11175,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-20",
+        "clearing_price_cents": 11681,
+        "volume_mwh": 102,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-05-21",
+        "clearing_price_cents": 13581,
+        "volume_mwh": 110,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-05-22",
+        "clearing_price_cents": 14515,
+        "volume_mwh": 94,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-23",
+        "clearing_price_cents": 9909,
+        "volume_mwh": 78,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-24",
+        "clearing_price_cents": 10442,
+        "volume_mwh": 104,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-25",
+        "clearing_price_cents": 12698,
+        "volume_mwh": 86,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-05-26",
+        "clearing_price_cents": 14648,
+        "volume_mwh": 88,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-05-27",
+        "clearing_price_cents": 11344,
+        "volume_mwh": 69,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-28",
+        "clearing_price_cents": 11061,
+        "volume_mwh": 62,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-29",
+        "clearing_price_cents": 12753,
+        "volume_mwh": 109,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-05-30",
+        "clearing_price_cents": 9319,
+        "volume_mwh": 66,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-31",
+        "clearing_price_cents": 12360,
+        "volume_mwh": 85,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-01",
+        "clearing_price_cents": 12817,
+        "volume_mwh": 95,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-02",
+        "clearing_price_cents": 11959,
+        "volume_mwh": 124,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-03",
+        "clearing_price_cents": 11301,
+        "volume_mwh": 71,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-04",
+        "clearing_price_cents": 13905,
+        "volume_mwh": 135,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-05",
+        "clearing_price_cents": 14011,
+        "volume_mwh": 128,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-06",
+        "clearing_price_cents": 10639,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-07",
+        "clearing_price_cents": 11536,
+        "volume_mwh": 93,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-08",
+        "clearing_price_cents": 13116,
+        "volume_mwh": 96,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-09",
+        "clearing_price_cents": 11494,
+        "volume_mwh": 92,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-10",
+        "clearing_price_cents": 11773,
+        "volume_mwh": 122,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-06-11",
+        "clearing_price_cents": 13891,
+        "volume_mwh": 79,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-06-12",
+        "clearing_price_cents": 13392,
+        "volume_mwh": 80,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-13",
+        "clearing_price_cents": 10340,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-14",
+        "clearing_price_cents": 11580,
+        "volume_mwh": 72,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-15",
+        "clearing_price_cents": 13935,
+        "volume_mwh": 122,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-06-16",
+        "clearing_price_cents": 14688,
+        "volume_mwh": 84,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-17",
+        "clearing_price_cents": 15831,
+        "volume_mwh": 133,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-18",
+        "clearing_price_cents": 12600,
+        "volume_mwh": 108,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-19",
+        "clearing_price_cents": 11247,
+        "volume_mwh": 76,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-20",
+        "clearing_price_cents": 9123,
+        "volume_mwh": 74,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-21",
+        "clearing_price_cents": 11945,
+        "volume_mwh": 125,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-06-22",
+        "clearing_price_cents": 14650,
+        "volume_mwh": 134,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-06-23",
+        "clearing_price_cents": 10926,
+        "volume_mwh": 99,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-24",
+        "clearing_price_cents": 13948,
+        "volume_mwh": 104,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-06-25",
+        "clearing_price_cents": 11776,
+        "volume_mwh": 135,
+        "severity": "RED",
+        "trade_count": 6
+      }
+    ],
+    "forecast": [
+      {
+        "date": "2026-06-26",
+        "predicted_price_cents": 11834,
+        "lower_bound_cents": 10225,
+        "upper_bound_cents": 13443,
+        "predicted_severity": "RED",
+        "confidence": 89
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 9863,
+        "lower_bound_cents": 8364,
+        "upper_bound_cents": 11362,
+        "predicted_severity": "AMBER",
+        "confidence": 85
+      },
+      {
+        "date": "2026-06-28",
+        "predicted_price_cents": 7676,
+        "lower_bound_cents": 6386,
+        "upper_bound_cents": 8966,
+        "predicted_severity": "GREEN",
+        "confidence": 82
+      },
+      {
+        "date": "2026-06-29",
+        "predicted_price_cents": 7782,
+        "lower_bound_cents": 6350,
+        "upper_bound_cents": 9214,
+        "predicted_severity": "GREEN",
+        "confidence": 78
+      },
+      {
+        "date": "2026-06-30",
+        "predicted_price_cents": 8219,
+        "lower_bound_cents": 6575,
+        "upper_bound_cents": 9863,
+        "predicted_severity": "GREEN",
+        "confidence": 75
+      },
+      {
+        "date": "2026-07-01",
+        "predicted_price_cents": 8127,
+        "lower_bound_cents": 6372,
+        "upper_bound_cents": 9882,
+        "predicted_severity": "GREEN",
+        "confidence": 72
+      },
+      {
+        "date": "2026-07-02",
+        "predicted_price_cents": 7838,
+        "lower_bound_cents": 6020,
+        "upper_bound_cents": 9656,
+        "predicted_severity": "GREEN",
+        "confidence": 68
+      },
+      {
+        "date": "2026-07-03",
+        "predicted_price_cents": 7957,
+        "lower_bound_cents": 5984,
+        "upper_bound_cents": 9930,
+        "predicted_severity": "GREEN",
+        "confidence": 65
+      },
+      {
+        "date": "2026-07-04",
+        "predicted_price_cents": 6198,
+        "lower_bound_cents": 4562,
+        "upper_bound_cents": 7834,
+        "predicted_severity": "GREEN",
+        "confidence": 61
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 5388,
+        "lower_bound_cents": 3879,
+        "upper_bound_cents": 6897,
+        "predicted_severity": "GREEN",
+        "confidence": 58
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 5139,
+        "lower_bound_cents": 3618,
+        "upper_bound_cents": 6660,
+        "predicted_severity": "GREEN",
+        "confidence": 55
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 5196,
+        "lower_bound_cents": 3575,
+        "upper_bound_cents": 6817,
+        "predicted_severity": "GREEN",
+        "confidence": 51
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 5229,
+        "lower_bound_cents": 3514,
+        "upper_bound_cents": 6944,
+        "predicted_severity": "GREEN",
+        "confidence": 48
+      },
+      {
+        "date": "2026-07-09",
+        "predicted_price_cents": 5444,
+        "lower_bound_cents": 3571,
+        "upper_bound_cents": 7317,
+        "predicted_severity": "GREEN",
+        "confidence": 45
+      }
+    ],
+    "stats": {
+      "avg_price_cents": 11235,
+      "peak_price_cents": 15831,
+      "low_price_cents": 7337,
+      "trend_7d_pct": -9.5,
+      "total_volume_mwh": 7903,
+      "total_trades": 367
+    }
+  },
+  {
+    "congestion_point_id": "cp_006",
+    "history": [
+      {
+        "date": "2026-03-28",
+        "clearing_price_cents": 3464,
+        "volume_mwh": 42,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-03-29",
+        "clearing_price_cents": 3524,
+        "volume_mwh": 62,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-03-30",
+        "clearing_price_cents": 4461,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-03-31",
+        "clearing_price_cents": 3970,
+        "volume_mwh": 87,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-01",
+        "clearing_price_cents": 4556,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-02",
+        "clearing_price_cents": 3980,
+        "volume_mwh": 58,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-03",
+        "clearing_price_cents": 4090,
+        "volume_mwh": 72,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-04",
+        "clearing_price_cents": 3633,
+        "volume_mwh": 88,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-05",
+        "clearing_price_cents": 3238,
+        "volume_mwh": 49,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-06",
+        "clearing_price_cents": 3829,
+        "volume_mwh": 66,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-07",
+        "clearing_price_cents": 4157,
+        "volume_mwh": 94,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-08",
+        "clearing_price_cents": 3745,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-09",
+        "clearing_price_cents": 3888,
+        "volume_mwh": 93,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-10",
+        "clearing_price_cents": 3545,
+        "volume_mwh": 58,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-11",
+        "clearing_price_cents": 3255,
+        "volume_mwh": 48,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-12",
+        "clearing_price_cents": 3358,
+        "volume_mwh": 56,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-13",
+        "clearing_price_cents": 4512,
+        "volume_mwh": 101,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-14",
+        "clearing_price_cents": 3736,
+        "volume_mwh": 83,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-15",
+        "clearing_price_cents": 3871,
+        "volume_mwh": 81,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-16",
+        "clearing_price_cents": 4557,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-17",
+        "clearing_price_cents": 4074,
+        "volume_mwh": 57,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-18",
+        "clearing_price_cents": 3182,
+        "volume_mwh": 49,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-19",
+        "clearing_price_cents": 3391,
+        "volume_mwh": 51,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-20",
+        "clearing_price_cents": 4399,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-21",
+        "clearing_price_cents": 3955,
+        "volume_mwh": 104,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-22",
+        "clearing_price_cents": 3947,
+        "volume_mwh": 65,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-23",
+        "clearing_price_cents": 4186,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-24",
+        "clearing_price_cents": 4518,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-25",
+        "clearing_price_cents": 3135,
+        "volume_mwh": 62,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-26",
+        "clearing_price_cents": 2890,
+        "volume_mwh": 42,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-27",
+        "clearing_price_cents": 3691,
+        "volume_mwh": 100,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-28",
+        "clearing_price_cents": 4488,
+        "volume_mwh": 91,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-29",
+        "clearing_price_cents": 4310,
+        "volume_mwh": 86,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-30",
+        "clearing_price_cents": 4287,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-01",
+        "clearing_price_cents": 3515,
+        "volume_mwh": 55,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-02",
+        "clearing_price_cents": 3642,
+        "volume_mwh": 88,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-03",
+        "clearing_price_cents": 3124,
+        "volume_mwh": 49,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-04",
+        "clearing_price_cents": 4171,
+        "volume_mwh": 92,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-05",
+        "clearing_price_cents": 3734,
+        "volume_mwh": 87,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-06",
+        "clearing_price_cents": 3356,
+        "volume_mwh": 63,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-07",
+        "clearing_price_cents": 4415,
+        "volume_mwh": 74,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-08",
+        "clearing_price_cents": 3533,
+        "volume_mwh": 36,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-09",
+        "clearing_price_cents": 3099,
+        "volume_mwh": 56,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-10",
+        "clearing_price_cents": 2774,
+        "volume_mwh": 46,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-11",
+        "clearing_price_cents": 3279,
+        "volume_mwh": 47,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-12",
+        "clearing_price_cents": 3383,
+        "volume_mwh": 50,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-13",
+        "clearing_price_cents": 3668,
+        "volume_mwh": 57,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-14",
+        "clearing_price_cents": 3920,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-15",
+        "clearing_price_cents": 3536,
+        "volume_mwh": 43,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-16",
+        "clearing_price_cents": 3361,
+        "volume_mwh": 59,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-17",
+        "clearing_price_cents": 2618,
+        "volume_mwh": 42,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-18",
+        "clearing_price_cents": 4365,
+        "volume_mwh": 69,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-19",
+        "clearing_price_cents": 3375,
+        "volume_mwh": 49,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-20",
+        "clearing_price_cents": 4339,
+        "volume_mwh": 84,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-21",
+        "clearing_price_cents": 3677,
+        "volume_mwh": 91,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-22",
+        "clearing_price_cents": 3581,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-23",
+        "clearing_price_cents": 3126,
+        "volume_mwh": 57,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-24",
+        "clearing_price_cents": 3115,
+        "volume_mwh": 53,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-25",
+        "clearing_price_cents": 3816,
+        "volume_mwh": 69,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-26",
+        "clearing_price_cents": 4157,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-27",
+        "clearing_price_cents": 3412,
+        "volume_mwh": 49,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-28",
+        "clearing_price_cents": 3991,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-29",
+        "clearing_price_cents": 3175,
+        "volume_mwh": 55,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-30",
+        "clearing_price_cents": 2846,
+        "volume_mwh": 58,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-31",
+        "clearing_price_cents": 2810,
+        "volume_mwh": 56,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-01",
+        "clearing_price_cents": 3161,
+        "volume_mwh": 37,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-02",
+        "clearing_price_cents": 4114,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-03",
+        "clearing_price_cents": 4002,
+        "volume_mwh": 91,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-04",
+        "clearing_price_cents": 3698,
+        "volume_mwh": 100,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-05",
+        "clearing_price_cents": 3978,
+        "volume_mwh": 81,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-06",
+        "clearing_price_cents": 3149,
+        "volume_mwh": 41,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-07",
+        "clearing_price_cents": 3370,
+        "volume_mwh": 64,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-08",
+        "clearing_price_cents": 3515,
+        "volume_mwh": 60,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-09",
+        "clearing_price_cents": 3441,
+        "volume_mwh": 51,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-10",
+        "clearing_price_cents": 3523,
+        "volume_mwh": 53,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-11",
+        "clearing_price_cents": 3283,
+        "volume_mwh": 55,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-12",
+        "clearing_price_cents": 3858,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-13",
+        "clearing_price_cents": 3247,
+        "volume_mwh": 43,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-14",
+        "clearing_price_cents": 2483,
+        "volume_mwh": 61,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-15",
+        "clearing_price_cents": 3858,
+        "volume_mwh": 76,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-16",
+        "clearing_price_cents": 3400,
+        "volume_mwh": 48,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-17",
+        "clearing_price_cents": 3217,
+        "volume_mwh": 53,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-18",
+        "clearing_price_cents": 2967,
+        "volume_mwh": 38,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-19",
+        "clearing_price_cents": 4028,
+        "volume_mwh": 71,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-20",
+        "clearing_price_cents": 3221,
+        "volume_mwh": 38,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-21",
+        "clearing_price_cents": 2451,
+        "volume_mwh": 51,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-22",
+        "clearing_price_cents": 3269,
+        "volume_mwh": 36,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-23",
+        "clearing_price_cents": 3162,
+        "volume_mwh": 48,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-24",
+        "clearing_price_cents": 3334,
+        "volume_mwh": 63,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-25",
+        "clearing_price_cents": 3710,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 4
+      }
+    ],
+    "forecast": [
+      {
+        "date": "2026-06-26",
+        "predicted_price_cents": 3532,
+        "lower_bound_cents": 3052,
+        "upper_bound_cents": 4012,
+        "predicted_severity": "GREEN",
+        "confidence": 89
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 3020,
+        "lower_bound_cents": 2561,
+        "upper_bound_cents": 3479,
+        "predicted_severity": "GREEN",
+        "confidence": 85
+      },
+      {
+        "date": "2026-06-28",
+        "predicted_price_cents": 2418,
+        "lower_bound_cents": 2012,
+        "upper_bound_cents": 2824,
+        "predicted_severity": "GREEN",
+        "confidence": 82
+      },
+      {
+        "date": "2026-06-29",
+        "predicted_price_cents": 2532,
+        "lower_bound_cents": 2066,
+        "upper_bound_cents": 2998,
+        "predicted_severity": "GREEN",
+        "confidence": 78
+      },
+      {
+        "date": "2026-06-30",
+        "predicted_price_cents": 2611,
+        "lower_bound_cents": 2089,
+        "upper_bound_cents": 3133,
+        "predicted_severity": "GREEN",
+        "confidence": 75
+      },
+      {
+        "date": "2026-07-01",
+        "predicted_price_cents": 2693,
+        "lower_bound_cents": 2111,
+        "upper_bound_cents": 3275,
+        "predicted_severity": "GREEN",
+        "confidence": 72
+      },
+      {
+        "date": "2026-07-02",
+        "predicted_price_cents": 2703,
+        "lower_bound_cents": 2076,
+        "upper_bound_cents": 3330,
+        "predicted_severity": "GREEN",
+        "confidence": 68
+      },
+      {
+        "date": "2026-07-03",
+        "predicted_price_cents": 2670,
+        "lower_bound_cents": 2008,
+        "upper_bound_cents": 3332,
+        "predicted_severity": "GREEN",
+        "confidence": 65
+      },
+      {
+        "date": "2026-07-04",
+        "predicted_price_cents": 2212,
+        "lower_bound_cents": 1628,
+        "upper_bound_cents": 2796,
+        "predicted_severity": "GREEN",
+        "confidence": 61
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 1833,
+        "lower_bound_cents": 1320,
+        "upper_bound_cents": 2346,
+        "predicted_severity": "GREEN",
+        "confidence": 58
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 1837,
+        "lower_bound_cents": 1293,
+        "upper_bound_cents": 2381,
+        "predicted_severity": "GREEN",
+        "confidence": 55
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 1781,
+        "lower_bound_cents": 1225,
+        "upper_bound_cents": 2337,
+        "predicted_severity": "GREEN",
+        "confidence": 51
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 1727,
+        "lower_bound_cents": 1161,
+        "upper_bound_cents": 2293,
+        "predicted_severity": "GREEN",
+        "confidence": 48
+      },
+      {
+        "date": "2026-07-09",
+        "predicted_price_cents": 1764,
+        "lower_bound_cents": 1157,
+        "upper_bound_cents": 2371,
+        "predicted_severity": "GREEN",
+        "confidence": 45
+      }
+    ],
+    "stats": {
+      "avg_price_cents": 3624,
+      "peak_price_cents": 4557,
+      "low_price_cents": 2451,
+      "trend_7d_pct": 0.6,
+      "total_volume_mwh": 5989,
+      "total_trades": 167
+    }
+  },
+  {
+    "congestion_point_id": "cp_007",
+    "history": [
+      {
+        "date": "2026-03-28",
+        "clearing_price_cents": 2578,
+        "volume_mwh": 54,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-03-29",
+        "clearing_price_cents": 2618,
+        "volume_mwh": 41,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-03-30",
+        "clearing_price_cents": 3261,
+        "volume_mwh": 65,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-03-31",
+        "clearing_price_cents": 2925,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-01",
+        "clearing_price_cents": 3176,
+        "volume_mwh": 68,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-02",
+        "clearing_price_cents": 2927,
+        "volume_mwh": 58,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-03",
+        "clearing_price_cents": 3014,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-04",
+        "clearing_price_cents": 2708,
+        "volume_mwh": 79,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-05",
+        "clearing_price_cents": 2514,
+        "volume_mwh": 65,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-06",
+        "clearing_price_cents": 3016,
+        "volume_mwh": 64,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-07",
+        "clearing_price_cents": 2810,
+        "volume_mwh": 58,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-08",
+        "clearing_price_cents": 2976,
+        "volume_mwh": 71,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-09",
+        "clearing_price_cents": 3217,
+        "volume_mwh": 74,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-10",
+        "clearing_price_cents": 2887,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-11",
+        "clearing_price_cents": 2327,
+        "volume_mwh": 56,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-12",
+        "clearing_price_cents": 2488,
+        "volume_mwh": 38,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-13",
+        "clearing_price_cents": 3194,
+        "volume_mwh": 78,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-14",
+        "clearing_price_cents": 2820,
+        "volume_mwh": 79,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-15",
+        "clearing_price_cents": 3390,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-16",
+        "clearing_price_cents": 2939,
+        "volume_mwh": 104,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-17",
+        "clearing_price_cents": 2896,
+        "volume_mwh": 83,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-18",
+        "clearing_price_cents": 2629,
+        "volume_mwh": 63,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-19",
+        "clearing_price_cents": 2364,
+        "volume_mwh": 63,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-20",
+        "clearing_price_cents": 3227,
+        "volume_mwh": 91,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-21",
+        "clearing_price_cents": 3246,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-22",
+        "clearing_price_cents": 2802,
+        "volume_mwh": 100,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-23",
+        "clearing_price_cents": 3253,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-24",
+        "clearing_price_cents": 3256,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-25",
+        "clearing_price_cents": 2687,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-26",
+        "clearing_price_cents": 2330,
+        "volume_mwh": 46,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-27",
+        "clearing_price_cents": 3330,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-28",
+        "clearing_price_cents": 3356,
+        "volume_mwh": 88,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-29",
+        "clearing_price_cents": 3140,
+        "volume_mwh": 103,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-30",
+        "clearing_price_cents": 2834,
+        "volume_mwh": 99,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-01",
+        "clearing_price_cents": 3069,
+        "volume_mwh": 86,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-02",
+        "clearing_price_cents": 2415,
+        "volume_mwh": 61,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-03",
+        "clearing_price_cents": 2306,
+        "volume_mwh": 52,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-04",
+        "clearing_price_cents": 3285,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-05",
+        "clearing_price_cents": 3248,
+        "volume_mwh": 68,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-06",
+        "clearing_price_cents": 3025,
+        "volume_mwh": 60,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-07",
+        "clearing_price_cents": 3194,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-08",
+        "clearing_price_cents": 3349,
+        "volume_mwh": 59,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-09",
+        "clearing_price_cents": 2770,
+        "volume_mwh": 68,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-10",
+        "clearing_price_cents": 2515,
+        "volume_mwh": 64,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-11",
+        "clearing_price_cents": 2830,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-12",
+        "clearing_price_cents": 3353,
+        "volume_mwh": 99,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-13",
+        "clearing_price_cents": 3191,
+        "volume_mwh": 92,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-14",
+        "clearing_price_cents": 2889,
+        "volume_mwh": 74,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-15",
+        "clearing_price_cents": 2807,
+        "volume_mwh": 58,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-16",
+        "clearing_price_cents": 2478,
+        "volume_mwh": 55,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-17",
+        "clearing_price_cents": 2731,
+        "volume_mwh": 65,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-18",
+        "clearing_price_cents": 2927,
+        "volume_mwh": 103,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-19",
+        "clearing_price_cents": 2831,
+        "volume_mwh": 69,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-20",
+        "clearing_price_cents": 3154,
+        "volume_mwh": 93,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-21",
+        "clearing_price_cents": 2864,
+        "volume_mwh": 103,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-22",
+        "clearing_price_cents": 3281,
+        "volume_mwh": 81,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-23",
+        "clearing_price_cents": 2641,
+        "volume_mwh": 103,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-24",
+        "clearing_price_cents": 2574,
+        "volume_mwh": 41,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-25",
+        "clearing_price_cents": 3176,
+        "volume_mwh": 76,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-26",
+        "clearing_price_cents": 3305,
+        "volume_mwh": 66,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-27",
+        "clearing_price_cents": 2948,
+        "volume_mwh": 86,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-28",
+        "clearing_price_cents": 2985,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-29",
+        "clearing_price_cents": 3170,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-30",
+        "clearing_price_cents": 2498,
+        "volume_mwh": 46,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-31",
+        "clearing_price_cents": 2607,
+        "volume_mwh": 44,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-01",
+        "clearing_price_cents": 3186,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-02",
+        "clearing_price_cents": 3076,
+        "volume_mwh": 99,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-03",
+        "clearing_price_cents": 3050,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-04",
+        "clearing_price_cents": 3046,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-05",
+        "clearing_price_cents": 3348,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-06",
+        "clearing_price_cents": 2739,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-07",
+        "clearing_price_cents": 2372,
+        "volume_mwh": 40,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-08",
+        "clearing_price_cents": 3001,
+        "volume_mwh": 73,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-09",
+        "clearing_price_cents": 3128,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-10",
+        "clearing_price_cents": 3196,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-11",
+        "clearing_price_cents": 3319,
+        "volume_mwh": 72,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-12",
+        "clearing_price_cents": 3396,
+        "volume_mwh": 69,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-13",
+        "clearing_price_cents": 2455,
+        "volume_mwh": 48,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-14",
+        "clearing_price_cents": 2503,
+        "volume_mwh": 47,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-15",
+        "clearing_price_cents": 3378,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-16",
+        "clearing_price_cents": 2802,
+        "volume_mwh": 93,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-17",
+        "clearing_price_cents": 3102,
+        "volume_mwh": 72,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-18",
+        "clearing_price_cents": 3213,
+        "volume_mwh": 92,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-19",
+        "clearing_price_cents": 3315,
+        "volume_mwh": 65,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-20",
+        "clearing_price_cents": 2650,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-21",
+        "clearing_price_cents": 2500,
+        "volume_mwh": 46,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-22",
+        "clearing_price_cents": 3365,
+        "volume_mwh": 67,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-23",
+        "clearing_price_cents": 3063,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-24",
+        "clearing_price_cents": 2924,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-25",
+        "clearing_price_cents": 2986,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 4
+      }
+    ],
+    "forecast": [
+      {
+        "date": "2026-06-26",
+        "predicted_price_cents": 2992,
+        "lower_bound_cents": 2585,
+        "upper_bound_cents": 3399,
+        "predicted_severity": "AMBER",
+        "confidence": 89
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 2429,
+        "lower_bound_cents": 2060,
+        "upper_bound_cents": 2798,
+        "predicted_severity": "GREEN",
+        "confidence": 85
+      },
+      {
+        "date": "2026-06-28",
+        "predicted_price_cents": 1992,
+        "lower_bound_cents": 1657,
+        "upper_bound_cents": 2327,
+        "predicted_severity": "GREEN",
+        "confidence": 82
+      },
+      {
+        "date": "2026-06-29",
+        "predicted_price_cents": 1985,
+        "lower_bound_cents": 1620,
+        "upper_bound_cents": 2350,
+        "predicted_severity": "GREEN",
+        "confidence": 78
+      },
+      {
+        "date": "2026-06-30",
+        "predicted_price_cents": 2016,
+        "lower_bound_cents": 1613,
+        "upper_bound_cents": 2419,
+        "predicted_severity": "GREEN",
+        "confidence": 75
+      },
+      {
+        "date": "2026-07-01",
+        "predicted_price_cents": 1995,
+        "lower_bound_cents": 1564,
+        "upper_bound_cents": 2426,
+        "predicted_severity": "GREEN",
+        "confidence": 72
+      },
+      {
+        "date": "2026-07-02",
+        "predicted_price_cents": 2049,
+        "lower_bound_cents": 1574,
+        "upper_bound_cents": 2524,
+        "predicted_severity": "GREEN",
+        "confidence": 68
+      },
+      {
+        "date": "2026-07-03",
+        "predicted_price_cents": 2012,
+        "lower_bound_cents": 1513,
+        "upper_bound_cents": 2511,
+        "predicted_severity": "GREEN",
+        "confidence": 65
+      },
+      {
+        "date": "2026-07-04",
+        "predicted_price_cents": 1621,
+        "lower_bound_cents": 1193,
+        "upper_bound_cents": 2049,
+        "predicted_severity": "GREEN",
+        "confidence": 61
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 1313,
+        "lower_bound_cents": 945,
+        "upper_bound_cents": 1681,
+        "predicted_severity": "GREEN",
+        "confidence": 58
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 1352,
+        "lower_bound_cents": 952,
+        "upper_bound_cents": 1752,
+        "predicted_severity": "GREEN",
+        "confidence": 55
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 1380,
+        "lower_bound_cents": 949,
+        "upper_bound_cents": 1811,
+        "predicted_severity": "GREEN",
+        "confidence": 51
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 1412,
+        "lower_bound_cents": 949,
+        "upper_bound_cents": 1875,
+        "predicted_severity": "GREEN",
+        "confidence": 48
+      },
+      {
+        "date": "2026-07-09",
+        "predicted_price_cents": 1427,
+        "lower_bound_cents": 936,
+        "upper_bound_cents": 1918,
+        "predicted_severity": "GREEN",
+        "confidence": 45
+      }
+    ],
+    "stats": {
+      "avg_price_cents": 2941,
+      "peak_price_cents": 3396,
+      "low_price_cents": 2306,
+      "trend_7d_pct": -0.2,
+      "total_volume_mwh": 6741,
+      "total_trades": 218
+    }
+  },
+  {
+    "congestion_point_id": "cp_008",
+    "history": [
+      {
+        "date": "2026-03-28",
+        "clearing_price_cents": 5163,
+        "volume_mwh": 37,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-03-29",
+        "clearing_price_cents": 5295,
+        "volume_mwh": 81,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-03-30",
+        "clearing_price_cents": 6608,
+        "volume_mwh": 90,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-03-31",
+        "clearing_price_cents": 5462,
+        "volume_mwh": 103,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-01",
+        "clearing_price_cents": 6048,
+        "volume_mwh": 87,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-02",
+        "clearing_price_cents": 5455,
+        "volume_mwh": 57,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-03",
+        "clearing_price_cents": 5765,
+        "volume_mwh": 71,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-04",
+        "clearing_price_cents": 5605,
+        "volume_mwh": 71,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-05",
+        "clearing_price_cents": 5078,
+        "volume_mwh": 51,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-06",
+        "clearing_price_cents": 6082,
+        "volume_mwh": 62,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-07",
+        "clearing_price_cents": 6216,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-08",
+        "clearing_price_cents": 5968,
+        "volume_mwh": 93,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-09",
+        "clearing_price_cents": 5435,
+        "volume_mwh": 104,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-10",
+        "clearing_price_cents": 5743,
+        "volume_mwh": 78,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-11",
+        "clearing_price_cents": 5388,
+        "volume_mwh": 101,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-12",
+        "clearing_price_cents": 4776,
+        "volume_mwh": 49,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-13",
+        "clearing_price_cents": 6131,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-14",
+        "clearing_price_cents": 6761,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-15",
+        "clearing_price_cents": 6329,
+        "volume_mwh": 64,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-16",
+        "clearing_price_cents": 6349,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-17",
+        "clearing_price_cents": 6725,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-18",
+        "clearing_price_cents": 5707,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-19",
+        "clearing_price_cents": 5389,
+        "volume_mwh": 73,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-20",
+        "clearing_price_cents": 6411,
+        "volume_mwh": 64,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-21",
+        "clearing_price_cents": 5443,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-22",
+        "clearing_price_cents": 6373,
+        "volume_mwh": 88,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-23",
+        "clearing_price_cents": 6802,
+        "volume_mwh": 91,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-24",
+        "clearing_price_cents": 6384,
+        "volume_mwh": 73,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-25",
+        "clearing_price_cents": 4718,
+        "volume_mwh": 58,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-26",
+        "clearing_price_cents": 4486,
+        "volume_mwh": 49,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-27",
+        "clearing_price_cents": 6194,
+        "volume_mwh": 103,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-28",
+        "clearing_price_cents": 6928,
+        "volume_mwh": 84,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-29",
+        "clearing_price_cents": 6017,
+        "volume_mwh": 73,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-30",
+        "clearing_price_cents": 6057,
+        "volume_mwh": 79,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-01",
+        "clearing_price_cents": 6664,
+        "volume_mwh": 84,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-02",
+        "clearing_price_cents": 5276,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-03",
+        "clearing_price_cents": 5371,
+        "volume_mwh": 88,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-04",
+        "clearing_price_cents": 6934,
+        "volume_mwh": 59,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-05",
+        "clearing_price_cents": 5668,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-06",
+        "clearing_price_cents": 6627,
+        "volume_mwh": 67,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-07",
+        "clearing_price_cents": 6108,
+        "volume_mwh": 73,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-08",
+        "clearing_price_cents": 6458,
+        "volume_mwh": 60,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-09",
+        "clearing_price_cents": 5148,
+        "volume_mwh": 59,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-10",
+        "clearing_price_cents": 5576,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-11",
+        "clearing_price_cents": 5670,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-12",
+        "clearing_price_cents": 6663,
+        "volume_mwh": 69,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-13",
+        "clearing_price_cents": 7067,
+        "volume_mwh": 109,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-14",
+        "clearing_price_cents": 6760,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-15",
+        "clearing_price_cents": 6841,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-16",
+        "clearing_price_cents": 5917,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-17",
+        "clearing_price_cents": 5568,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-18",
+        "clearing_price_cents": 6329,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-19",
+        "clearing_price_cents": 7173,
+        "volume_mwh": 80,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-05-20",
+        "clearing_price_cents": 5901,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-21",
+        "clearing_price_cents": 6926,
+        "volume_mwh": 66,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-22",
+        "clearing_price_cents": 5961,
+        "volume_mwh": 87,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-23",
+        "clearing_price_cents": 5723,
+        "volume_mwh": 67,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-24",
+        "clearing_price_cents": 5370,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-25",
+        "clearing_price_cents": 6720,
+        "volume_mwh": 83,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-26",
+        "clearing_price_cents": 6927,
+        "volume_mwh": 90,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-27",
+        "clearing_price_cents": 6047,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-28",
+        "clearing_price_cents": 7095,
+        "volume_mwh": 92,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-29",
+        "clearing_price_cents": 5898,
+        "volume_mwh": 60,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-30",
+        "clearing_price_cents": 5311,
+        "volume_mwh": 101,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-31",
+        "clearing_price_cents": 5954,
+        "volume_mwh": 99,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-01",
+        "clearing_price_cents": 5987,
+        "volume_mwh": 86,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-02",
+        "clearing_price_cents": 5693,
+        "volume_mwh": 79,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-03",
+        "clearing_price_cents": 5708,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-04",
+        "clearing_price_cents": 6119,
+        "volume_mwh": 56,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-05",
+        "clearing_price_cents": 7353,
+        "volume_mwh": 80,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-06",
+        "clearing_price_cents": 4761,
+        "volume_mwh": 41,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-07",
+        "clearing_price_cents": 5209,
+        "volume_mwh": 74,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-08",
+        "clearing_price_cents": 6115,
+        "volume_mwh": 99,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-09",
+        "clearing_price_cents": 6913,
+        "volume_mwh": 59,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-10",
+        "clearing_price_cents": 7159,
+        "volume_mwh": 104,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-06-11",
+        "clearing_price_cents": 6486,
+        "volume_mwh": 104,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-12",
+        "clearing_price_cents": 6044,
+        "volume_mwh": 74,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-13",
+        "clearing_price_cents": 5809,
+        "volume_mwh": 83,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-14",
+        "clearing_price_cents": 5818,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-15",
+        "clearing_price_cents": 5916,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-16",
+        "clearing_price_cents": 6848,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-17",
+        "clearing_price_cents": 7064,
+        "volume_mwh": 82,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-06-18",
+        "clearing_price_cents": 6343,
+        "volume_mwh": 74,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-19",
+        "clearing_price_cents": 6994,
+        "volume_mwh": 59,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-20",
+        "clearing_price_cents": 5478,
+        "volume_mwh": 83,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-21",
+        "clearing_price_cents": 5823,
+        "volume_mwh": 64,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-22",
+        "clearing_price_cents": 6695,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-23",
+        "clearing_price_cents": 6901,
+        "volume_mwh": 79,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-24",
+        "clearing_price_cents": 5858,
+        "volume_mwh": 58,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-25",
+        "clearing_price_cents": 7334,
+        "volume_mwh": 130,
+        "severity": "RED",
+        "trade_count": 7
+      }
+    ],
+    "forecast": [
+      {
+        "date": "2026-06-26",
+        "predicted_price_cents": 7082,
+        "lower_bound_cents": 6119,
+        "upper_bound_cents": 8045,
+        "predicted_severity": "RED",
+        "confidence": 89
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 5902,
+        "lower_bound_cents": 5005,
+        "upper_bound_cents": 6799,
+        "predicted_severity": "AMBER",
+        "confidence": 85
+      },
+      {
+        "date": "2026-06-28",
+        "predicted_price_cents": 4933,
+        "lower_bound_cents": 4104,
+        "upper_bound_cents": 5762,
+        "predicted_severity": "GREEN",
+        "confidence": 82
+      },
+      {
+        "date": "2026-06-29",
+        "predicted_price_cents": 5081,
+        "lower_bound_cents": 4146,
+        "upper_bound_cents": 6016,
+        "predicted_severity": "GREEN",
+        "confidence": 78
+      },
+      {
+        "date": "2026-06-30",
+        "predicted_price_cents": 5155,
+        "lower_bound_cents": 4124,
+        "upper_bound_cents": 6186,
+        "predicted_severity": "GREEN",
+        "confidence": 75
+      },
+      {
+        "date": "2026-07-01",
+        "predicted_price_cents": 5282,
+        "lower_bound_cents": 4141,
+        "upper_bound_cents": 6423,
+        "predicted_severity": "AMBER",
+        "confidence": 72
+      },
+      {
+        "date": "2026-07-02",
+        "predicted_price_cents": 5221,
+        "lower_bound_cents": 4010,
+        "upper_bound_cents": 6432,
+        "predicted_severity": "AMBER",
+        "confidence": 68
+      },
+      {
+        "date": "2026-07-03",
+        "predicted_price_cents": 5430,
+        "lower_bound_cents": 4083,
+        "upper_bound_cents": 6777,
+        "predicted_severity": "AMBER",
+        "confidence": 65
+      },
+      {
+        "date": "2026-07-04",
+        "predicted_price_cents": 4556,
+        "lower_bound_cents": 3353,
+        "upper_bound_cents": 5759,
+        "predicted_severity": "GREEN",
+        "confidence": 61
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 3872,
+        "lower_bound_cents": 2788,
+        "upper_bound_cents": 4956,
+        "predicted_severity": "GREEN",
+        "confidence": 58
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 3863,
+        "lower_bound_cents": 2720,
+        "upper_bound_cents": 5006,
+        "predicted_severity": "GREEN",
+        "confidence": 55
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 3865,
+        "lower_bound_cents": 2659,
+        "upper_bound_cents": 5071,
+        "predicted_severity": "GREEN",
+        "confidence": 51
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 3890,
+        "lower_bound_cents": 2614,
+        "upper_bound_cents": 5166,
+        "predicted_severity": "GREEN",
+        "confidence": 48
+      },
+      {
+        "date": "2026-07-09",
+        "predicted_price_cents": 3928,
+        "lower_bound_cents": 2577,
+        "upper_bound_cents": 5279,
+        "predicted_severity": "GREEN",
+        "confidence": 45
+      }
+    ],
+    "stats": {
+      "avg_price_cents": 6082,
+      "peak_price_cents": 7353,
+      "low_price_cents": 4486,
+      "trend_7d_pct": 2.8,
+      "total_volume_mwh": 7115,
+      "total_trades": 275
+    }
+  },
+  {
+    "congestion_point_id": "cp_009",
+    "history": [
+      {
+        "date": "2026-03-28",
+        "clearing_price_cents": 2369,
+        "volume_mwh": 50,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-03-29",
+        "clearing_price_cents": 2414,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-03-30",
+        "clearing_price_cents": 2977,
+        "volume_mwh": 67,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-03-31",
+        "clearing_price_cents": 3022,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-01",
+        "clearing_price_cents": 2679,
+        "volume_mwh": 59,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-02",
+        "clearing_price_cents": 3002,
+        "volume_mwh": 104,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-03",
+        "clearing_price_cents": 2619,
+        "volume_mwh": 94,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-04",
+        "clearing_price_cents": 2092,
+        "volume_mwh": 39,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-05",
+        "clearing_price_cents": 2323,
+        "volume_mwh": 36,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-06",
+        "clearing_price_cents": 2797,
+        "volume_mwh": 59,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-07",
+        "clearing_price_cents": 2541,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-08",
+        "clearing_price_cents": 2745,
+        "volume_mwh": 66,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-09",
+        "clearing_price_cents": 2712,
+        "volume_mwh": 85,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-10",
+        "clearing_price_cents": 2665,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-11",
+        "clearing_price_cents": 2224,
+        "volume_mwh": 41,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-12",
+        "clearing_price_cents": 2119,
+        "volume_mwh": 61,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-13",
+        "clearing_price_cents": 2639,
+        "volume_mwh": 79,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-14",
+        "clearing_price_cents": 2822,
+        "volume_mwh": 70,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-15",
+        "clearing_price_cents": 2591,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-16",
+        "clearing_price_cents": 2956,
+        "volume_mwh": 90,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-17",
+        "clearing_price_cents": 2719,
+        "volume_mwh": 87,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-18",
+        "clearing_price_cents": 2140,
+        "volume_mwh": 61,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-19",
+        "clearing_price_cents": 2151,
+        "volume_mwh": 58,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-20",
+        "clearing_price_cents": 2738,
+        "volume_mwh": 85,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-21",
+        "clearing_price_cents": 2622,
+        "volume_mwh": 77,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-22",
+        "clearing_price_cents": 2547,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-23",
+        "clearing_price_cents": 2934,
+        "volume_mwh": 64,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-24",
+        "clearing_price_cents": 2673,
+        "volume_mwh": 84,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-25",
+        "clearing_price_cents": 2264,
+        "volume_mwh": 57,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-26",
+        "clearing_price_cents": 2402,
+        "volume_mwh": 84,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-27",
+        "clearing_price_cents": 2481,
+        "volume_mwh": 57,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-28",
+        "clearing_price_cents": 2893,
+        "volume_mwh": 81,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-29",
+        "clearing_price_cents": 2512,
+        "volume_mwh": 90,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-30",
+        "clearing_price_cents": 2772,
+        "volume_mwh": 60,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-01",
+        "clearing_price_cents": 2941,
+        "volume_mwh": 82,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-02",
+        "clearing_price_cents": 2373,
+        "volume_mwh": 45,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-03",
+        "clearing_price_cents": 2112,
+        "volume_mwh": 58,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-04",
+        "clearing_price_cents": 2911,
+        "volume_mwh": 90,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-05",
+        "clearing_price_cents": 2671,
+        "volume_mwh": 76,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-06",
+        "clearing_price_cents": 2919,
+        "volume_mwh": 73,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-07",
+        "clearing_price_cents": 2476,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-08",
+        "clearing_price_cents": 2554,
+        "volume_mwh": 61,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-09",
+        "clearing_price_cents": 2380,
+        "volume_mwh": 45,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-10",
+        "clearing_price_cents": 2032,
+        "volume_mwh": 38,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-11",
+        "clearing_price_cents": 2480,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-12",
+        "clearing_price_cents": 2646,
+        "volume_mwh": 88,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-13",
+        "clearing_price_cents": 2517,
+        "volume_mwh": 67,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-14",
+        "clearing_price_cents": 2568,
+        "volume_mwh": 81,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-15",
+        "clearing_price_cents": 2671,
+        "volume_mwh": 86,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-16",
+        "clearing_price_cents": 2226,
+        "volume_mwh": 47,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-17",
+        "clearing_price_cents": 2216,
+        "volume_mwh": 38,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-05-18",
+        "clearing_price_cents": 2743,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-19",
+        "clearing_price_cents": 2817,
+        "volume_mwh": 96,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-20",
+        "clearing_price_cents": 2789,
+        "volume_mwh": 63,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-21",
+        "clearing_price_cents": 2637,
+        "volume_mwh": 78,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-22",
+        "clearing_price_cents": 2713,
+        "volume_mwh": 93,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-23",
+        "clearing_price_cents": 2342,
+        "volume_mwh": 49,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-24",
+        "clearing_price_cents": 2188,
+        "volume_mwh": 47,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-25",
+        "clearing_price_cents": 2730,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-26",
+        "clearing_price_cents": 2742,
+        "volume_mwh": 67,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-27",
+        "clearing_price_cents": 2512,
+        "volume_mwh": 103,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-28",
+        "clearing_price_cents": 2595,
+        "volume_mwh": 84,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-29",
+        "clearing_price_cents": 2720,
+        "volume_mwh": 69,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-30",
+        "clearing_price_cents": 2182,
+        "volume_mwh": 50,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-31",
+        "clearing_price_cents": 2066,
+        "volume_mwh": 50,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-01",
+        "clearing_price_cents": 2740,
+        "volume_mwh": 75,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-02",
+        "clearing_price_cents": 2653,
+        "volume_mwh": 60,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-03",
+        "clearing_price_cents": 2675,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-04",
+        "clearing_price_cents": 2431,
+        "volume_mwh": 59,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-05",
+        "clearing_price_cents": 2411,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-06",
+        "clearing_price_cents": 2045,
+        "volume_mwh": 56,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-07",
+        "clearing_price_cents": 2180,
+        "volume_mwh": 52,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-08",
+        "clearing_price_cents": 2440,
+        "volume_mwh": 77,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-09",
+        "clearing_price_cents": 2777,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-10",
+        "clearing_price_cents": 2387,
+        "volume_mwh": 71,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-11",
+        "clearing_price_cents": 2386,
+        "volume_mwh": 88,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-12",
+        "clearing_price_cents": 2547,
+        "volume_mwh": 79,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-13",
+        "clearing_price_cents": 2033,
+        "volume_mwh": 56,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-14",
+        "clearing_price_cents": 1996,
+        "volume_mwh": 50,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-15",
+        "clearing_price_cents": 2474,
+        "volume_mwh": 85,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-16",
+        "clearing_price_cents": 2476,
+        "volume_mwh": 76,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-17",
+        "clearing_price_cents": 2363,
+        "volume_mwh": 60,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-18",
+        "clearing_price_cents": 2347,
+        "volume_mwh": 36,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-19",
+        "clearing_price_cents": 2616,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-20",
+        "clearing_price_cents": 2052,
+        "volume_mwh": 44,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-06-21",
+        "clearing_price_cents": 1966,
+        "volume_mwh": 64,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-22",
+        "clearing_price_cents": 2400,
+        "volume_mwh": 84,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-23",
+        "clearing_price_cents": 2728,
+        "volume_mwh": 56,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-24",
+        "clearing_price_cents": 2728,
+        "volume_mwh": 84,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-25",
+        "clearing_price_cents": 2543,
+        "volume_mwh": 93,
+        "severity": "AMBER",
+        "trade_count": 4
+      }
+    ],
+    "forecast": [
+      {
+        "date": "2026-06-26",
+        "predicted_price_cents": 2549,
+        "lower_bound_cents": 2202,
+        "upper_bound_cents": 2896,
+        "predicted_severity": "AMBER",
+        "confidence": 89
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 2039,
+        "lower_bound_cents": 1729,
+        "upper_bound_cents": 2349,
+        "predicted_severity": "GREEN",
+        "confidence": 85
+      },
+      {
+        "date": "2026-06-28",
+        "predicted_price_cents": 1712,
+        "lower_bound_cents": 1424,
+        "upper_bound_cents": 2000,
+        "predicted_severity": "GREEN",
+        "confidence": 82
+      },
+      {
+        "date": "2026-06-29",
+        "predicted_price_cents": 1692,
+        "lower_bound_cents": 1381,
+        "upper_bound_cents": 2003,
+        "predicted_severity": "GREEN",
+        "confidence": 78
+      },
+      {
+        "date": "2026-06-30",
+        "predicted_price_cents": 1698,
+        "lower_bound_cents": 1358,
+        "upper_bound_cents": 2038,
+        "predicted_severity": "GREEN",
+        "confidence": 75
+      },
+      {
+        "date": "2026-07-01",
+        "predicted_price_cents": 1676,
+        "lower_bound_cents": 1314,
+        "upper_bound_cents": 2038,
+        "predicted_severity": "GREEN",
+        "confidence": 72
+      },
+      {
+        "date": "2026-07-02",
+        "predicted_price_cents": 1695,
+        "lower_bound_cents": 1302,
+        "upper_bound_cents": 2088,
+        "predicted_severity": "GREEN",
+        "confidence": 68
+      },
+      {
+        "date": "2026-07-03",
+        "predicted_price_cents": 1721,
+        "lower_bound_cents": 1294,
+        "upper_bound_cents": 2148,
+        "predicted_severity": "GREEN",
+        "confidence": 65
+      },
+      {
+        "date": "2026-07-04",
+        "predicted_price_cents": 1399,
+        "lower_bound_cents": 1030,
+        "upper_bound_cents": 1768,
+        "predicted_severity": "GREEN",
+        "confidence": 61
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 1153,
+        "lower_bound_cents": 830,
+        "upper_bound_cents": 1476,
+        "predicted_severity": "GREEN",
+        "confidence": 58
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 1178,
+        "lower_bound_cents": 829,
+        "upper_bound_cents": 1527,
+        "predicted_severity": "GREEN",
+        "confidence": 55
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 1154,
+        "lower_bound_cents": 794,
+        "upper_bound_cents": 1514,
+        "predicted_severity": "GREEN",
+        "confidence": 51
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 1138,
+        "lower_bound_cents": 765,
+        "upper_bound_cents": 1511,
+        "predicted_severity": "GREEN",
+        "confidence": 48
+      },
+      {
+        "date": "2026-07-09",
+        "predicted_price_cents": 1140,
+        "lower_bound_cents": 748,
+        "upper_bound_cents": 1532,
+        "predicted_severity": "GREEN",
+        "confidence": 45
+      }
+    ],
+    "stats": {
+      "avg_price_cents": 2522,
+      "peak_price_cents": 3022,
+      "low_price_cents": 1966,
+      "trend_7d_pct": 4.9,
+      "total_volume_mwh": 6414,
+      "total_trades": 220
+    }
+  },
+  {
+    "congestion_point_id": "cp_010",
+    "history": [
+      {
+        "date": "2026-03-28",
+        "clearing_price_cents": 8813,
+        "volume_mwh": 100,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-03-29",
+        "clearing_price_cents": 9310,
+        "volume_mwh": 62,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-03-30",
+        "clearing_price_cents": 11627,
+        "volume_mwh": 126,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-03-31",
+        "clearing_price_cents": 11320,
+        "volume_mwh": 97,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-04-01",
+        "clearing_price_cents": 8367,
+        "volume_mwh": 78,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-02",
+        "clearing_price_cents": 11252,
+        "volume_mwh": 103,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-04-03",
+        "clearing_price_cents": 8309,
+        "volume_mwh": 44,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-04",
+        "clearing_price_cents": 7089,
+        "volume_mwh": 63,
+        "severity": "GREEN",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-05",
+        "clearing_price_cents": 9040,
+        "volume_mwh": 84,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-06",
+        "clearing_price_cents": 10813,
+        "volume_mwh": 57,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-07",
+        "clearing_price_cents": 10454,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-08",
+        "clearing_price_cents": 10457,
+        "volume_mwh": 87,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-09",
+        "clearing_price_cents": 11441,
+        "volume_mwh": 92,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-10",
+        "clearing_price_cents": 9887,
+        "volume_mwh": 64,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-11",
+        "clearing_price_cents": 7030,
+        "volume_mwh": 48,
+        "severity": "GREEN",
+        "trade_count": 0
+      },
+      {
+        "date": "2026-04-12",
+        "clearing_price_cents": 6926,
+        "volume_mwh": 43,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-13",
+        "clearing_price_cents": 8691,
+        "volume_mwh": 103,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-14",
+        "clearing_price_cents": 10355,
+        "volume_mwh": 66,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-15",
+        "clearing_price_cents": 11962,
+        "volume_mwh": 131,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-16",
+        "clearing_price_cents": 9671,
+        "volume_mwh": 83,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-04-17",
+        "clearing_price_cents": 8920,
+        "volume_mwh": 65,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-18",
+        "clearing_price_cents": 8938,
+        "volume_mwh": 72,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-19",
+        "clearing_price_cents": 10130,
+        "volume_mwh": 65,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-20",
+        "clearing_price_cents": 10490,
+        "volume_mwh": 58,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-21",
+        "clearing_price_cents": 11181,
+        "volume_mwh": 84,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-22",
+        "clearing_price_cents": 11864,
+        "volume_mwh": 86,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-04-23",
+        "clearing_price_cents": 8783,
+        "volume_mwh": 85,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-24",
+        "clearing_price_cents": 9805,
+        "volume_mwh": 95,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-04-25",
+        "clearing_price_cents": 10996,
+        "volume_mwh": 88,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-04-26",
+        "clearing_price_cents": 10566,
+        "volume_mwh": 90,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-04-27",
+        "clearing_price_cents": 11713,
+        "volume_mwh": 80,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-04-28",
+        "clearing_price_cents": 12967,
+        "volume_mwh": 107,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-04-29",
+        "clearing_price_cents": 13080,
+        "volume_mwh": 82,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-04-30",
+        "clearing_price_cents": 13394,
+        "volume_mwh": 123,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-01",
+        "clearing_price_cents": 10281,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-02",
+        "clearing_price_cents": 8324,
+        "volume_mwh": 52,
+        "severity": "GREEN",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-03",
+        "clearing_price_cents": 10880,
+        "volume_mwh": 97,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-04",
+        "clearing_price_cents": 9241,
+        "volume_mwh": 73,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-05",
+        "clearing_price_cents": 13190,
+        "volume_mwh": 78,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-06",
+        "clearing_price_cents": 10568,
+        "volume_mwh": 80,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-07",
+        "clearing_price_cents": 13083,
+        "volume_mwh": 99,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-05-08",
+        "clearing_price_cents": 13754,
+        "volume_mwh": 85,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-09",
+        "clearing_price_cents": 9564,
+        "volume_mwh": 98,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-10",
+        "clearing_price_cents": 9354,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-11",
+        "clearing_price_cents": 9981,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-12",
+        "clearing_price_cents": 10529,
+        "volume_mwh": 59,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-13",
+        "clearing_price_cents": 11781,
+        "volume_mwh": 140,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-14",
+        "clearing_price_cents": 13913,
+        "volume_mwh": 83,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-05-15",
+        "clearing_price_cents": 10895,
+        "volume_mwh": 76,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-16",
+        "clearing_price_cents": 8854,
+        "volume_mwh": 69,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-05-17",
+        "clearing_price_cents": 9827,
+        "volume_mwh": 58,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-18",
+        "clearing_price_cents": 14414,
+        "volume_mwh": 84,
+        "severity": "RED",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-05-19",
+        "clearing_price_cents": 13535,
+        "volume_mwh": 118,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-05-20",
+        "clearing_price_cents": 11819,
+        "volume_mwh": 100,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-05-21",
+        "clearing_price_cents": 10625,
+        "volume_mwh": 89,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-05-22",
+        "clearing_price_cents": 10207,
+        "volume_mwh": 99,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-23",
+        "clearing_price_cents": 8441,
+        "volume_mwh": 91,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-24",
+        "clearing_price_cents": 10571,
+        "volume_mwh": 57,
+        "severity": "AMBER",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-05-25",
+        "clearing_price_cents": 13867,
+        "volume_mwh": 132,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-05-26",
+        "clearing_price_cents": 13622,
+        "volume_mwh": 126,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-05-27",
+        "clearing_price_cents": 11358,
+        "volume_mwh": 88,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-05-28",
+        "clearing_price_cents": 15386,
+        "volume_mwh": 140,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-05-29",
+        "clearing_price_cents": 11433,
+        "volume_mwh": 108,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-05-30",
+        "clearing_price_cents": 11282,
+        "volume_mwh": 83,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-05-31",
+        "clearing_price_cents": 11117,
+        "volume_mwh": 60,
+        "severity": "AMBER",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-01",
+        "clearing_price_cents": 11994,
+        "volume_mwh": 89,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-02",
+        "clearing_price_cents": 11064,
+        "volume_mwh": 88,
+        "severity": "AMBER",
+        "trade_count": 1
+      },
+      {
+        "date": "2026-06-03",
+        "clearing_price_cents": 11659,
+        "volume_mwh": 102,
+        "severity": "RED",
+        "trade_count": 9
+      },
+      {
+        "date": "2026-06-04",
+        "clearing_price_cents": 15743,
+        "volume_mwh": 84,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-06-05",
+        "clearing_price_cents": 11369,
+        "volume_mwh": 115,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-06",
+        "clearing_price_cents": 10636,
+        "volume_mwh": 65,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-07",
+        "clearing_price_cents": 12483,
+        "volume_mwh": 128,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-08",
+        "clearing_price_cents": 10922,
+        "volume_mwh": 102,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-09",
+        "clearing_price_cents": 10899,
+        "volume_mwh": 84,
+        "severity": "AMBER",
+        "trade_count": 2
+      },
+      {
+        "date": "2026-06-10",
+        "clearing_price_cents": 12087,
+        "volume_mwh": 91,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-11",
+        "clearing_price_cents": 14418,
+        "volume_mwh": 98,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-06-12",
+        "clearing_price_cents": 14270,
+        "volume_mwh": 116,
+        "severity": "RED",
+        "trade_count": 7
+      },
+      {
+        "date": "2026-06-13",
+        "clearing_price_cents": 12274,
+        "volume_mwh": 133,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-14",
+        "clearing_price_cents": 11467,
+        "volume_mwh": 79,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-06-15",
+        "clearing_price_cents": 13314,
+        "volume_mwh": 98,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-06-16",
+        "clearing_price_cents": 16124,
+        "volume_mwh": 127,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-17",
+        "clearing_price_cents": 12711,
+        "volume_mwh": 115,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-18",
+        "clearing_price_cents": 14889,
+        "volume_mwh": 120,
+        "severity": "RED",
+        "trade_count": 6
+      },
+      {
+        "date": "2026-06-19",
+        "clearing_price_cents": 13765,
+        "volume_mwh": 132,
+        "severity": "RED",
+        "trade_count": 3
+      },
+      {
+        "date": "2026-06-20",
+        "clearing_price_cents": 9933,
+        "volume_mwh": 57,
+        "severity": "AMBER",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-21",
+        "clearing_price_cents": 11483,
+        "volume_mwh": 128,
+        "severity": "RED",
+        "trade_count": 5
+      },
+      {
+        "date": "2026-06-22",
+        "clearing_price_cents": 15602,
+        "volume_mwh": 127,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-06-23",
+        "clearing_price_cents": 11644,
+        "volume_mwh": 112,
+        "severity": "RED",
+        "trade_count": 4
+      },
+      {
+        "date": "2026-06-24",
+        "clearing_price_cents": 15368,
+        "volume_mwh": 85,
+        "severity": "RED",
+        "trade_count": 8
+      },
+      {
+        "date": "2026-06-25",
+        "clearing_price_cents": 11587,
+        "volume_mwh": 126,
+        "severity": "RED",
+        "trade_count": 8
+      }
+    ],
+    "forecast": [
+      {
+        "date": "2026-06-26",
+        "predicted_price_cents": 11021,
+        "lower_bound_cents": 9522,
+        "upper_bound_cents": 12520,
+        "predicted_severity": "AMBER",
+        "confidence": 89
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 8999,
+        "lower_bound_cents": 7631,
+        "upper_bound_cents": 10367,
+        "predicted_severity": "AMBER",
+        "confidence": 85
+      },
+      {
+        "date": "2026-06-28",
+        "predicted_price_cents": 7129,
+        "lower_bound_cents": 5931,
+        "upper_bound_cents": 8327,
+        "predicted_severity": "GREEN",
+        "confidence": 82
+      },
+      {
+        "date": "2026-06-29",
+        "predicted_price_cents": 7375,
+        "lower_bound_cents": 6018,
+        "upper_bound_cents": 8732,
+        "predicted_severity": "GREEN",
+        "confidence": 78
+      },
+      {
+        "date": "2026-06-30",
+        "predicted_price_cents": 7412,
+        "lower_bound_cents": 5930,
+        "upper_bound_cents": 8894,
+        "predicted_severity": "GREEN",
+        "confidence": 75
+      },
+      {
+        "date": "2026-07-01",
+        "predicted_price_cents": 7688,
+        "lower_bound_cents": 6027,
+        "upper_bound_cents": 9349,
+        "predicted_severity": "GREEN",
+        "confidence": 72
+      },
+      {
+        "date": "2026-07-02",
+        "predicted_price_cents": 7356,
+        "lower_bound_cents": 5649,
+        "upper_bound_cents": 9063,
+        "predicted_severity": "GREEN",
+        "confidence": 68
+      },
+      {
+        "date": "2026-07-03",
+        "predicted_price_cents": 7489,
+        "lower_bound_cents": 5632,
+        "upper_bound_cents": 9346,
+        "predicted_severity": "GREEN",
+        "confidence": 65
+      },
+      {
+        "date": "2026-07-04",
+        "predicted_price_cents": 6514,
+        "lower_bound_cents": 4794,
+        "upper_bound_cents": 8234,
+        "predicted_severity": "GREEN",
+        "confidence": 61
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 5218,
+        "lower_bound_cents": 3757,
+        "upper_bound_cents": 6679,
+        "predicted_severity": "GREEN",
+        "confidence": 58
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 5160,
+        "lower_bound_cents": 3633,
+        "upper_bound_cents": 6687,
+        "predicted_severity": "GREEN",
+        "confidence": 55
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 5371,
+        "lower_bound_cents": 3695,
+        "upper_bound_cents": 7047,
+        "predicted_severity": "GREEN",
+        "confidence": 51
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 5697,
+        "lower_bound_cents": 3828,
+        "upper_bound_cents": 7566,
+        "predicted_severity": "GREEN",
+        "confidence": 48
+      },
+      {
+        "date": "2026-07-09",
+        "predicted_price_cents": 5712,
+        "lower_bound_cents": 3747,
+        "upper_bound_cents": 7677,
+        "predicted_severity": "GREEN",
+        "confidence": 45
+      }
+    ],
+    "stats": {
+      "avg_price_cents": 11278,
+      "peak_price_cents": 16124,
+      "low_price_cents": 6926,
+      "trend_7d_pct": -6,
+      "total_volume_mwh": 8200,
+      "total_trades": 374
+    }
+  }
+]

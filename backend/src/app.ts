@@ -20,6 +20,7 @@ import { internalRouter } from './routes/internal';
 import { initWebSocket, emitEvent } from './websocket/events';
 import { startMatchingEngine } from './services/matching-engine';
 import { startSettlementChecker } from './services/settlement';
+import { forecastRouter } from './routes/forecast';
 
 const app = express();
 const httpServer = createServer(app);
@@ -54,6 +55,7 @@ app.use('/api/trades', tradesRouter);
 app.use('/api/settlements', settlementsRouter);
 app.use('/api/congestion', congestionRouter);
 app.use('/api/internal', internalRouter);
+app.use('/api/forecast', forecastRouter);
 
 // ── 404 + error handlers (must be last) ───────────────────────────────────────
 app.use(notFoundHandler);
