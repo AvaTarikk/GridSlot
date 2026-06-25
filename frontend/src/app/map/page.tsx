@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { AppShell } from '@/components/layout/AppShell';
 import { congestion } from '@/lib/api';
@@ -27,17 +28,26 @@ type DetailedPoint = CongestionPoint & {
   price_history: { clearing_price_cents: number; matched_at: string }[];
 };
 
+// Module-level cache — survives Next.js client-side navigation
+let _cachedPoints: CongestionPoint[] = [];
+
 export default function MapPage() {
-  const [points, setPoints] = useState<CongestionPoint[]>([]);
+  const router = useRouter();
+  const [points, setPoints] = useState<CongestionPoint[]>(_cachedPoints);
   const [selected, setSelected] = useState<DetailedPoint | null>(null);
   const [selectedBase, setSelectedBase] = useState<CongestionPoint | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(_cachedPoints.length === 0);
   const [detailLoading, setDetailLoading] = useState(false);
   const [filter, setFilter] = useState<'ALL' | Severity>('ALL');
 
   useEffect(() => {
+    if (_cachedPoints.length > 0) {
+      setPoints(_cachedPoints);
+      setLoading(false);
+      return;
+    }
     congestion.list()
-      .then(setPoints)
+      .then(data => { _cachedPoints = data; setPoints(data); })
       .catch(console.error)
       .finally(() => setLoading(false));
   }, []);
@@ -202,9 +212,15 @@ export default function MapPage() {
                         <p className="text-[10px] font-mono tracking-widest text-slate-600 uppercase mb-2">Active listings</p>
                         <div className="space-y-1.5">
                           {selected.active_scus.slice(0, 4).map(scu => (
-                            <div key={scu.id} className="flex justify-between text-xs">
+                            <div key={scu.id} className="flex justify-between items-center text-xs">
                               <span className="text-slate-400">{scu.mwh_amount} MWh</span>
                               <span className="font-mono text-amber-400">{formatEuros(scu.ask_price_cents)}</span>
+                              <button
+                                onClick={() => router.push(`/marketplace/${scu.id}`)}
+                                className="ml-2 text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20 text-blue-400 hover:bg-blue-500/20 transition-colors"
+                              >
+                                View →
+                              </button>
                             </div>
                           ))}
                         </div>
