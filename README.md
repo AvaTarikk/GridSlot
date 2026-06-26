@@ -33,7 +33,7 @@
 
 ## 1. Project Overview
 
-GridSlot is a **fintech MVP** developed as part of the MSc Business Anlaytics & Management (FinTech Business Models and Applications) programme at the Erasmus University Rotterdam. It demonstrates a working financial marketplace for electricity grid capacity in the Netherlands — a market that currently does not exist in a structured, digital form despite being legalised by the ACM in April 2024 and formalised under the Energiewet (January 2026).
+GridSlot is a **fintech MVP** developed as part of the MSc Business Analytics & Management (FinTech Business Models and Applications) programme at the Erasmus University Rotterdam. It demonstrates a working financial marketplace for electricity grid capacity in the Netherlands — a market that currently does not exist in a structured, digital form despite being legalised by the ACM in April 2024 and formalised under the Energiewet (January 2026).
 
 The Netherlands faces one of Europe's most acute grid congestion crises: over **20,000 companies** are on waiting lists for grid access, costing the economy an estimated **EUR 10–40 billion per year** (BCG/Ecorys, 2024). GridSlot addresses this by creating a transparent, automated marketplace where companies with unused grid capacity can trade that capacity to companies that urgently need it.
 
@@ -144,7 +144,8 @@ The MVP implements the full marketplace loop end-to-end using mock grid operator
   MATCHED → PAYMENT_HELD → DELIVERY_PENDING → CONFIRMED → SETTLED
   ```
 - Buyer payment is held in escrow simulation on match
-- Seller collateral (10% of trade value) is locked on listing
+- Seller collateral (5% of trade value) is locked on listing
+- Transaction fee of 0.1%
 - On delivery confirmation (mock grid data), funds release automatically
 - On non-delivery, seller forfeits 5% of collateral; buyer is refunded
 
@@ -285,87 +286,100 @@ The business plan references Hyperledger Besu for the production settlement ledg
 gridslot/
 │
 ├── .claude/
-│   └── instructions.md          # Claude Code agent instructions
+│   ├── instructions.md          # Claude Code agent instructions
+│   └── settings.local.json
 │
 ├── .github/
 │   └── workflows/
 │       ├── ci.yml               # Run tests on every PR
-│       └── deploy.yml           # Deploy to Vercel + Railway on main merge
+│       └── deploy.yml           # Deploy on main merge
 │
 ├── CLAUDE.md                    # Agent instructions for Claude Code
 ├── AGENTS.md                    # General agent orchestration overview
 ├── README.md                    # This file
+├── .prettierrc
+├── .gitignore
 │
 ├── frontend/                    # Next.js 14 application
-│   ├── app/
-│   │   ├── (auth)/
-│   │   │   ├── login/
-│   │   │   └── register/
-│   │   ├── dashboard/
-│   │   ├── marketplace/
-│   │   │   ├── page.tsx         # SCU listing browser
-│   │   │   └── [id]/page.tsx   # Individual SCU detail + bidding
-│   │   ├── map/
-│   │   ├── portfolio/
-│   │   └── layout.tsx
-│   ├── components/
-│   │   ├── ui/                  # Reusable design system components
-│   │   ├── marketplace/         # Auction, bid, SCU listing components
-│   │   ├── map/                 # Leaflet map wrapper and overlays
-│   │   ├── settlement/          # Settlement status tracker
-│   │   └── dashboard/           # Portfolio, metrics, forecast panel
-│   ├── lib/
-│   │   ├── api.ts               # API client
-│   │   ├── auth.ts              # NextAuth config
-│   │   └── websocket.ts         # Socket.io client
-│   ├── store/                   # Zustand state stores
-│   └── public/
-│       └── nl-grid-outline.svg  # Netherlands map asset
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── landing/page.tsx
+│   │   │   ├── login/page.tsx
+│   │   │   ├── register/page.tsx
+│   │   │   ├── dashboard/page.tsx
+│   │   │   ├── marketplace/
+│   │   │   │   ├── page.tsx         # SCU listing browser
+│   │   │   │   └── [id]/page.tsx    # SCU detail + bidding
+│   │   │   ├── map/page.tsx
+│   │   │   ├── forecast/page.tsx
+│   │   │   ├── portfolio/page.tsx
+│   │   │   ├── layout.tsx
+│   │   │   └── globals.css
+│   │   ├── components/
+│   │   │   ├── layout/              # AppShell, Sidebar, Providers, Toast
+│   │   │   ├── marketplace/         # ScuCard, CreateScuModal
+│   │   │   ├── map/                 # MapView, map-view.css
+│   │   │   ├── settlement/          # SettlementTracker
+│   │   │   └── ui/                  # Toaster
+│   │   ├── hooks/
+│   │   │   ├── useWebSocket.ts
+│   │   │   ├── useCountdown.ts
+│   │   │   └── use-realtime.ts
+│   │   ├── stores/                  # Zustand: auth, marketplace, toasts
+│   │   ├── lib/
+│   │   │   ├── api.ts
+│   │   │   └── utils.ts
+│   │   └── types/
+│   │       └── index.ts
+│   ├── next.config.js
+│   ├── tailwind.config.ts
+│   └── tsconfig.json
 │
 ├── backend/                     # Express API server
 │   ├── src/
+│   │   ├── app.ts
 │   │   ├── routes/
 │   │   │   ├── auth.ts
-│   │   │   ├── companies.ts
 │   │   │   ├── scus.ts
 │   │   │   ├── bids.ts
 │   │   │   ├── trades.ts
 │   │   │   ├── settlements.ts
-│   │   │   └── congestion.ts
+│   │   │   ├── congestion.ts
+│   │   │   ├── forecast.ts
+│   │   │   └── internal.ts          # Dev-only match trigger
 │   │   ├── services/
 │   │   │   ├── matching-engine.ts   # Core auction matching logic
-│   │   │   ├── settlement.ts        # State machine implementation
-│   │   │   ├── scu-registry.ts      # SCU validation and management
-│   │   │   ├── congestion.ts        # Mock congestion data service
-│   │   │   └── forecast.ts          # Rule-based forecast simulation
+│   │   │   ├── settlement.ts        # Settlement state machine
+│   │   │   └── forecast.service.ts  # Rule-based forecast simulation
 │   │   ├── middleware/
 │   │   │   ├── auth.ts
+│   │   │   ├── errorHandler.ts
 │   │   │   ├── rateLimit.ts
 │   │   │   └── logger.ts
 │   │   ├── websocket/
-│   │   │   └── events.ts            # Socket.io event definitions
-│   │   └── app.ts
+│   │   │   └── events.ts            # Socket.IO event definitions
+│   │   └── lib/
+│   │       └── prisma.ts            # Prisma client singleton
 │   ├── prisma/
 │   │   ├── schema.prisma            # Database schema
-│   │   └── seed.ts                  # Demo data seeder
-│   └── tests/
-│       ├── matching-engine.test.ts
-│       ├── settlement.test.ts
-│       └── api/
+│   │   ├── seed.ts                  # Demo data seeder
+│   │   ├── seed-rich.ts             # Extended seed data
+│   │   └── migrations/              # Prisma migration history
+│   ├── tests/
+│   │   ├── matching-engine.test.ts
+│   │   ├── settlement.test.ts
+│   │   └── api/auth.test.ts
+│   └── tsconfig.json
 │
 ├── mock-data/
 │   ├── congestion-points.json       # Dutch grid congestion hotspots
 │   ├── grid-operators.json          # TenneT, Liander, Stedin, Enexis
 │   ├── demo-companies.json          # Seeded demo participants
-│   └── forecast-scenarios.json      # Congestion forecast mock scenarios
+│   ├── forecast-scenarios.json      # Congestion forecast scenarios
+│   └── price-history.json           # Historical clearing prices
 │
-└── docs/
-    ├── architecture.md              # Detailed architecture documentation
-    ├── api-reference.md             # Full API endpoint reference
-    ├── matching-engine.md           # Algorithm documentation
-    └── regulatory-context.md       # ACM/Energiewet background
+└── docs/                            # Extended documentation
 ```
-
 ---
 
 ## 8. Getting Started
@@ -824,7 +838,7 @@ chore: upgrade Prisma to v5.10
 
 ## 19. Team
 
-**Team Seven — MSc Business Anlaytics & Management (FinTech Business Models and Applications) programme at the Erasmus University Rotterdam.**
+**Team Seven — MSc Business Analytics & Management (FinTech Business Models and Applications) programme at the Erasmus University Rotterdam.**
 
 | Name | Role | GitHub |
 |---|---|---|
@@ -852,7 +866,7 @@ GridSlot is designed to operate within the ACM's **congestion service provider**
 
 ## 21. License
 
-This project is submitted as academic coursework for the MSc Business Anlaytics & Management (FinTech Business Models and Applications) programme at the Erasmus University Rotterdam. The codebase is not licensed for commercial use without written permission from the authors.
+This project is submitted as academic coursework for the MSc Business Analytics & Management (FinTech Business Models and Applications) programme at the Erasmus University Rotterdam. The codebase is not licensed for commercial use without written permission from the authors.
 
 ---
 
