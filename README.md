@@ -784,6 +784,8 @@ The MVP runs the matching engine on a 60-second interval. At scale, near real-ti
 
 ## 17. Known Limitations and Roadmap
 
+No real payment movement — account balances are managed off-platform. GridSlot handles trade matching and settlement logic; actual money movement would connect to a payment rail (Stripe, Adyen, or SEPA via a Dutch PSP) in production.
+
 ### MVP Limitations
 - All grid operator data is mocked — no live API connections
 - Payment escrow is simulated, not real
