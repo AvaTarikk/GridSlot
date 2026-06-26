@@ -27,11 +27,18 @@
  *                                      [SETTLED]             [REFUNDED]
  *                                      (terminal)            (terminal)
  *
+ * DELIVERY SCORE FORMULA
+ * ----------------------
+ * - No score changes until a seller has at least MINIMUM_TRADES completed trades
+ * - After that, score = settled / last ROLLING_WINDOW completed trades
+ * - This prevents one early miss from permanently damaging a seller's reputation
+ * - Completed trades = SETTLED or CANCELLED (i.e. trades with a final outcome)
+ *
  * FINANCIAL INVARIANTS
  * --------------------
  * - Collateral forfeiture on non-delivery = 5% of trade total_value_cents (Math.ceil)
  * - Buyer refund on non-delivery = 100% of trade total_value_cents
- * - Seller delivery_score is recalculated on SETTLED and REFUNDED (settled / total trades)
+ * - Seller delivery_score is recalculated on SETTLED and REFUNDED using a rolling window
  * - All monetary values are integers in EUR cents — no floats anywhere
  * - Every transition writes an AuditLog entry in the same DB transaction
  * - Terminal states (SETTLED, REFUNDED) have no valid outgoing transitions
@@ -48,6 +55,64 @@ import { prisma } from '../lib/prisma';
 import type { Prisma } from '@prisma/client';
 import { InvalidStateTransitionError } from '../middleware/errorHandler';
 import type { SettlementStatus } from '@prisma/client';
+
+// ─── Delivery score config ────────────────────────────────────────────────────
+
+/**
+ * Minimum number of completed trades before delivery score is calculated.
+ * Below this threshold the score is left untouched (stays at default 1.0).
+ * Prevents one early miss from permanently damaging a new seller's reputation.
+ */
+const MINIMUM_TRADES = 5;
+
+/**
+ * Number of most recent completed trades to consider when calculating score.
+ * Older trades beyond this window are ignored — recent behaviour matters most.
+ */
+const ROLLING_WINDOW = 20;
+
+/**
+ * Recalculates and updates a seller's delivery score based on their last
+ * ROLLING_WINDOW completed trades. Only runs if they have at least MINIMUM_TRADES.
+ *
+ * Completed trades are those with a terminal status (SETTLED or CANCELLED).
+ * Trades still in progress are excluded from the calculation entirely.
+ *
+ * Must be called inside an existing Prisma transaction.
+ *
+ * @param tx - Active Prisma transaction client
+ * @param sellerId - Company ID of the seller to recalculate
+ * @returns The new score rounded to 3 decimal places, or null if below minimum threshold
+ */
+async function recalculateDeliveryScore(
+  tx: Prisma.TransactionClient,
+  sellerId: string
+): Promise<number | null> {
+  const recentTrades = await tx.trade.findMany({
+    where: {
+      seller_id: sellerId,
+      status: { in: ['SETTLED', 'CANCELLED'] },
+    },
+    orderBy: { matched_at: 'desc' },
+    take: ROLLING_WINDOW,
+  });
+
+  // Not enough history yet — leave score unchanged
+  if (recentTrades.length < MINIMUM_TRADES) return null;
+
+  const settledCount = recentTrades.filter(t => t.status === 'SETTLED').length;
+
+  // Score = fraction of recent completed trades that were successfully delivered
+  // Rounded to 3 decimal places (e.g. 0.933 = 93.3%)
+  const newScore = Math.round((settledCount / recentTrades.length) * 1000) / 1000;
+
+  await tx.company.update({
+    where: { id: sellerId },
+    data: { delivery_score: newScore },
+  });
+
+  return newScore;
+}
 
 // ─── Transition map ───────────────────────────────────────────────────────────
 
@@ -228,7 +293,7 @@ export async function transitionToConfirmed(
     await tx.auditLog.create({
       data: {
         action: 'SETTLEMENT_CONFIRMED',
-        company_id: actorCompanyId,  // seller who confirmed
+        company_id: actorCompanyId,
         settlement_id: settlementId,
         metadata: {
           from: settlement.status,
@@ -247,7 +312,8 @@ export async function transitionToConfirmed(
  *
  * This is the happy-path terminal state. On settlement:
  *   1. The settlement and trade records are marked SETTLED
- *   2. The seller's delivery_score is incremented (settled trades / all trades)
+ *   2. The seller's delivery_score is recalculated using a rolling window
+ *      (only if they have reached the MINIMUM_TRADES threshold)
  *   3. In production, escrowed funds would be released to the seller here
  *
  * This transition is triggered automatically by runSettlementChecks() after
@@ -255,7 +321,8 @@ export async function transitionToConfirmed(
  *
  * DELIVERY SCORE FORMULA
  * ----------------------
- * score = (previously settled trades + 1) / total trades for this seller
+ * score = settled trades / last ROLLING_WINDOW completed trades
+ * Only calculated once MINIMUM_TRADES completed trades exist.
  * Stored as a float rounded to 3 decimal places (e.g. 0.933 = 93.3%).
  * Visible to all marketplace participants to assess seller reliability.
  *
@@ -284,24 +351,10 @@ export async function transitionToSettled(settlementId: string): Promise<void> {
       data: { status: 'SETTLED' },
     });
 
-    // Recalculate delivery score for the seller.
-    // We count *all* their trades (including cancelled) as the denominator —
-    // this ensures non-delivery events permanently affect the score even after
-    // subsequent successful deliveries.
-    const seller = settlement.trade.seller;
-    const allTrades = await tx.trade.count({ where: { seller_id: seller.id } });
-    const settledTrades = await tx.trade.count({
-      where: { seller_id: seller.id, status: 'SETTLED' },
-    });
-
-    // +1 because the current trade's status update happens in the same transaction
-    // so it won't be counted yet by the COUNT query above
-    const newScore = (settledTrades + 1) / allTrades;
-
-    await tx.company.update({
-      where: { id: seller.id },
-      data: { delivery_score: Math.round(newScore * 1000) / 1000 },
-    });
+    // Recalculate delivery score using rolling window.
+    // Returns null if seller hasn't reached MINIMUM_TRADES yet — score stays at 1.0.
+    const sellerId = settlement.trade.seller.id;
+    const newScore = await recalculateDeliveryScore(tx, sellerId);
 
     await tx.auditLog.create({
       data: {
@@ -312,7 +365,7 @@ export async function transitionToSettled(settlementId: string): Promise<void> {
           to: 'SETTLED',
           settled_at: now.toISOString(),
           total_value_cents: settlement.trade.total_value_cents,
-          seller_new_delivery_score: Math.round(newScore * 1000) / 1000,
+          seller_new_delivery_score: newScore ?? 'pending_minimum_trades',
         },
       },
     });
@@ -383,11 +436,12 @@ export async function transitionToNonDelivery(settlementId: string): Promise<voi
  * Finalises the non-delivery outcome:
  *   1. The full trade value is recorded as the buyer's refund amount
  *   2. The trade is marked CANCELLED
- *   3. The seller's delivery_score is penalised (settled / all trades, no +1)
+ *   3. The seller's delivery_score is recalculated using a rolling window
+ *      (only if they have reached the MINIMUM_TRADES threshold)
  *   4. In production, funds would be returned to the buyer's account here
  *
  * The collateral_forfeited_cents was already set in transitionToNonDelivery().
- * This function only needs to handle the refund side.
+ * This function only needs to handle the refund and score penalty side.
  *
  * @param settlementId - The settlement to refund
  * @throws {InvalidStateTransitionError} If not currently in NON_DELIVERY state
@@ -420,22 +474,11 @@ export async function transitionToRefunded(settlementId: string): Promise<void> 
       data: { status: 'CANCELLED' },
     });
 
-    // Penalise seller delivery score.
-    // Unlike the SETTLED path, we do NOT +1 here — this trade counts against the seller.
-    const seller = settlement.trade.seller;
-    const allTrades = await tx.trade.count({ where: { seller_id: seller.id } });
-    const settledTrades = await tx.trade.count({
-      where: { seller_id: seller.id, status: 'SETTLED' },
-    });
-
-    // If somehow this is their only trade and it failed, score stays at 1.0
-    // (edge case: protects against division producing NaN)
-    const newScore = allTrades > 0 ? settledTrades / allTrades : 1.0;
-
-    await tx.company.update({
-      where: { id: seller.id },
-      data: { delivery_score: Math.round(newScore * 1000) / 1000 },
-    });
+    // Recalculate delivery score using rolling window.
+    // This trade is now CANCELLED so it counts against the seller in the window.
+    // Returns null if seller hasn't reached MINIMUM_TRADES yet — score stays at 1.0.
+    const sellerId = settlement.trade.seller.id;
+    const newScore = await recalculateDeliveryScore(tx, sellerId);
 
     await tx.auditLog.create({
       data: {
@@ -446,7 +489,7 @@ export async function transitionToRefunded(settlementId: string): Promise<void> 
           to: 'REFUNDED',
           buyer_refund_cents: refundAmount,
           collateral_forfeited_cents: settlement.collateral_forfeited_cents,
-          seller_new_delivery_score: Math.round(newScore * 1000) / 1000,
+          seller_new_delivery_score: newScore ?? 'pending_minimum_trades',
         },
       },
     });
@@ -484,7 +527,7 @@ export interface SettlementCheckResult {
  * Errors on individual settlements are caught and logged — one failed settlement
  * must never block others from being processed.
  *
- * This function is called every 5 minutes by startSettlementChecker().
+ * This function is called every 1 minute by startSettlementChecker().
  *
  * @param emitEvent - Optional WebSocket emitter for real-time client notifications
  * @returns A summary of what was processed
@@ -559,7 +602,7 @@ export async function runSettlementChecks(
 // ─── Scheduler ────────────────────────────────────────────────────────────────
 
 /**
- * Starts the settlement background checker on a 5-minute interval.
+ * Starts the settlement background checker on a 1-minute interval.
  *
  * In production this would be a dedicated cron job or queue worker (e.g. BullMQ)
  * to decouple settlement processing from the API server process. For the MVP,
@@ -571,9 +614,9 @@ export async function runSettlementChecks(
 export function startSettlementChecker(
   emitEvent?: (event: string, payload: unknown) => void
 ): NodeJS.Timeout {
-  const intervalMs = 5 * 60 * 1000; // 5 minutes
+  const intervalMs = 60 * 1000; // 1 minute
 
-  console.warn('[Settlement] Checker started — interval: 5min');
+  console.warn('[Settlement] Checker started — interval: 1min');
 
   return setInterval(async () => {
     try {

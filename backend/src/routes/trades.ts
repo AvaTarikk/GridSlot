@@ -25,7 +25,7 @@ tradesRouter.get('/', requireAuth, async (req, res, next) => {
           scu: { include: { congestion_point: true } },
           seller: { select: { id: true, name: true, delivery_score: true } },
           buyer: { select: { id: true, name: true } },
-          settlement: { select: { status: true, delivery_window_closes_at: true } },
+          settlement: { select: { id: true, status: true, delivery_window_closes_at: true } },
         },
         orderBy: { matched_at: 'desc' },
         skip: (pageNum - 1) * limitNum,

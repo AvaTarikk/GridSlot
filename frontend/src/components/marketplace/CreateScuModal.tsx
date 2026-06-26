@@ -217,8 +217,9 @@ export function CreateScuModal({ onClose, onCreated }: CreateScuModalProps) {
     }
   }
 
-  const totalCents      = eurosToCents(Number(form.ask_price_euros)) * Number(form.mwh)
-  const collateralCents = Math.ceil(totalCents * 0.05)
+  const totalCents       = eurosToCents(Number(form.ask_price_euros)) * Number(form.mwh)
+  const collateralCents  = Math.ceil(totalCents * 0.05)
+  const platformFeeCents = Math.ceil(totalCents * 10 / 10_000) // 0.1%
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -315,6 +316,18 @@ export function CreateScuModal({ onClose, onCreated }: CreateScuModalProps) {
                 <span className="text-slate-400">Collateral required (5%)</span>
                 <span className="text-amber-400 tabular">
                   €{(collateralCents / 100).toFixed(2)}
+                </span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-400">Platform fee (0.1%)</span>
+                <span className="text-amber-400 tabular">
+                  €{(platformFeeCents / 100).toFixed(2)}
+                </span>
+              </div>
+              <div className="flex justify-between border-t border-white/5 pt-2">
+                <span className="text-slate-300 font-medium">You receive (net)</span>
+                <span className="text-white tabular font-semibold">
+                  €{((totalCents - platformFeeCents) / 100).toFixed(2)}
                 </span>
               </div>
               <p className="text-[11px] text-slate-400 pt-1 border-t border-white/5">

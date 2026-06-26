@@ -115,10 +115,11 @@ export async function matchScu(
   // Step 3: Freeze trade values at the moment of match.
   // These values must never be recalculated after this point — they are the
   // legally binding terms of the trade.
-  const clearingPrice = winningBid.price_cents; // buyer pays their bid, not the ask
+  const clearingPrice = winningBid.price_cents;
   const mwhAmount = scu.mwh_amount;
-  const totalValue = clearingPrice * mwhAmount;  // integer arithmetic — no float risk
-
+  const totalValue = clearingPrice * mwhAmount;
+  const platformFee = Math.ceil(totalValue * 10 / 10_000); // 0.1% rounded up
+  
   // Step 4: Execute all DB writes atomically.
   // If any write fails, the entire transaction rolls back and the SCU remains ACTIVE.
   const result = await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
@@ -162,6 +163,8 @@ export async function matchScu(
         clearing_price_cents: clearingPrice,
         mwh_amount: mwhAmount,
         total_value_cents: totalValue,
+        seller_fee_cents: platformFee,  // ADD THIS
+        buyer_fee_cents: platformFee,   // ADD THIS
         status: 'ACTIVE',
       },
     });
@@ -201,6 +204,8 @@ export async function matchScu(
           clearing_price_cents: clearingPrice,
           mwh_amount: mwhAmount,
           total_value_cents: totalValue,
+          seller_fee_cents: platformFee,   // ADD THIS
+          buyer_fee_cents: platformFee,    // ADD THIS
           losing_bid_count: losingBidIds.length,
         },
       },

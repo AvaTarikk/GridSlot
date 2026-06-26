@@ -46,7 +46,6 @@ export default function ScuDetailPage() {
   const [bidLoading, setBidLoading] = useState(false)
   const [bidError, setBidError] = useState('')
 
-  // Recalculate target every time the timer expires
   const [cycleTarget, setCycleTarget] = useState(() => nextMatchingCycle())
   const { display: countdown, expired } = useCountdown(cycleTarget)
 
@@ -69,10 +68,8 @@ export default function ScuDetailPage() {
   }, [id])
 
   const isSeller = scu?.company_id === company?.id
-  // Fixed: backend uses 'ACTIVE' not 'LISTED'
   const canBid = !isSeller && scu?.status === 'ACTIVE' && company?.kyb_status === 'ACTIVE'
 
-  // MWh field: backend returns mwh_amount
   const mwh = scu?.mwh_amount ?? scu?.mwh ?? 0
 
   async function handleBid(e: FormEvent) {
@@ -141,6 +138,10 @@ export default function ScuDetailPage() {
 
   const severity = scu.congestion_point?.severity ?? 'GREEN'
 
+  // Bid cost breakdown
+  const bidTotalCents = eurosToCents(Number(bidAmount)) * mwh
+  const bidFeeCents   = Math.ceil(bidTotalCents * 10 / 10_000) // 0.1%
+
   return (
     <AppShell>
       <div className="px-8 py-8 max-w-4xl mx-auto">
@@ -167,7 +168,6 @@ export default function ScuDetailPage() {
                 </div>
               </div>
 
-              {/* Fixed: use time_window_start / time_window_end */}
               <div className="bg-surface-3 rounded-lg px-4 py-3 font-mono text-sm text-slate-300 mb-5">
                 {formatTimeWindow(scu.time_window_start ?? scu.start_time, scu.time_window_end ?? scu.end_time)}
               </div>
@@ -275,12 +275,21 @@ export default function ScuDetailPage() {
                   </p>
                 </div>
 
-                {bidAmount && (
-                  <div className="bg-surface-3 rounded-lg px-3 py-2 text-xs text-slate-400">
-                    Total: <span className="text-white font-medium tabular">
-                      {formatEuros(eurosToCents(Number(bidAmount)) * mwh)}
-                    </span>
-                    <span className="text-slate-500"> for {mwh} MWh</span>
+                {bidAmount && Number(bidAmount) > 0 && (
+                  <div className="bg-surface-3 rounded-lg px-3 py-3 text-xs text-slate-400 space-y-1.5">
+                    <div className="flex justify-between">
+                      <span>Total value</span>
+                      <span className="text-white font-medium tabular">{formatEuros(bidTotalCents)}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Platform fee (0.1%)</span>
+                      <span className="text-amber-400 tabular">{formatEuros(bidFeeCents)}</span>
+                    </div>
+                    <div className="flex justify-between border-t border-white/5 pt-1.5">
+                      <span>You pay</span>
+                      <span className="text-white font-semibold tabular">{formatEuros(bidTotalCents + bidFeeCents)}</span>
+                    </div>
+                    <p className="text-[10px] text-slate-600">for {mwh} MWh · fee collected at settlement</p>
                   </div>
                 )}
 

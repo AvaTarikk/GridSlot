@@ -27,9 +27,13 @@ interface PortfolioSnapshot {
   recentBids: Bid[]
 }
 
-async function fetchSnapshot(): Promise<PortfolioSnapshot> {
+// companyId is passed in so we can filter revenue/spend by role without
+// relying on a closure over a potentially-stale auth store reference.
+async function fetchSnapshot(companyId: string): Promise<PortfolioSnapshot> {
   const [scuRes, bidRes, tradeRes] = await Promise.all([
-    scusApi.list({ status: 'ACTIVE', limit: 100 }),
+    // BUG 4 FIX: pass mine=true so the backend scopes results to this company.
+    // Previously this fetched ALL companies' active SCUs, inflating the count.
+    scusApi.list({ status: 'ACTIVE', limit: 100, mine: true }),
     bidsApi.list({ status: 'OPEN', limit: 100 }),
     tradesApi.list({ limit: 20 }),
   ])
@@ -42,8 +46,17 @@ async function fetchSnapshot(): Promise<PortfolioSnapshot> {
   return {
     activeListings: getTotal(scuRes),
     openBids: getTotal(bidRes),
-    totalRevenueCents: settledTrades.reduce((sum, t) => sum + t.clearing_price_cents, 0),
-    totalSpendCents: settledTrades.reduce((sum, t) => sum + t.clearing_price_cents, 0),
+
+    // BUG 1 + 2 FIX: filter by seller_id / buyer_id (not the same array for
+    // both), and sum total_value_cents (the actual trade total) not
+    // clearing_price_cents (which is price-per-MWh, far too small).
+    totalRevenueCents: settledTrades
+      .filter((t) => t.seller_id === companyId)
+      .reduce((sum, t) => sum + t.total_value_cents - (t.seller_fee_cents ?? 0), 0),
+    totalSpendCents: settledTrades
+      .filter((t) => t.buyer_id === companyId)
+      .reduce((sum, t) => sum + t.total_value_cents + (t.buyer_fee_cents ?? 0), 0),
+
     recentTrades: tradeRes.data.slice(0, 6),
     recentBids: bidRes.data.slice(0, 6),
   }
@@ -71,11 +84,12 @@ export default function DashboardPage() {
   const [error, setError] = useState('')
 
   useEffect(() => {
-    fetchSnapshot()
+    if (!company?.id) return
+    fetchSnapshot(company.id)
       .then(setData)
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false))
-  }, [])
+  }, [company?.id])
 
   const hour = new Date().getHours()
   const greeting = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening'
@@ -159,10 +173,11 @@ export default function DashboardPage() {
                     <div key={trade.id} className="px-5 py-3.5 flex items-center gap-3">
                       <span className={cn('w-1.5 h-1.5 rounded-full shrink-0', tradeStatusDot[trade.status] ?? 'bg-slate-500')} />
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm text-slate-200 tabular">{formatEuros(trade.clearing_price_cents)}</p>
+                        <p className="text-sm text-slate-200 tabular">{formatEuros(trade.total_value_cents)}</p>
                         <p className="text-xs text-slate-500">{tradeStatusLabel[trade.status]}</p>
                       </div>
-                      <span className="text-xs text-slate-600">{formatRelative(trade.created_at)}</span>
+                      {/* BUG 3 FIX: Trade has matched_at, not created_at */}
+                      <span className="text-xs text-slate-600">{formatRelative(trade.matched_at)}</span>
                     </div>
                   ))}
                 </div>

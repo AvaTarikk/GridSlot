@@ -93,24 +93,49 @@ bidsRouter.post('/', requireAuth, requireRole('BUYER', 'BOTH'), async (req, res,
 });
 
 // ─── GET /api/bids/my ─────────────────────────────────────────────────────────
-
 bidsRouter.get('/my', requireAuth, async (req, res, next) => {
   try {
-    const { status, page = '1', limit = '20' } = req.query;
+    const {
+      scu_id,
+      status,
+      page = '1',
+      limit = '20',
+    } = req.query;
+
     const pageNum = Math.max(1, parseInt(page as string, 10));
     const limitNum = Math.min(100, parseInt(limit as string, 10));
 
-    const where: Record<string, unknown> = { company_id: req.companyId };
-    if (status) where.status = status;
+    const where: Prisma.BidWhereInput = {
+      company_id: req.companyId,
+    };
+
+    if (status) where.status = String(status);
+    if (scu_id) where.scu_id = String(scu_id);
 
     const [bids, total] = await Promise.all([
       prisma.bid.findMany({
         where,
         include: {
-          scu: { include: { congestion_point: true } },
-          trade: { select: { id: true, status: true, settlement: { select: { status: true } } } },
+          scu: {
+            include: {
+              congestion_point: true,
+            },
+          },
+          trade: {
+            select: {
+              id: true,
+              status: true,
+              settlement: {
+                select: {
+                  status: true,
+                },
+              },
+            },
+          },
         },
-        orderBy: { created_at: 'desc' },
+        orderBy: {
+          created_at: 'desc',
+        },
         skip: (pageNum - 1) * limitNum,
         take: limitNum,
       }),
@@ -119,7 +144,12 @@ bidsRouter.get('/my', requireAuth, async (req, res, next) => {
 
     res.json({
       data: bids,
-      pagination: { page: pageNum, limit: limitNum, total, pages: Math.ceil(total / limitNum) },
+      pagination: {
+        page: pageNum,
+        limit: limitNum,
+        total,
+        pages: Math.ceil(total / limitNum),
+      },
     });
   } catch (err) {
     next(err);

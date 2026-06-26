@@ -207,6 +207,12 @@ model Trade {
   /// clearing_price_cents × mwh_amount. Pre-computed; never recalculate.
   total_value_cents     Int
 
+  /// Platform fee charged to the seller (0.1% of total value, rounded up).
+  seller_fee_cents      Int
+
+  /// Platform fee charged to the buyer (0.1% of total value, rounded up).
+  buyer_fee_cents       Int
+
   status         TradeStatus @default(ACTIVE)
   matched_at     DateTime    @default(now())
   updated_at     DateTime    @updatedAt

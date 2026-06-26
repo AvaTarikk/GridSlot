@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { io, Socket } from 'socket.io-client'
 import { useAuthStore } from '@/stores/auth'
 import { useMarketplaceStore } from '@/stores/marketplace'
-import type { Trade, Bid, CongestionPoint, WsEvent } from '@/types'
+import type { Trade, Bid, CongestionPoint } from '@/types'
 
 const WS_URL = process.env.NEXT_PUBLIC_WS_URL ?? 'ws://localhost:4000'
 
@@ -35,8 +35,7 @@ export function useWebSocket() {
       console.log('[WS] disconnected')
     })
 
-    socket.on('trade:matched', (event: WsEvent<Trade>) => {
-      const trade = event.payload
+    socket.on('trade:matched', (trade: Trade) => {
       addRecentTrade(trade)
       markScuUpdated(trade.scu_id)
       addNotification({
@@ -46,8 +45,7 @@ export function useWebSocket() {
       })
     })
 
-    socket.on('bid:lost', (event: WsEvent<Bid>) => {
-      const bid = event.payload
+    socket.on('bid:lost', (bid: Bid) => {
       markScuUpdated(bid.scu_id)
       addNotification({
         type: 'info',
@@ -56,16 +54,16 @@ export function useWebSocket() {
       })
     })
 
-    socket.on('settlement:update', (event: WsEvent<{ trade_id: string; status: string }>) => {
+    socket.on('settlement:update', (data: { trade_id: string; status: string }) => {
       addNotification({
         type: 'info',
         title: 'Settlement update',
-        message: `Settlement status changed to ${event.payload.status}`,
+        message: `Settlement status changed to ${data.status}`,
       })
     })
 
-    socket.on('congestion:update', (event: WsEvent<Partial<CongestionPoint> & { id: string }>) => {
-      const { id, ...updates } = event.payload
+    socket.on('congestion:update', (data: Partial<CongestionPoint> & { id: string }) => {
+      const { id, ...updates } = data
       updateCongestionPoint(id, updates)
     })
 

@@ -9,7 +9,6 @@ export const internalRouter = Router();
 
 internalRouter.post('/trigger-matching', requireInternal, async (_req, res, next) => {
   try {
-    // Dynamically import to avoid circular deps at startup
     const { runMatchingCycle } = await import('../services/matching-engine.js');
     const result = await runMatchingCycle();
     res.json({ triggered: true, ...result });
@@ -25,6 +24,30 @@ internalRouter.post('/trigger-settlement', requireInternal, async (_req, res, ne
     const { runSettlementChecks } = await import('../services/settlement.js');
     const result = await runSettlementChecks();
     res.json({ triggered: true, ...result });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// ─── POST /api/internal/advance-settlement/:id ────────────────────────────────
+
+internalRouter.post('/advance-settlement/:id', requireInternal, async (req, res, next) => {
+  try {
+    const { transitionToDeliveryPending } = await import('../services/settlement.js');
+    const result = await transitionToDeliveryPending(req.params.id);
+    res.json(result);
+  } catch (err) {
+    next(err);
+  }
+});
+
+// ─── POST /api/internal/force-settle/:id ──────────────────────────────────────
+
+internalRouter.post('/force-settle/:id', requireInternal, async (req, res, next) => {
+  try {
+    const { transitionToSettled } = await import('../services/settlement.js');
+    await transitionToSettled(req.params.id);
+    res.json({ settled: true, settlement_id: req.params.id });
   } catch (err) {
     next(err);
   }

@@ -32,10 +32,18 @@ const CreateScuSchema = z.object({
 );
 
 // ─── GET /api/scus ────────────────────────────────────────────────────────────
+// Optional query param: ?mine=true  → scopes to the authenticated company only.
+// Without it, all ACTIVE SCUs are returned (marketplace view for buyers).
 
 scusRouter.get('/', requireAuth, async (req, res, next) => {
   try {
-    const { congestion_point_id, status = 'ACTIVE', page = '1', limit = '20' } = req.query;
+    const {
+      congestion_point_id,
+      status = 'ACTIVE',
+      page = '1',
+      limit = '20',
+      mine,
+    } = req.query;
 
     const pageNum = Math.max(1, parseInt(page as string, 10));
     const limitNum = Math.min(100, Math.max(1, parseInt(limit as string, 10)));
@@ -43,6 +51,16 @@ scusRouter.get('/', requireAuth, async (req, res, next) => {
 
     const where: Record<string, unknown> = { status };
     if (congestion_point_id) where.congestion_point_id = congestion_point_id;
+
+    // BUG 4 FIX: ?mine=true scopes results to the authenticated company.
+    // Without this flag the route returns all companies' SCUs (correct for
+    // the marketplace view); with it, only the caller's own SCUs are returned
+    // (correct for dashboard / portfolio). Previously the dashboard fetched
+    // all SCUs and displayed the total, inflating the count with other
+    // companies' listings.
+    if (mine === 'true') {
+      where.company_id = req.companyId!;
+    }
 
     const [scus, total] = await Promise.all([
       prisma.scu.findMany({
@@ -124,7 +142,7 @@ scusRouter.post('/', requireAuth, requireRole('SELLER', 'BOTH'), async (req, res
     });
     if (!point) throw new NotFoundError('Congestion point');
 
-    // Calculate collateral: 10% of total value
+    // Calculate collateral: 5% of total value
     const totalValue = data.ask_price_cents * data.mwh_amount;
     const collateral = Math.ceil(totalValue * 0.05);
 

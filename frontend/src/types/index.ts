@@ -81,6 +81,11 @@ export interface Trade {
   seller_id: string
   seller?: Pick<Company, 'id' | 'name'>
   clearing_price_cents: number
+
+  // ADD THESE
+  seller_fee_cents?: number
+  buyer_fee_cents?: number
+
   status: TradeStatus
   created_at: string
   settlement?: Settlement
