@@ -845,7 +845,7 @@ chore: upgrade Prisma to v5.10
 | Name | Role | GitHub |
 |---|---|---|
 | Tarik Ülgen | Backend, Matching Engine, Architecture | @AvaTarikk |
-| Anouar Maniari | Frontend, UX, Congestion Map | @anouar |
+| Anouar Maniari | Frontend, UX, Congestion Map | @anouarm473 |
 
 ---
 
