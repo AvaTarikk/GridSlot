@@ -5,17 +5,34 @@ import SettlementTracker from '@/components/settlement/SettlementTracker';
 import { scus, bids, trades, settlements } from '@/lib/api';
 import {
   formatEuros,
+  formatEurosCompact,
   formatDateTime,
   formatTimeWindow,
   scuStatusLabel,
   scuStatusColor,
   bidStatusColor,
+  cn,
 } from '@/lib/utils';
 import { useAuthStore } from '@/stores/auth';
 import { useToastStore } from '@/stores/toasts';
 import type { Scu, Bid, Trade, Settlement } from '@/types';
 
 type Tab = 'listings' | 'bids' | 'trades';
+
+function StatCard({ label, value, sub, accent }: {
+  label: string
+  value: string
+  sub?: string
+  accent?: string
+}) {
+  return (
+    <div className="card px-5 py-4">
+      <p className="stat-label">{label}</p>
+      <p className={cn('stat-value mt-2', accent)}>{value}</p>
+      {sub && <p className="text-xs text-slate-500 mt-1">{sub}</p>}
+    </div>
+  )
+}
 
 export default function PortfolioPage() {
   const { company } = useAuthStore();
@@ -32,8 +49,8 @@ export default function PortfolioPage() {
     try {
       const [scuRes, bidRes, tradeRes] = await Promise.all([
         scus.list({ limit: 50 }),
-        bids.list({ }),
-        trades.list({ }),
+        bids.list({}),
+        trades.list({}),
       ]);
       setScuList(scuRes.data ?? []);
       setBidList(bidRes.data ?? []);
@@ -80,41 +97,41 @@ export default function PortfolioPage() {
     .reduce((a, t) => a + (t.total_value_cents ?? 0), 0);
 
   const TabBtn = ({ t, label }: { t: Tab; label: string }) => (
-    <button onClick={() => setTab(t)} style={{
-      padding: '8px 20px', borderRadius: 4, fontSize: 13, fontWeight: 500, cursor: 'pointer',
-      border: '1px solid', transition: 'all 0.15s',
-      background: tab === t ? '#1e2330' : 'transparent',
-      borderColor: tab === t ? '#2a3347' : 'transparent',
-      color: tab === t ? '#e8eaf0' : '#8892a4',
-    }}>{label}</button>
+    <button
+      onClick={() => setTab(t)}
+      className={cn(
+        'px-4 py-1.5 rounded-md text-sm font-medium transition-colors border',
+        tab === t
+          ? 'bg-surface-3 border-white/10 text-white'
+          : 'border-transparent text-slate-400 hover:text-slate-200'
+      )}
+    >
+      {label}
+    </button>
   );
+
+  const thClass = "text-left py-2.5 px-4 text-[10px] font-mono tracking-widest text-slate-600 uppercase font-medium";
+  const tdClass = "py-3 px-4 text-sm";
 
   return (
     <AppShell>
-      <div style={{ padding: '32px 40px', maxWidth: 1100 }}>
+      <div className="px-8 py-8 max-w-6xl mx-auto">
         {/* Header */}
-        <div style={{ marginBottom: 28 }}>
-          <div style={{ fontSize: 11, color: '#4a5568', fontFamily: 'monospace', letterSpacing: '0.08em', marginBottom: 6 }}>PORTFOLIO</div>
-          <h1 style={{ fontSize: 24, fontWeight: 700, color: '#e8eaf0', margin: 0 }}>{company?.name}</h1>
+        <div className="mb-8">
+          <p className="stat-label mb-1">Portfolio</p>
+          <h1 className="font-display text-2xl font-semibold text-white">{company?.name}</h1>
         </div>
 
         {/* Stats */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 28 }}>
-          {[
-            { label: 'ACTIVE LISTINGS', value: String(myScus.filter(s => s.status === 'ACTIVE').length), color: '#e8eaf0' },
-            { label: 'OPEN BIDS', value: String(bidList.filter(b => b.status === 'OPEN').length), color: '#e8eaf0' },
-            { label: 'REVENUE (SETTLED)', value: formatEuros(totalRevenue), color: '#10b981' },
-            { label: 'SPEND (SETTLED)', value: formatEuros(totalSpend), color: '#f59e0b' },
-          ].map(s => (
-            <div key={s.label} style={{ padding: '16px 20px', background: '#111318', border: '1px solid #1f2535', borderRadius: 6 }}>
-              <div style={{ fontSize: 10, color: '#4a5568', fontFamily: 'monospace', letterSpacing: '0.08em', marginBottom: 6 }}>{s.label}</div>
-              <div style={{ fontSize: 22, fontWeight: 700, color: s.color }}>{s.value}</div>
-            </div>
-          ))}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          <StatCard label="Active listings" value={String(myScus.filter(s => s.status === 'ACTIVE').length)} sub="SCUs on market" />
+          <StatCard label="Open bids" value={String(bidList.filter(b => b.status === 'OPEN').length)} sub="Pending matching" />
+          <StatCard label="Revenue (settled)" value={formatEurosCompact(totalRevenue)} sub="All-time" accent="text-emerald-400" />
+          <StatCard label="Spend (settled)" value={formatEurosCompact(totalSpend)} sub="All-time" accent="text-grid-400" />
         </div>
 
         {/* Tabs */}
-        <div style={{ display: 'flex', gap: 4, marginBottom: 20, background: '#0d0f14', border: '1px solid #1f2535', borderRadius: 6, padding: 4, width: 'fit-content' }}>
+        <div className="flex gap-1 mb-5 bg-surface-2 border border-white/5 rounded-lg p-1 w-fit">
           {isSeller && <TabBtn t="listings" label={`Listings (${myScus.length})`} />}
           {isBuyer && <TabBtn t="bids" label={`Bids (${bidList.length})`} />}
           <TabBtn t="trades" label={`Trades (${tradeList.length})`} />
@@ -122,64 +139,56 @@ export default function PortfolioPage() {
 
         {/* Listings tab */}
         {tab === 'listings' && (
-          <div style={{ background: '#111318', border: '1px solid #1f2535', borderRadius: 6, overflow: 'hidden' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <div className="card overflow-hidden">
+            <table className="w-full">
               <thead>
-                <tr style={{ borderBottom: '1px solid #1f2535' }}>
-                  {['CONGESTION POINT', 'TIME WINDOW', 'VOLUME', 'ASK PRICE', 'BIDS', 'STATUS', ''].map(h => (
-                    <th key={h} style={{ padding: '12px 16px', fontSize: 10, color: '#4a5568', fontFamily: 'monospace', letterSpacing: '0.06em', textAlign: 'left', fontWeight: 500 }}>{h}</th>
-                  ))}
+                <tr className="border-b border-white/5">
+                  <th className={thClass}>Congestion point</th>
+                  <th className={thClass}>Time window</th>
+                  <th className={thClass}>Volume</th>
+                  <th className={thClass}>Ask price</th>
+                  <th className={thClass}>Bids</th>
+                  <th className={thClass}>Status</th>
+                  <th className={thClass}></th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-white/5">
                 {loading ? (
-                  <tr><td colSpan={7} style={{ textAlign: 'center', padding: 40, color: '#4a5568', fontSize: 13 }}>Loading...</td></tr>
+                  <tr><td colSpan={7} className="text-center py-10 text-sm text-slate-500">Loading...</td></tr>
                 ) : myScus.length === 0 ? (
-                  <tr><td colSpan={7} style={{ textAlign: 'center', padding: 40, color: '#4a5568', fontSize: 13 }}>No listings yet.</td></tr>
-                ) : myScus.map((s, i) => (
-                  <tr key={s.id} style={{ borderBottom: i < myScus.length - 1 ? '1px solid #1a1f2e' : 'none' }}>
-                    <td style={{ padding: '12px 16px' }}>
-                      <div style={{ color: '#e8eaf0', fontWeight: 500, fontSize: 13 }}>
-                        {(s as Scu & { congestion_point?: { name: string; operator: string } }).congestion_point?.name?.split('—')[0].trim() ?? '—'}
-                      </div>
-                      <div style={{ fontSize: 11, color: '#4a5568' }}>
-                        {(s as Scu & { congestion_point?: { operator: string } }).congestion_point?.operator}
-                      </div>
-                    </td>
-                    <td style={{ padding: '12px 16px', fontSize: 12, color: '#8892a4' }}>
-                      {formatTimeWindow(s.time_window_start, s.time_window_end)}
-                    </td>
-                    <td style={{ padding: '12px 16px', fontFamily: 'monospace', fontSize: 13, color: '#e8eaf0' }}>
-                      {s.mwh_amount} MWh
-                    </td>
-                    <td style={{ padding: '12px 16px', fontFamily: 'monospace', fontSize: 13, color: '#f59e0b' }}>
-                      {formatEuros(s.ask_price_cents)}/MWh
-                    </td>
-                    <td style={{ padding: '12px 16px', fontFamily: 'monospace', fontSize: 13 }}>
-                      <span style={{ color: (s as Scu & { _count?: { bids: number } })._count?.bids ? '#f59e0b' : '#4a5568' }}>
-                        {(s as Scu & { _count?: { bids: number } })._count?.bids ?? 0}
-                      </span>
-                    </td>
-                    <td style={{ padding: '12px 16px' }}>
-                      <span style={{
-                        fontSize: 11, padding: '2px 8px', borderRadius: 3, fontFamily: 'monospace',
-                        background: '#1f2535', color: scuStatusColor[s.status],
-                      }}>
-                        {scuStatusLabel[s.status]}
-                      </span>
-                    </td>
-                    <td style={{ padding: '12px 16px' }}>
-                      {s.status === 'ACTIVE' && (
-                        <button
-                          onClick={() => handleWithdrawScu(s.id)}
-                          style={{ fontSize: 11, padding: '3px 10px', background: 'rgba(239,68,68,.15)', border: '1px solid rgba(239,68,68,.3)', color: '#ef4444', borderRadius: 3, cursor: 'pointer' }}
-                        >
-                          Withdraw
-                        </button>
-                      )}
-                    </td>
-                  </tr>
-                ))}
+                  <tr><td colSpan={7} className="text-center py-10 text-sm text-slate-500">No listings yet.</td></tr>
+                ) : myScus.map(s => {
+                  const extS = s as Scu & { congestion_point?: { name: string; operator: string }; _count?: { bids: number } };
+                  return (
+                    <tr key={s.id} className="hover:bg-white/[0.02] transition-colors">
+                      <td className={tdClass}>
+                        <p className="text-slate-200 font-medium">{extS.congestion_point?.name?.split('—')[0].trim() ?? '—'}</p>
+                        <p className="text-xs text-slate-500">{extS.congestion_point?.operator}</p>
+                      </td>
+                      <td className={cn(tdClass, 'text-slate-400')}>{formatTimeWindow(s.time_window_start, s.time_window_end)}</td>
+                      <td className={cn(tdClass, 'tabular text-slate-200')}>{s.mwh_amount} MWh</td>
+                      <td className={cn(tdClass, 'tabular text-grid-400')}>{formatEuros(s.ask_price_cents)}/MWh</td>
+                      <td className={cn(tdClass, 'tabular', extS._count?.bids ? 'text-grid-400' : 'text-slate-500')}>
+                        {extS._count?.bids ?? 0}
+                      </td>
+                      <td className={tdClass}>
+                        <span className={cn('text-xs font-mono px-2 py-0.5 rounded-full bg-surface-3', scuStatusColor[s.status])}>
+                          {scuStatusLabel[s.status]}
+                        </span>
+                      </td>
+                      <td className={tdClass}>
+                        {s.status === 'ACTIVE' && (
+                          <button
+                            onClick={() => handleWithdrawScu(s.id)}
+                            className="text-xs px-2.5 py-1 rounded-md bg-red-500/10 border border-red-500/20 text-red-400 hover:bg-red-500/15 transition-colors"
+                          >
+                            Withdraw
+                          </button>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -187,52 +196,53 @@ export default function PortfolioPage() {
 
         {/* Bids tab */}
         {tab === 'bids' && (
-          <div style={{ background: '#111318', border: '1px solid #1f2535', borderRadius: 6, overflow: 'hidden' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <div className="card overflow-hidden">
+            <table className="w-full">
               <thead>
-                <tr style={{ borderBottom: '1px solid #1f2535' }}>
-                  {['CONGESTION POINT', 'TIME WINDOW', 'MY BID', 'STATUS', 'TRADE', ''].map(h => (
-                    <th key={h} style={{ padding: '12px 16px', fontSize: 10, color: '#4a5568', fontFamily: 'monospace', letterSpacing: '0.06em', textAlign: 'left', fontWeight: 500 }}>{h}</th>
-                  ))}
+                <tr className="border-b border-white/5">
+                  <th className={thClass}>Congestion point</th>
+                  <th className={thClass}>Time window</th>
+                  <th className={thClass}>My bid</th>
+                  <th className={thClass}>Status</th>
+                  <th className={thClass}>Trade</th>
+                  <th className={thClass}></th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-white/5">
                 {loading ? (
-                  <tr><td colSpan={6} style={{ textAlign: 'center', padding: 40, color: '#4a5568' }}>Loading...</td></tr>
+                  <tr><td colSpan={6} className="text-center py-10 text-sm text-slate-500">Loading...</td></tr>
                 ) : bidList.length === 0 ? (
-                  <tr><td colSpan={6} style={{ textAlign: 'center', padding: 40, color: '#4a5568' }}>No bids placed yet.</td></tr>
-                ) : bidList.map((b, i) => {
+                  <tr><td colSpan={6} className="text-center py-10 text-sm text-slate-500">No bids placed yet.</td></tr>
+                ) : bidList.map(b => {
                   const extB = b as Bid & { scu?: Scu & { congestion_point?: { name: string } }; trade?: Trade & { settlement?: Settlement } };
                   return (
-                    <tr key={b.id} style={{ borderBottom: i < bidList.length - 1 ? '1px solid #1a1f2e' : 'none' }}>
-                      <td style={{ padding: '12px 16px', color: '#e8eaf0', fontSize: 13 }}>
-                        {extB.scu?.congestion_point?.name?.split('—')[0].trim() ?? '—'}
-                      </td>
-                      <td style={{ padding: '12px 16px', fontSize: 12, color: '#8892a4' }}>
+                    <tr key={b.id} className="hover:bg-white/[0.02] transition-colors">
+                      <td className={cn(tdClass, 'text-slate-200')}>{extB.scu?.congestion_point?.name?.split('—')[0].trim() ?? '—'}</td>
+                      <td className={cn(tdClass, 'text-slate-400')}>
                         {extB.scu ? formatTimeWindow(extB.scu.time_window_start, extB.scu.time_window_end) : '—'}
                       </td>
-                      <td style={{ padding: '12px 16px', fontFamily: 'monospace', fontSize: 13, color: '#e8eaf0' }}>
-                        {formatEuros(b.price_cents)}/MWh
+                      <td className={cn(tdClass, 'tabular text-slate-200')}>{formatEuros(b.price_cents)}/MWh</td>
+                      <td className={tdClass}>
+                        <span className="flex items-center gap-1.5">
+                          <span className={cn('w-1.5 h-1.5 rounded-full shrink-0', bidStatusColor[b.status])} />
+                          <span className="text-xs text-slate-400 capitalize">{b.status.toLowerCase()}</span>
+                        </span>
                       </td>
-                      <td style={{ padding: '12px 16px' }}>
-                        <span style={{
-                          display: 'inline-block', width: 8, height: 8, borderRadius: '50%',
-                          background: bidStatusColor[b.status], marginRight: 6,
-                        }} />
-                        <span style={{ fontSize: 12, color: '#8892a4' }}>{b.status}</span>
-                      </td>
-                      <td style={{ padding: '12px 16px' }}>
+                      <td className={tdClass}>
                         {extB.trade?.settlement && (
-                          <button onClick={() => openSettlement(extB.trade!.settlement!.id)} style={{ background: 'none', border: 'none', color: '#f59e0b', cursor: 'pointer', fontSize: 11, fontFamily: 'monospace', padding: 0 }}>
+                          <button
+                            onClick={() => openSettlement(extB.trade!.settlement!.id)}
+                            className="text-xs font-mono text-grid-400 hover:text-grid-300 transition-colors"
+                          >
                             {extB.trade.settlement.status} →
                           </button>
                         )}
                       </td>
-                      <td style={{ padding: '12px 16px' }}>
+                      <td className={tdClass}>
                         {b.status === 'OPEN' && (
                           <button
                             onClick={() => handleWithdrawBid(b.id)}
-                            style={{ fontSize: 11, padding: '3px 10px', background: 'rgba(239,68,68,.15)', border: '1px solid rgba(239,68,68,.3)', color: '#ef4444', borderRadius: 3, cursor: 'pointer' }}
+                            className="text-xs px-2.5 py-1 rounded-md bg-red-500/10 border border-red-500/20 text-red-400 hover:bg-red-500/15 transition-colors"
                           >
                             Withdraw
                           </button>
@@ -248,54 +258,53 @@ export default function PortfolioPage() {
 
         {/* Trades tab */}
         {tab === 'trades' && (
-          <div style={{ background: '#111318', border: '1px solid #1f2535', borderRadius: 6, overflow: 'hidden' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <div className="card overflow-hidden">
+            <table className="w-full">
               <thead>
-                <tr style={{ borderBottom: '1px solid #1f2535' }}>
-                  {['CONGESTION POINT', 'ROLE', 'CLEARING PRICE', 'VOLUME', 'TOTAL', 'MATCHED', 'SETTLEMENT'].map(h => (
-                    <th key={h} style={{ padding: '12px 16px', fontSize: 10, color: '#4a5568', fontFamily: 'monospace', letterSpacing: '0.06em', textAlign: 'left', fontWeight: 500 }}>{h}</th>
-                  ))}
+                <tr className="border-b border-white/5">
+                  <th className={thClass}>Congestion point</th>
+                  <th className={thClass}>Role</th>
+                  <th className={thClass}>Clearing price</th>
+                  <th className={thClass}>Volume</th>
+                  <th className={thClass}>Total</th>
+                  <th className={thClass}>Matched</th>
+                  <th className={thClass}>Settlement</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-white/5">
                 {loading ? (
-                  <tr><td colSpan={7} style={{ textAlign: 'center', padding: 40, color: '#4a5568' }}>Loading...</td></tr>
+                  <tr><td colSpan={7} className="text-center py-10 text-sm text-slate-500">Loading...</td></tr>
                 ) : tradeList.length === 0 ? (
-                  <tr><td colSpan={7} style={{ textAlign: 'center', padding: 40, color: '#4a5568' }}>No trades yet.</td></tr>
-                ) : tradeList.map((t, i) => {
+                  <tr><td colSpan={7} className="text-center py-10 text-sm text-slate-500">No trades yet.</td></tr>
+                ) : tradeList.map(t => {
                   const extT = t as Trade & { scu?: Scu & { congestion_point?: { name: string } }; settlement?: Settlement };
                   const role = t.seller_id === company?.id ? 'SELLER' : 'BUYER';
                   return (
-                    <tr key={t.id} style={{ borderBottom: i < tradeList.length - 1 ? '1px solid #1a1f2e' : 'none' }}>
-                      <td style={{ padding: '12px 16px', color: '#e8eaf0', fontSize: 13 }}>
-                        {extT.scu?.congestion_point?.name?.split('—')[0].trim() ?? '—'}
+                    <tr key={t.id} className="hover:bg-white/[0.02] transition-colors">
+                      <td className={cn(tdClass, 'text-slate-200')}>{extT.scu?.congestion_point?.name?.split('—')[0].trim() ?? '—'}</td>
+                      <td className={tdClass}>
+                        <span className={cn(
+                          'text-xs font-mono px-2 py-0.5 rounded-full border',
+                          role === 'SELLER'
+                            ? 'bg-grid-500/10 border-grid-500/20 text-grid-400'
+                            : 'bg-blue-500/10 border-blue-500/20 text-blue-400'
+                        )}>
+                          {role}
+                        </span>
                       </td>
-                      <td style={{ padding: '12px 16px' }}>
-                        <span style={{
-                          fontSize: 11, padding: '2px 8px', borderRadius: 3, fontFamily: 'monospace',
-                          background: role === 'SELLER' ? 'rgba(245,158,11,.15)' : 'rgba(59,130,246,.15)',
-                          color: role === 'SELLER' ? '#f59e0b' : '#60a5fa',
-                          border: `1px solid ${role === 'SELLER' ? 'rgba(245,158,11,.3)' : 'rgba(59,130,246,.3)'}`,
-                        }}>{role}</span>
-                      </td>
-                      <td style={{ padding: '12px 16px', fontFamily: 'monospace', fontSize: 13, color: '#f59e0b' }}>
-                        {formatEuros(t.clearing_price_cents)}/MWh
-                      </td>
-                      <td style={{ padding: '12px 16px', fontFamily: 'monospace', fontSize: 13, color: '#e8eaf0' }}>
-                        {t.mwh_amount} MWh
-                      </td>
-                      <td style={{ padding: '12px 16px', fontFamily: 'monospace', fontSize: 13, color: '#10b981' }}>
-                        {formatEuros(t.total_value_cents ?? 0)}
-                      </td>
-                      <td style={{ padding: '12px 16px', fontSize: 12, color: '#8892a4' }}>
-                        {formatDateTime(t.matched_at ?? t.created_at)}
-                      </td>
-                      <td style={{ padding: '12px 16px' }}>
+                      <td className={cn(tdClass, 'tabular text-grid-400')}>{formatEuros(t.clearing_price_cents)}/MWh</td>
+                      <td className={cn(tdClass, 'tabular text-slate-200')}>{t.mwh_amount} MWh</td>
+                      <td className={cn(tdClass, 'tabular text-emerald-400')}>{formatEuros(t.total_value_cents ?? 0)}</td>
+                      <td className={cn(tdClass, 'text-slate-400')}>{formatDateTime(t.matched_at ?? t.created_at)}</td>
+                      <td className={tdClass}>
                         {extT.settlement ? (
-                          <button onClick={() => openSettlement(extT.settlement!.id)} style={{ background: 'none', border: 'none', color: '#f59e0b', cursor: 'pointer', fontSize: 11, fontFamily: 'monospace', padding: 0 }}>
+                          <button
+                            onClick={() => openSettlement(extT.settlement!.id)}
+                            className="text-xs font-mono text-grid-400 hover:text-grid-300 transition-colors"
+                          >
                             {extT.settlement.status} →
                           </button>
-                        ) : '—'}
+                        ) : <span className="text-slate-500">—</span>}
                       </td>
                     </tr>
                   );
@@ -308,32 +317,39 @@ export default function PortfolioPage() {
 
       {/* Settlement modal */}
       {selectedSettlement && (
-        <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100, padding: 24 }}>
-          <div style={{ width: '100%', maxWidth: 560, background: '#111318', border: '1px solid #1f2535', borderRadius: 8, padding: 32 }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
+        <div className="fixed inset-0 bg-black/75 flex items-center justify-center z-[100] p-6">
+          <div className="card w-full max-w-lg p-8">
+            <div className="flex justify-between items-center mb-6">
               <div>
-                <div style={{ fontSize: 11, color: '#4a5568', fontFamily: 'monospace', letterSpacing: '0.06em', marginBottom: 4 }}>SETTLEMENT</div>
-                <h2 style={{ fontSize: 16, fontWeight: 600, color: '#e8eaf0', margin: 0 }}>
+                <p className="stat-label mb-1">Settlement</p>
+                <h2 className="font-display text-lg font-semibold text-white">
                   {(selectedSettlement as Settlement & { trade?: Trade & { scu?: Scu & { congestion_point?: { name: string } } } }).trade?.scu?.congestion_point?.name?.split('—')[0].trim() ?? 'Trade Settlement'}
                 </h2>
               </div>
-              <button onClick={() => setSelectedSettlement(null)} style={{ background: 'none', border: 'none', color: '#4a5568', cursor: 'pointer', fontSize: 20 }}>×</button>
+              <button
+                onClick={() => setSelectedSettlement(null)}
+                className="text-slate-500 hover:text-slate-300 transition-colors text-xl leading-none"
+              >
+                ×
+              </button>
             </div>
 
             {(selectedSettlement as Settlement & { trade?: Trade }).trade && (() => {
               const t = (selectedSettlement as Settlement & { trade: Trade }).trade;
               return (
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12, marginBottom: 24 }}>
-                  {[
-                    { label: 'CLEARING PRICE', value: `${formatEuros(t.clearing_price_cents)}/MWh`, color: '#f59e0b' },
-                    { label: 'VOLUME', value: `${t.mwh_amount} MWh`, color: '#e8eaf0' },
-                    { label: 'TOTAL VALUE', value: formatEuros(t.total_value_cents ?? 0), color: '#10b981' },
-                  ].map(m => (
-                    <div key={m.label} style={{ background: '#0d0f14', border: '1px solid #1f2535', borderRadius: 4, padding: '10px 14px' }}>
-                      <div style={{ fontSize: 10, color: '#4a5568', fontFamily: 'monospace', letterSpacing: '0.06em', marginBottom: 4 }}>{m.label}</div>
-                      <div style={{ fontSize: 15, fontWeight: 700, color: m.color }}>{m.value}</div>
-                    </div>
-                  ))}
+                <div className="grid grid-cols-3 gap-3 mb-6">
+                  <div className="bg-surface-2 border border-white/5 rounded-md px-3.5 py-2.5">
+                    <p className="text-[10px] font-mono tracking-widest text-slate-600 uppercase mb-1">Clearing price</p>
+                    <p className="text-base font-display font-semibold text-grid-400">{formatEuros(t.clearing_price_cents)}/MWh</p>
+                  </div>
+                  <div className="bg-surface-2 border border-white/5 rounded-md px-3.5 py-2.5">
+                    <p className="text-[10px] font-mono tracking-widest text-slate-600 uppercase mb-1">Volume</p>
+                    <p className="text-base font-display font-semibold text-white">{t.mwh_amount} MWh</p>
+                  </div>
+                  <div className="bg-surface-2 border border-white/5 rounded-md px-3.5 py-2.5">
+                    <p className="text-[10px] font-mono tracking-widest text-slate-600 uppercase mb-1">Total value</p>
+                    <p className="text-base font-display font-semibold text-emerald-400">{formatEuros(t.total_value_cents ?? 0)}</p>
+                  </div>
                 </div>
               );
             })()}

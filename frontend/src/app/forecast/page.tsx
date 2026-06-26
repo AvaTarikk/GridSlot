@@ -7,7 +7,6 @@ import { formatEuros, cn } from '@/lib/utils';
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 type Severity = 'GREEN' | 'AMBER' | 'RED';
-type Range = '7' | '30' | '60' | '90';
 type Scenario = 'baseline' | 'heat_wave' | 'solar_peak' | 'ev_charging';
 
 interface HistoryDay {
@@ -71,6 +70,8 @@ const SCENARIOS: Record<Scenario, { label: string; desc: string; multiplier: num
   ev_charging: { label: 'EV Night Fleet', desc: 'Fleet charging 22:00–06:00',       multiplier: 1.17 },
 };
 
+const HISTORY_DAYS = 30;
+
 // ─── SVG Chart ────────────────────────────────────────────────────────────────
 
 function PriceChart({
@@ -106,7 +107,7 @@ function PriceChart({
   const forePoints = forecast.map((d, i) => ({
     x: px(history.length + i),
     y: py(d.predicted_price_cents * mult),
-    yLo: py(d.upper_bound_cents * mult), // inverted because y goes down
+    yLo: py(d.upper_bound_cents * mult),
     yHi: py(d.lower_bound_cents * mult),
     conf: d.confidence,
   }));
@@ -114,13 +115,11 @@ function PriceChart({
   const toPath = (pts: { x: number; y: number }[]) =>
     pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
 
-  // Confidence band polygon
   const bandPath = [
     ...forePoints.map(p => `${p.x.toFixed(1)},${p.yLo.toFixed(1)}`),
     ...[...forePoints].reverse().map(p => `${p.x.toFixed(1)},${p.yHi.toFixed(1)}`),
   ].join(' ');
 
-  // Y-axis ticks
   const ticks = 5;
   const yTicks = Array.from({ length: ticks }, (_, i) => minP + ((maxP - minP) * i) / (ticks - 1));
 
@@ -151,7 +150,6 @@ function PriceChart({
         onMouseMove={handleMouseMove}
         onMouseLeave={() => setTooltip(null)}
       >
-        {/* Grid lines */}
         {yTicks.map((v, i) => (
           <g key={i}>
             <line
@@ -164,7 +162,6 @@ function PriceChart({
           </g>
         ))}
 
-        {/* Forecast divider */}
         <line
           x1={px(history.length)} y1={PAD.top}
           x2={px(history.length)} y2={H - PAD.bottom}
@@ -174,19 +171,15 @@ function PriceChart({
           FORECAST
         </text>
 
-        {/* Confidence band */}
         <polygon points={bandPath} fill="rgba(251,191,36,0.07)" />
 
-        {/* History line */}
         <path d={toPath(histPoints)} fill="none" stroke="#60a5fa" strokeWidth="1.5" />
 
-        {/* Forecast line */}
         <path
           d={toPath([histPoints[histPoints.length - 1], ...forePoints.map(p => ({ x: p.x, y: p.y }))])}
           fill="none" stroke="#fbbf24" strokeWidth="1.5" strokeDasharray="5,3"
         />
 
-        {/* Tooltip dot */}
         {tooltip && (
           <circle cx={tooltip.x} cy={tooltip.y} r="4"
             fill={tooltip.isForecast ? '#fbbf24' : '#60a5fa'}
@@ -194,8 +187,7 @@ function PriceChart({
           />
         )}
 
-        {/* X-axis date labels — sparse */}
-        {history.filter((_, i) => i % Math.ceil(history.length / 6) === 0).map((d, i, arr) => {
+        {history.filter((_, i) => i % Math.ceil(history.length / 6) === 0).map((d, i) => {
           const realIdx = i * Math.ceil(history.length / 6);
           return (
             <text key={i} x={px(realIdx)} y={H - 8} textAnchor="middle" fontSize="9" fill="rgba(255,255,255,0.2)" fontFamily="monospace">
@@ -205,7 +197,6 @@ function PriceChart({
         })}
       </svg>
 
-      {/* Tooltip */}
       {tooltip && (
         <div
           className="absolute z-20 pointer-events-none px-3 py-2 rounded-lg text-xs shadow-xl"
@@ -225,7 +216,6 @@ function PriceChart({
         </div>
       )}
 
-      {/* Chart legend */}
       <div className="flex gap-4 mt-2 px-1">
         <span className="flex items-center gap-1.5 text-[10px] text-slate-500">
           <span className="w-6 h-0.5 bg-blue-400 inline-block rounded" /> Historical price
@@ -282,17 +272,6 @@ function VolumeChart({ history }: { history: HistoryDay[] }) {
 function CalendarHeatmap({ history }: { history: HistoryDay[] }) {
   const [hovered, setHovered] = useState<HistoryDay | null>(null);
 
-  // Group into weeks
-  const weeks: HistoryDay[][] = [];
-  let week: HistoryDay[] = [];
-  history.forEach((d, i) => {
-    week.push(d);
-    if (week.length === 7 || i === history.length - 1) {
-      weeks.push(week);
-      week = [];
-    }
-  });
-
   return (
     <div>
       <div className="flex gap-1 flex-wrap">
@@ -348,12 +327,10 @@ function StatCard({ label, value, sub, trend }: { label: string; value: string; 
 
 // ─── Main page ────────────────────────────────────────────────────────────────
 
-// Module-level cache
 let _cachedForecast: Record<string, PointForecast> = {};
 
 export default function ForecastPage() {
   const [selectedId, setSelectedId] = useState('cp_001');
-  const [range, setRange] = useState<Range>('30');
   const [scenario, setScenario] = useState<Scenario>('baseline');
   const [data, setData] = useState<PointForecast | null>(_cachedForecast[selectedId] ?? null);
   const [loading, setLoading] = useState(!_cachedForecast[selectedId]);
@@ -367,7 +344,7 @@ export default function ForecastPage() {
     }
     setLoading(true);
     setError('');
-    fetch(`${process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000'}/api/forecast/${selectedId}?range=${range}`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000'}/api/forecast/${selectedId}?range=30`, {
       headers: { Authorization: `Bearer ${typeof window !== 'undefined' ? localStorage.getItem('gs_token') : ''}` }
     })
       .then(r => r.json())
@@ -377,12 +354,12 @@ export default function ForecastPage() {
       })
       .catch(() => setError('Failed to load forecast data'))
       .finally(() => setLoading(false));
-  }, [selectedId, range]);
+  }, [selectedId]);
 
   const selectedPoint = POINTS.find(p => p.id === selectedId)!;
   const sevCfg = SEV_CFG[selectedPoint.severity];
 
-  const displayedHistory = data ? data.history.slice(-parseInt(range)) : [];
+  const displayedHistory = data ? data.history.slice(-HISTORY_DAYS) : [];
 
   return (
     <AppShell>
@@ -464,37 +441,17 @@ export default function ForecastPage() {
             {!loading && !error && data && (
               <>
                 {/* Point header */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className={cn('w-2.5 h-2.5 rounded-full', sevCfg.dot)} />
-                    <h2 className="text-base font-semibold text-white">{selectedPoint.name}</h2>
-                    <span className={cn('text-[11px] font-mono px-2 py-0.5 rounded-full border', sevCfg.bg, sevCfg.border, sevCfg.text)}>
-                      {sevCfg.label}
+                <div className="flex items-center gap-3">
+                  <span className={cn('w-2.5 h-2.5 rounded-full', sevCfg.dot)} />
+                  <h2 className="text-base font-semibold text-white">{selectedPoint.name}</h2>
+                  <span className={cn('text-[11px] font-mono px-2 py-0.5 rounded-full border', sevCfg.bg, sevCfg.border, sevCfg.text)}>
+                    {sevCfg.label}
+                  </span>
+                  {scenario !== 'baseline' && (
+                    <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400">
+                      {SCENARIOS[scenario].label} · {SCENARIOS[scenario].desc}
                     </span>
-                    {scenario !== 'baseline' && (
-                      <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400">
-                        {SCENARIOS[scenario].label} · {SCENARIOS[scenario].desc}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Range selector */}
-                  <div className="flex gap-1">
-                    {(['7', '30', '60', '90'] as Range[]).map(r => (
-                      <button
-                        key={r}
-                        onClick={() => setRange(r)}
-                        className={cn(
-                          'px-2.5 py-1 rounded text-[11px] font-mono border transition-colors',
-                          range === r
-                            ? 'bg-surface-3 border-white/15 text-white'
-                            : 'border-transparent text-slate-500 hover:text-slate-300'
-                        )}
-                      >
-                        {r}d
-                      </button>
-                    ))}
-                  </div>
+                  )}
                 </div>
 
                 {/* Stats row */}
@@ -505,14 +462,14 @@ export default function ForecastPage() {
                     trend={data.stats.trend_7d_pct}
                   />
                   <StatCard
-                    label="Peak price (90d)"
+                    label="Peak price (30d)"
                     value={formatEuros(Math.round(data.stats.peak_price_cents * SCENARIOS[scenario].multiplier))}
                     sub="Highest cleared bid"
                   />
                   <StatCard
                     label="Total volume"
                     value={`${data.stats.total_volume_mwh.toLocaleString()} MWh`}
-                    sub={`${data.stats.total_trades} trades · 90 days`}
+                    sub={`${data.stats.total_trades} trades · 30 days`}
                   />
                   <StatCard
                     label="14d forecast"
@@ -524,7 +481,7 @@ export default function ForecastPage() {
                 {/* Price chart */}
                 <div className="rounded-xl border border-white/8 bg-surface-2 px-5 py-4">
                   <div className="flex items-center justify-between mb-4">
-                    <p className="text-[10px] font-mono tracking-widest text-slate-500 uppercase">Clearing price — {range}d history + 14d forecast</p>
+                    <p className="text-[10px] font-mono tracking-widest text-slate-500 uppercase">Clearing price — 30d history + 14d forecast</p>
                     <div className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
                       <span className="text-[10px] text-slate-500">€/MWh</span>
@@ -542,10 +499,10 @@ export default function ForecastPage() {
                 {/* Calendar heatmap */}
                 <div className="rounded-xl border border-white/8 bg-surface-2 px-5 py-4">
                   <div className="flex items-center justify-between mb-3">
-                    <p className="text-[10px] font-mono tracking-widest text-slate-500 uppercase">90-day congestion calendar</p>
+                    <p className="text-[10px] font-mono tracking-widest text-slate-500 uppercase">30-day congestion calendar</p>
                     <p className="text-[10px] text-slate-600 font-mono">Hover to inspect</p>
                   </div>
-                  <CalendarHeatmap history={data.history} />
+                  <CalendarHeatmap history={displayedHistory} />
                 </div>
 
                 {/* Forecast table */}

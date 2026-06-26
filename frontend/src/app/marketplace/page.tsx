@@ -18,6 +18,7 @@ export default function MarketplacePage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [showCreate, setShowCreate] = useState(false)
+  const [countdown, setCountdown] = useState(60)
 
   const [selectedPoint, setSelectedPoint] = useState('')
   const [minPrice, setMinPrice] = useState('')
@@ -25,6 +26,14 @@ export default function MarketplacePage() {
 
   const { updatedScuIds } = useMarketplaceStore()
   const canSell = company?.role === 'SELLER' || company?.role === 'BOTH'
+
+  const mm = String(Math.floor(countdown / 60)).padStart(2, '0')
+  const ss = String(countdown % 60).padStart(2, '0')
+
+  useEffect(() => {
+    const t = setInterval(() => setCountdown((c) => (c <= 1 ? 60 : c - 1)), 1000)
+    return () => clearInterval(t)
+  }, [])
 
   const fetchScus = useCallback(async () => {
     try {
@@ -60,6 +69,8 @@ export default function MarketplacePage() {
   return (
     <AppShell>
       <div className="px-8 py-8 max-w-7xl mx-auto">
+
+        {/* ── Header ── */}
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="font-display text-2xl font-semibold text-white">Marketplace</h1>
@@ -67,16 +78,32 @@ export default function MarketplacePage() {
               {total} active capacity unit{total !== 1 ? 's' : ''} available
             </p>
           </div>
-          {canSell && (
-            <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
-              <svg viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4">
-                <path d="M8.75 3.75a.75.75 0 00-1.5 0v3.5h-3.5a.75.75 0 000 1.5h3.5v3.5a.75.75 0 001.5 0v-3.5h3.5a.75.75 0 000-1.5h-3.5v-3.5z" />
-              </svg>
-              List capacity
-            </button>
-          )}
+          <div className="flex items-center gap-3">
+
+            {/* Auction countdown */}
+            <div className="flex items-center gap-2 bg-surface-2 border border-white/8 rounded-lg px-3 py-2">
+              <span
+                className={cn('w-1.5 h-1.5 rounded-full', countdown <= 10 ? 'bg-red-400' : 'bg-emerald-400')}
+                style={{ boxShadow: `0 0 6px ${countdown <= 10 ? '#f87171' : '#10b981'}` }}
+              />
+              <span className="text-xs text-slate-500 font-mono">Next auction</span>
+              <span className={cn('text-sm font-mono font-semibold', countdown <= 10 ? 'text-red-400' : 'text-white')}>
+                {mm}:{ss}
+              </span>
+            </div>
+
+            {canSell && (
+              <button onClick={() => setShowCreate(true)} className="btn-primary flex items-center gap-2">
+                <svg viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4">
+                  <path d="M8.75 3.75a.75.75 0 00-1.5 0v3.5h-3.5a.75.75 0 000 1.5h3.5v3.5a.75.75 0 001.5 0v-3.5h3.5a.75.75 0 000-1.5h-3.5v-3.5z" />
+                </svg>
+                List capacity
+              </button>
+            )}
+          </div>
         </div>
 
+        {/* ── Filters ── */}
         <div className="card px-5 py-4 mb-6 flex flex-wrap gap-4 items-end">
           <div className="min-w-48">
             <label className="label block mb-2">Congestion point</label>
@@ -102,6 +129,7 @@ export default function MarketplacePage() {
           )}
         </div>
 
+        {/* ── Loading ── */}
         {loading && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[...Array(6)].map((_, i) => (
@@ -117,12 +145,14 @@ export default function MarketplacePage() {
           </div>
         )}
 
+        {/* ── Error ── */}
         {error && !loading && (
           <div className="card px-5 py-8 text-center border-red-500/15">
             <p className="text-sm text-red-400">{error}</p>
           </div>
         )}
 
+        {/* ── Empty ── */}
         {!loading && !error && scuList.length === 0 && (
           <div className="card px-5 py-16 text-center">
             <p className="text-slate-400">No capacity units available right now.</p>
@@ -130,6 +160,7 @@ export default function MarketplacePage() {
           </div>
         )}
 
+        {/* ── Grid ── */}
         {!loading && !error && scuList.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-in">
             {scuList.map((scu) => (

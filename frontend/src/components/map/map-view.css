@@ -1,0 +1,64 @@
+/* Slightly brighten the dark basemap so labels/coastlines read clearly
+   against the surrounding dark UI, without going as flat/low-contrast
+   as the raw dark_all CARTO tiles. */
+.gs-map-tiles {
+  filter: brightness(1.18) contrast(1.05) saturate(1.05);
+}
+
+.leaflet-control-zoom {
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
+}
+.leaflet-control-zoom a {
+  background: #14171f !important;
+  color: #cbd5e1 !important;
+  border: none !important;
+  width: 30px !important;
+  height: 30px !important;
+  line-height: 30px !important;
+  font-size: 16px !important;
+  transition: background-color 0.15s, color 0.15s;
+}
+.leaflet-control-zoom a:hover {
+  background: #1c2030 !important;
+  color: #ffffff !important;
+}
+.leaflet-control-zoom-in {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.gs-tooltip {
+  background: #14171f !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #e2e8f0 !important;
+  border-radius: 6px !important;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  padding: 6px 10px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+.gs-tooltip::before {
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.leaflet-container {
+  background: #0a0c10 !important;
+  font-family: inherit;
+}
+
+@keyframes gs-pulse-ring {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}

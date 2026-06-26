@@ -43,6 +43,15 @@ export const useAuthStore = create<AuthState>()(
     {
       name: 'gs_auth',
       partialize: (state) => ({ company: state.company, token: state.token }),
+      onRehydrateStorage: () => (state) => {
+        // Called once rehydration from localStorage is complete.
+        // At this point state.company and state.token are populated (or null),
+        // so we can safely set isLoading to false.
+        if (state) {
+          state.isLoading = false
+          if (state.token) setToken(state.token)
+        }
+      },
     },
   ),
 )

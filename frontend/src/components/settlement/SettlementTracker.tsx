@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { settlements } from '@/lib/api';
+import { formatEuros, cn } from '@/lib/utils';
 import { useToastStore } from '@/stores/toasts';
 import type { Settlement } from '@/types';
 
@@ -54,27 +55,36 @@ export default function SettlementTracker({ settlement, isSeller, onUpdate }: Pr
     <div>
       {/* Progress steps */}
       {!isFailed && (
-        <div style={{ display: 'flex', alignItems: 'center', marginBottom: 20 }}>
+        <div className="flex items-center mb-5">
           {STEPS.map((step, i) => {
             const done = currentIdx > i;
             const active = currentIdx === i;
             return (
-              <div key={step} style={{ display: 'flex', alignItems: 'center', flex: i < STEPS.length - 1 ? 1 : 'none' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
-                  <div style={{
-                    width: 28, height: 28, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    background: done ? '#10b981' : active ? '#f59e0b' : '#1f2535',
-                    border: `2px solid ${done ? '#10b981' : active ? '#f59e0b' : '#2a3347'}`,
-                    fontSize: 11, fontWeight: 700, color: (done || active) ? '#0b0d10' : '#4a5568',
-                  }}>
+              <div key={step} className={cn('flex items-center', i < STEPS.length - 1 ? 'flex-1' : '')}>
+                <div className="flex flex-col items-center gap-1">
+                  <div
+                    className={cn(
+                      'w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-bold border-2 transition-colors',
+                      done && 'bg-emerald-400 border-emerald-400 text-surface-1',
+                      active && 'bg-grid-400 border-grid-400 text-surface-1',
+                      !done && !active && 'bg-surface-3 border-white/10 text-slate-600'
+                    )}
+                  >
                     {done ? '✓' : i + 1}
                   </div>
-                  <div style={{ fontSize: 9, color: active ? '#f59e0b' : done ? '#10b981' : '#4a5568', fontFamily: 'monospace', letterSpacing: '0.04em', textAlign: 'center', whiteSpace: 'nowrap' }}>
+                  <p
+                    className={cn(
+                      'text-[9px] font-mono tracking-wide text-center whitespace-nowrap',
+                      active && 'text-grid-400',
+                      done && 'text-emerald-400',
+                      !done && !active && 'text-slate-600'
+                    )}
+                  >
                     {STEP_LABELS[step]}
-                  </div>
+                  </p>
                 </div>
                 {i < STEPS.length - 1 && (
-                  <div style={{ flex: 1, height: 2, background: done ? '#10b981' : '#1f2535', margin: '0 4px', marginBottom: 20 }} />
+                  <div className={cn('flex-1 h-0.5 mx-1 mb-5', done ? 'bg-emerald-400' : 'bg-white/10')} />
                 )}
               </div>
             );
@@ -84,22 +94,25 @@ export default function SettlementTracker({ settlement, isSeller, onUpdate }: Pr
 
       {/* Failed state */}
       {isFailed && (
-        <div style={{ padding: '12px 16px', background: 'rgba(239,68,68,.1)', border: '1px solid rgba(239,68,68,.3)', borderRadius: 4, marginBottom: 16 }}>
-          <div style={{ fontSize: 13, fontWeight: 600, color: '#ef4444', marginBottom: 4 }}>
-            {STEP_LABELS[settlement.status]}
-          </div>
-          <div style={{ fontSize: 12, color: '#8892a4' }}>
+        <div className="px-4 py-3 bg-red-500/10 border border-red-500/20 rounded-md mb-4">
+          <p className="text-sm font-semibold text-red-400 mb-1">{STEP_LABELS[settlement.status]}</p>
+          <p className="text-xs text-slate-400">
             {settlement.status === 'NON_DELIVERY'
               ? 'The seller did not confirm delivery. 5% collateral has been forfeited.'
               : 'Payment has been refunded to the buyer.'}
-          </div>
+          </p>
         </div>
       )}
 
       {/* Current status label */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 14px', background: '#0d0f14', border: '1px solid #1f2535', borderRadius: 4, marginBottom: 16 }}>
-        <span style={{ fontSize: 12, color: '#8892a4' }}>Current status</span>
-        <span style={{ fontSize: 13, fontWeight: 600, fontFamily: 'monospace', color: isFailed ? '#ef4444' : isTerminal ? '#10b981' : '#f59e0b' }}>
+      <div className="flex justify-between items-center px-3.5 py-2.5 bg-surface-2 border border-white/5 rounded-md mb-4">
+        <span className="text-sm text-slate-400">Current status</span>
+        <span
+          className={cn(
+            'text-sm font-semibold font-mono',
+            isFailed ? 'text-red-400' : isTerminal ? 'text-emerald-400' : 'text-grid-400'
+          )}
+        >
           {STEP_LABELS[settlement.status] ?? settlement.status}
         </span>
       </div>
@@ -109,11 +122,12 @@ export default function SettlementTracker({ settlement, isSeller, onUpdate }: Pr
         <button
           onClick={handleConfirm}
           disabled={loading}
-          style={{
-            width: '100%', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 600,
-            cursor: loading ? 'not-allowed' : 'pointer', border: 'none',
-            background: loading ? '#2a3347' : '#10b981', color: loading ? '#4a5568' : '#0b0d10',
-          }}
+          className={cn(
+            'w-full py-2.5 rounded-md text-sm font-semibold transition-colors',
+            loading
+              ? 'bg-surface-3 text-slate-600 cursor-not-allowed'
+              : 'bg-emerald-400 text-surface-1 hover:bg-emerald-300'
+          )}
         >
           {loading ? 'Confirming…' : 'Confirm Delivery'}
         </button>
@@ -121,17 +135,15 @@ export default function SettlementTracker({ settlement, isSeller, onUpdate }: Pr
 
       {/* Payment details */}
       {settlement.payment_held_cents !== undefined && settlement.payment_held_cents > 0 && (
-        <div style={{ marginTop: 12, fontSize: 12, color: '#4a5568', display: 'flex', justifyContent: 'space-between' }}>
+        <div className="flex justify-between text-xs text-slate-500 mt-3">
           <span>Payment held</span>
-          <span style={{ fontFamily: 'monospace', color: '#8892a4' }}>
-            €{(settlement.payment_held_cents / 100).toFixed(2)}
-          </span>
+          <span className="font-mono tabular text-slate-300">{formatEuros(settlement.payment_held_cents)}</span>
         </div>
       )}
       {settlement.collateral_forfeited_cents !== undefined && settlement.collateral_forfeited_cents > 0 && (
-        <div style={{ fontSize: 12, color: '#ef4444', display: 'flex', justifyContent: 'space-between', marginTop: 4 }}>
+        <div className="flex justify-between text-xs text-red-400 mt-1">
           <span>Collateral forfeited</span>
-          <span style={{ fontFamily: 'monospace' }}>€{(settlement.collateral_forfeited_cents / 100).toFixed(2)}</span>
+          <span className="font-mono tabular">{formatEuros(settlement.collateral_forfeited_cents)}</span>
         </div>
       )}
     </div>

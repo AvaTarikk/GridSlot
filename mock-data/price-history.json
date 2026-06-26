@@ -636,115 +636,115 @@
     "forecast": [
       {
         "date": "2026-06-26",
-        "predicted_price_cents": 12293,
-        "lower_bound_cents": 10621,
-        "upper_bound_cents": 13965,
+        "predicted_price_cents": 11861,
+        "lower_bound_cents": 11106,
+        "upper_bound_cents": 12616,
+        "predicted_severity": "RED",
+        "confidence": 92
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 11518,
+        "lower_bound_cents": 10700,
+        "upper_bound_cents": 12336,
         "predicted_severity": "RED",
         "confidence": 89
       },
       {
-        "date": "2026-06-27",
-        "predicted_price_cents": 9711,
-        "lower_bound_cents": 8235,
-        "upper_bound_cents": 11187,
-        "predicted_severity": "AMBER",
-        "confidence": 85
-      },
-      {
         "date": "2026-06-28",
-        "predicted_price_cents": 7656,
-        "lower_bound_cents": 6370,
-        "upper_bound_cents": 8942,
-        "predicted_severity": "GREEN",
-        "confidence": 82
+        "predicted_price_cents": 11175,
+        "lower_bound_cents": 10294,
+        "upper_bound_cents": 12056,
+        "predicted_severity": "RED",
+        "confidence": 87
       },
       {
         "date": "2026-06-29",
-        "predicted_price_cents": 7970,
-        "lower_bound_cents": 6504,
-        "upper_bound_cents": 9436,
-        "predicted_severity": "GREEN",
-        "confidence": 78
+        "predicted_price_cents": 10832,
+        "lower_bound_cents": 9888,
+        "upper_bound_cents": 11776,
+        "predicted_severity": "RED",
+        "confidence": 84
       },
       {
         "date": "2026-06-30",
-        "predicted_price_cents": 7795,
-        "lower_bound_cents": 6236,
-        "upper_bound_cents": 9354,
-        "predicted_severity": "GREEN",
-        "confidence": 75
+        "predicted_price_cents": 10488,
+        "lower_bound_cents": 9481,
+        "upper_bound_cents": 11495,
+        "predicted_severity": "AMBER",
+        "confidence": 82
       },
       {
         "date": "2026-07-01",
-        "predicted_price_cents": 7784,
-        "lower_bound_cents": 6103,
-        "upper_bound_cents": 9465,
-        "predicted_severity": "GREEN",
-        "confidence": 72
+        "predicted_price_cents": 10145,
+        "lower_bound_cents": 9075,
+        "upper_bound_cents": 11215,
+        "predicted_severity": "AMBER",
+        "confidence": 79
       },
       {
         "date": "2026-07-02",
-        "predicted_price_cents": 7894,
-        "lower_bound_cents": 6063,
-        "upper_bound_cents": 9725,
-        "predicted_severity": "GREEN",
-        "confidence": 68
+        "predicted_price_cents": 9801,
+        "lower_bound_cents": 8668,
+        "upper_bound_cents": 10934,
+        "predicted_severity": "AMBER",
+        "confidence": 76
       },
       {
         "date": "2026-07-03",
-        "predicted_price_cents": 7811,
-        "lower_bound_cents": 5874,
-        "upper_bound_cents": 9748,
-        "predicted_severity": "GREEN",
-        "confidence": 65
+        "predicted_price_cents": 9788,
+        "lower_bound_cents": 8592,
+        "upper_bound_cents": 10984,
+        "predicted_severity": "AMBER",
+        "confidence": 74
       },
       {
         "date": "2026-07-04",
-        "predicted_price_cents": 6585,
-        "lower_bound_cents": 4847,
-        "upper_bound_cents": 8323,
-        "predicted_severity": "GREEN",
-        "confidence": 61
+        "predicted_price_cents": 9774,
+        "lower_bound_cents": 8515,
+        "upper_bound_cents": 11033,
+        "predicted_severity": "AMBER",
+        "confidence": 71
       },
       {
         "date": "2026-07-05",
-        "predicted_price_cents": 5303,
-        "lower_bound_cents": 3818,
-        "upper_bound_cents": 6788,
-        "predicted_severity": "GREEN",
-        "confidence": 58
+        "predicted_price_cents": 9761,
+        "lower_bound_cents": 8439,
+        "upper_bound_cents": 11083,
+        "predicted_severity": "AMBER",
+        "confidence": 69
       },
       {
         "date": "2026-07-06",
-        "predicted_price_cents": 5171,
-        "lower_bound_cents": 3640,
-        "upper_bound_cents": 6702,
-        "predicted_severity": "GREEN",
-        "confidence": 55
+        "predicted_price_cents": 9598,
+        "lower_bound_cents": 8213,
+        "upper_bound_cents": 10983,
+        "predicted_severity": "AMBER",
+        "confidence": 66
       },
       {
         "date": "2026-07-07",
-        "predicted_price_cents": 5450,
-        "lower_bound_cents": 3750,
-        "upper_bound_cents": 7150,
-        "predicted_severity": "GREEN",
-        "confidence": 51
+        "predicted_price_cents": 9586,
+        "lower_bound_cents": 8138,
+        "upper_bound_cents": 11034,
+        "predicted_severity": "AMBER",
+        "confidence": 63
       },
       {
         "date": "2026-07-08",
-        "predicted_price_cents": 5628,
-        "lower_bound_cents": 3782,
-        "upper_bound_cents": 7474,
-        "predicted_severity": "GREEN",
-        "confidence": 48
+        "predicted_price_cents": 9574,
+        "lower_bound_cents": 8063,
+        "upper_bound_cents": 11085,
+        "predicted_severity": "AMBER",
+        "confidence": 61
       },
       {
         "date": "2026-07-09",
-        "predicted_price_cents": 5377,
-        "lower_bound_cents": 3527,
-        "upper_bound_cents": 7227,
-        "predicted_severity": "GREEN",
-        "confidence": 45
+        "predicted_price_cents": 9562,
+        "lower_bound_cents": 7988,
+        "upper_bound_cents": 11136,
+        "predicted_severity": "AMBER",
+        "confidence": 58
       }
     ],
     "stats": {
@@ -1393,115 +1393,115 @@
     "forecast": [
       {
         "date": "2026-06-26",
-        "predicted_price_cents": 7485,
-        "lower_bound_cents": 6467,
-        "upper_bound_cents": 8503,
+        "predicted_price_cents": 6611,
+        "lower_bound_cents": 6186,
+        "upper_bound_cents": 7036,
+        "predicted_severity": "AMBER",
+        "confidence": 92
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 6581,
+        "lower_bound_cents": 6121,
+        "upper_bound_cents": 7041,
         "predicted_severity": "AMBER",
         "confidence": 89
       },
       {
-        "date": "2026-06-27",
-        "predicted_price_cents": 6148,
-        "lower_bound_cents": 5214,
-        "upper_bound_cents": 7082,
-        "predicted_severity": "AMBER",
-        "confidence": 85
-      },
-      {
         "date": "2026-06-28",
-        "predicted_price_cents": 4985,
-        "lower_bound_cents": 4148,
-        "upper_bound_cents": 5822,
-        "predicted_severity": "GREEN",
-        "confidence": 82
+        "predicted_price_cents": 6551,
+        "lower_bound_cents": 6055,
+        "upper_bound_cents": 7047,
+        "predicted_severity": "AMBER",
+        "confidence": 87
       },
       {
         "date": "2026-06-29",
-        "predicted_price_cents": 4902,
-        "lower_bound_cents": 4000,
-        "upper_bound_cents": 5804,
-        "predicted_severity": "GREEN",
-        "confidence": 78
+        "predicted_price_cents": 6520,
+        "lower_bound_cents": 5989,
+        "upper_bound_cents": 7051,
+        "predicted_severity": "AMBER",
+        "confidence": 84
       },
       {
         "date": "2026-06-30",
-        "predicted_price_cents": 4780,
-        "lower_bound_cents": 3824,
-        "upper_bound_cents": 5736,
-        "predicted_severity": "GREEN",
-        "confidence": 75
+        "predicted_price_cents": 6490,
+        "lower_bound_cents": 5923,
+        "upper_bound_cents": 7057,
+        "predicted_severity": "AMBER",
+        "confidence": 82
       },
       {
         "date": "2026-07-01",
-        "predicted_price_cents": 4964,
-        "lower_bound_cents": 3892,
-        "upper_bound_cents": 6036,
-        "predicted_severity": "GREEN",
-        "confidence": 72
+        "predicted_price_cents": 6460,
+        "lower_bound_cents": 5858,
+        "upper_bound_cents": 7062,
+        "predicted_severity": "AMBER",
+        "confidence": 79
       },
       {
         "date": "2026-07-02",
-        "predicted_price_cents": 5179,
-        "lower_bound_cents": 3977,
-        "upper_bound_cents": 6381,
-        "predicted_severity": "GREEN",
-        "confidence": 68
+        "predicted_price_cents": 6430,
+        "lower_bound_cents": 5793,
+        "upper_bound_cents": 7067,
+        "predicted_severity": "AMBER",
+        "confidence": 76
       },
       {
         "date": "2026-07-03",
-        "predicted_price_cents": 5048,
-        "lower_bound_cents": 3796,
-        "upper_bound_cents": 6300,
-        "predicted_severity": "GREEN",
-        "confidence": 65
+        "predicted_price_cents": 6417,
+        "lower_bound_cents": 5744,
+        "upper_bound_cents": 7090,
+        "predicted_severity": "AMBER",
+        "confidence": 74
       },
       {
         "date": "2026-07-04",
-        "predicted_price_cents": 4080,
-        "lower_bound_cents": 3003,
-        "upper_bound_cents": 5157,
-        "predicted_severity": "GREEN",
-        "confidence": 61
+        "predicted_price_cents": 6405,
+        "lower_bound_cents": 5697,
+        "upper_bound_cents": 7113,
+        "predicted_severity": "AMBER",
+        "confidence": 71
       },
       {
         "date": "2026-07-05",
-        "predicted_price_cents": 3483,
-        "lower_bound_cents": 2508,
-        "upper_bound_cents": 4458,
-        "predicted_severity": "GREEN",
-        "confidence": 58
+        "predicted_price_cents": 6392,
+        "lower_bound_cents": 5648,
+        "upper_bound_cents": 7136,
+        "predicted_severity": "AMBER",
+        "confidence": 69
       },
       {
         "date": "2026-07-06",
-        "predicted_price_cents": 3548,
-        "lower_bound_cents": 2498,
-        "upper_bound_cents": 4598,
-        "predicted_severity": "GREEN",
-        "confidence": 55
+        "predicted_price_cents": 7364,
+        "lower_bound_cents": 6585,
+        "upper_bound_cents": 8143,
+        "predicted_severity": "AMBER",
+        "confidence": 66
       },
       {
         "date": "2026-07-07",
-        "predicted_price_cents": 3589,
-        "lower_bound_cents": 2469,
-        "upper_bound_cents": 4709,
-        "predicted_severity": "GREEN",
-        "confidence": 51
+        "predicted_price_cents": 7369,
+        "lower_bound_cents": 6555,
+        "upper_bound_cents": 8183,
+        "predicted_severity": "AMBER",
+        "confidence": 63
       },
       {
         "date": "2026-07-08",
-        "predicted_price_cents": 3583,
-        "lower_bound_cents": 2408,
-        "upper_bound_cents": 4758,
-        "predicted_severity": "GREEN",
-        "confidence": 48
+        "predicted_price_cents": 7375,
+        "lower_bound_cents": 6525,
+        "upper_bound_cents": 8225,
+        "predicted_severity": "AMBER",
+        "confidence": 61
       },
       {
         "date": "2026-07-09",
-        "predicted_price_cents": 3739,
-        "lower_bound_cents": 2453,
-        "upper_bound_cents": 5025,
-        "predicted_severity": "GREEN",
-        "confidence": 45
+        "predicted_price_cents": 7380,
+        "lower_bound_cents": 6495,
+        "upper_bound_cents": 8265,
+        "predicted_severity": "AMBER",
+        "confidence": 58
       }
     ],
     "stats": {
@@ -2150,115 +2150,115 @@
     "forecast": [
       {
         "date": "2026-06-26",
-        "predicted_price_cents": 17210,
-        "lower_bound_cents": 14869,
-        "upper_bound_cents": 19551,
+        "predicted_price_cents": 21083,
+        "lower_bound_cents": 19748,
+        "upper_bound_cents": 22418,
+        "predicted_severity": "RED",
+        "confidence": 92
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 20489,
+        "lower_bound_cents": 19042,
+        "upper_bound_cents": 21936,
         "predicted_severity": "RED",
         "confidence": 89
       },
       {
-        "date": "2026-06-27",
-        "predicted_price_cents": 14852,
-        "lower_bound_cents": 12594,
-        "upper_bound_cents": 17110,
-        "predicted_severity": "RED",
-        "confidence": 85
-      },
-      {
         "date": "2026-06-28",
-        "predicted_price_cents": 12352,
-        "lower_bound_cents": 10277,
-        "upper_bound_cents": 14427,
-        "predicted_severity": "AMBER",
-        "confidence": 82
+        "predicted_price_cents": 19895,
+        "lower_bound_cents": 18337,
+        "upper_bound_cents": 21453,
+        "predicted_severity": "RED",
+        "confidence": 87
       },
       {
         "date": "2026-06-29",
-        "predicted_price_cents": 12751,
-        "lower_bound_cents": 10405,
-        "upper_bound_cents": 15097,
-        "predicted_severity": "AMBER",
-        "confidence": 78
+        "predicted_price_cents": 19302,
+        "lower_bound_cents": 17633,
+        "upper_bound_cents": 20971,
+        "predicted_severity": "RED",
+        "confidence": 84
       },
       {
         "date": "2026-06-30",
-        "predicted_price_cents": 12123,
-        "lower_bound_cents": 9698,
-        "upper_bound_cents": 14548,
-        "predicted_severity": "AMBER",
-        "confidence": 75
+        "predicted_price_cents": 18709,
+        "lower_bound_cents": 16929,
+        "upper_bound_cents": 20489,
+        "predicted_severity": "RED",
+        "confidence": 82
       },
       {
         "date": "2026-07-01",
-        "predicted_price_cents": 12033,
-        "lower_bound_cents": 9434,
-        "upper_bound_cents": 14632,
-        "predicted_severity": "AMBER",
-        "confidence": 72
+        "predicted_price_cents": 18116,
+        "lower_bound_cents": 16224,
+        "upper_bound_cents": 20008,
+        "predicted_severity": "RED",
+        "confidence": 79
       },
       {
         "date": "2026-07-02",
-        "predicted_price_cents": 11897,
-        "lower_bound_cents": 9137,
-        "upper_bound_cents": 14657,
-        "predicted_severity": "AMBER",
-        "confidence": 68
+        "predicted_price_cents": 17524,
+        "lower_bound_cents": 15521,
+        "upper_bound_cents": 19527,
+        "predicted_severity": "RED",
+        "confidence": 76
       },
       {
         "date": "2026-07-03",
-        "predicted_price_cents": 12702,
-        "lower_bound_cents": 9552,
-        "upper_bound_cents": 15852,
-        "predicted_severity": "AMBER",
-        "confidence": 65
+        "predicted_price_cents": 17624,
+        "lower_bound_cents": 15510,
+        "upper_bound_cents": 19738,
+        "predicted_severity": "RED",
+        "confidence": 74
       },
       {
         "date": "2026-07-04",
-        "predicted_price_cents": 10993,
-        "lower_bound_cents": 8091,
-        "upper_bound_cents": 13895,
-        "predicted_severity": "AMBER",
-        "confidence": 61
+        "predicted_price_cents": 17725,
+        "lower_bound_cents": 15500,
+        "upper_bound_cents": 19950,
+        "predicted_severity": "RED",
+        "confidence": 71
       },
       {
         "date": "2026-07-05",
-        "predicted_price_cents": 9209,
-        "lower_bound_cents": 6630,
-        "upper_bound_cents": 11788,
-        "predicted_severity": "GREEN",
-        "confidence": 58
+        "predicted_price_cents": 17826,
+        "lower_bound_cents": 15489,
+        "upper_bound_cents": 20163,
+        "predicted_severity": "RED",
+        "confidence": 69
       },
       {
         "date": "2026-07-06",
-        "predicted_price_cents": 8831,
-        "lower_bound_cents": 6217,
-        "upper_bound_cents": 11445,
-        "predicted_severity": "GREEN",
-        "confidence": 55
+        "predicted_price_cents": 16655,
+        "lower_bound_cents": 14207,
+        "upper_bound_cents": 19103,
+        "predicted_severity": "RED",
+        "confidence": 66
       },
       {
         "date": "2026-07-07",
-        "predicted_price_cents": 8589,
-        "lower_bound_cents": 5909,
-        "upper_bound_cents": 11269,
-        "predicted_severity": "GREEN",
-        "confidence": 51
+        "predicted_price_cents": 16715,
+        "lower_bound_cents": 14156,
+        "upper_bound_cents": 19274,
+        "predicted_severity": "RED",
+        "confidence": 63
       },
       {
         "date": "2026-07-08",
-        "predicted_price_cents": 8218,
-        "lower_bound_cents": 5522,
-        "upper_bound_cents": 10914,
-        "predicted_severity": "GREEN",
-        "confidence": 48
+        "predicted_price_cents": 16775,
+        "lower_bound_cents": 14104,
+        "upper_bound_cents": 19446,
+        "predicted_severity": "RED",
+        "confidence": 61
       },
       {
         "date": "2026-07-09",
-        "predicted_price_cents": 8720,
-        "lower_bound_cents": 5720,
-        "upper_bound_cents": 11720,
-        "predicted_severity": "GREEN",
-        "confidence": 45
+        "predicted_price_cents": 16834,
+        "lower_bound_cents": 14052,
+        "upper_bound_cents": 19616,
+        "predicted_severity": "RED",
+        "confidence": 58
       }
     ],
     "stats": {
@@ -2907,115 +2907,115 @@
     "forecast": [
       {
         "date": "2026-06-26",
-        "predicted_price_cents": 5649,
-        "lower_bound_cents": 4881,
-        "upper_bound_cents": 6417,
-        "predicted_severity": "AMBER",
-        "confidence": 89
+        "predicted_price_cents": 5518,
+        "lower_bound_cents": 5154,
+        "upper_bound_cents": 5882,
+        "predicted_severity": "RED",
+        "confidence": 92
       },
       {
         "date": "2026-06-27",
-        "predicted_price_cents": 4540,
-        "lower_bound_cents": 3850,
-        "upper_bound_cents": 5230,
-        "predicted_severity": "GREEN",
-        "confidence": 85
+        "predicted_price_cents": 5472,
+        "lower_bound_cents": 5078,
+        "upper_bound_cents": 5866,
+        "predicted_severity": "RED",
+        "confidence": 89
       },
       {
         "date": "2026-06-28",
-        "predicted_price_cents": 3803,
-        "lower_bound_cents": 3164,
-        "upper_bound_cents": 4442,
-        "predicted_severity": "GREEN",
-        "confidence": 82
+        "predicted_price_cents": 5426,
+        "lower_bound_cents": 5001,
+        "upper_bound_cents": 5851,
+        "predicted_severity": "RED",
+        "confidence": 87
       },
       {
         "date": "2026-06-29",
-        "predicted_price_cents": 3704,
-        "lower_bound_cents": 3022,
-        "upper_bound_cents": 4386,
-        "predicted_severity": "GREEN",
-        "confidence": 78
+        "predicted_price_cents": 5380,
+        "lower_bound_cents": 4925,
+        "upper_bound_cents": 5835,
+        "predicted_severity": "AMBER",
+        "confidence": 84
       },
       {
         "date": "2026-06-30",
-        "predicted_price_cents": 3839,
-        "lower_bound_cents": 3071,
-        "upper_bound_cents": 4607,
-        "predicted_severity": "GREEN",
-        "confidence": 75
+        "predicted_price_cents": 5334,
+        "lower_bound_cents": 4849,
+        "upper_bound_cents": 5819,
+        "predicted_severity": "AMBER",
+        "confidence": 82
       },
       {
         "date": "2026-07-01",
-        "predicted_price_cents": 3945,
-        "lower_bound_cents": 3093,
-        "upper_bound_cents": 4797,
-        "predicted_severity": "GREEN",
-        "confidence": 72
+        "predicted_price_cents": 5288,
+        "lower_bound_cents": 4772,
+        "upper_bound_cents": 5804,
+        "predicted_severity": "AMBER",
+        "confidence": 79
       },
       {
         "date": "2026-07-02",
-        "predicted_price_cents": 4021,
-        "lower_bound_cents": 3088,
-        "upper_bound_cents": 4954,
-        "predicted_severity": "GREEN",
-        "confidence": 68
+        "predicted_price_cents": 5242,
+        "lower_bound_cents": 4696,
+        "upper_bound_cents": 5788,
+        "predicted_severity": "AMBER",
+        "confidence": 76
       },
       {
         "date": "2026-07-03",
-        "predicted_price_cents": 4101,
-        "lower_bound_cents": 3084,
-        "upper_bound_cents": 5118,
-        "predicted_severity": "GREEN",
-        "confidence": 65
+        "predicted_price_cents": 5242,
+        "lower_bound_cents": 4666,
+        "upper_bound_cents": 5818,
+        "predicted_severity": "AMBER",
+        "confidence": 74
       },
       {
         "date": "2026-07-04",
-        "predicted_price_cents": 3353,
-        "lower_bound_cents": 2468,
-        "upper_bound_cents": 4238,
+        "predicted_price_cents": 5243,
+        "lower_bound_cents": 4636,
+        "upper_bound_cents": 5850,
+        "predicted_severity": "AMBER",
+        "confidence": 71
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 5243,
+        "lower_bound_cents": 4606,
+        "upper_bound_cents": 5880,
+        "predicted_severity": "AMBER",
+        "confidence": 69
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 4632,
+        "lower_bound_cents": 3965,
+        "upper_bound_cents": 5299,
+        "predicted_severity": "GREEN",
+        "confidence": 66
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 4620,
+        "lower_bound_cents": 3922,
+        "upper_bound_cents": 5318,
+        "predicted_severity": "GREEN",
+        "confidence": 63
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 4608,
+        "lower_bound_cents": 3880,
+        "upper_bound_cents": 5336,
         "predicted_severity": "GREEN",
         "confidence": 61
       },
       {
-        "date": "2026-07-05",
-        "predicted_price_cents": 2708,
-        "lower_bound_cents": 1950,
-        "upper_bound_cents": 3466,
+        "date": "2026-07-09",
+        "predicted_price_cents": 4597,
+        "lower_bound_cents": 3839,
+        "upper_bound_cents": 5355,
         "predicted_severity": "GREEN",
         "confidence": 58
-      },
-      {
-        "date": "2026-07-06",
-        "predicted_price_cents": 2730,
-        "lower_bound_cents": 1922,
-        "upper_bound_cents": 3538,
-        "predicted_severity": "GREEN",
-        "confidence": 55
-      },
-      {
-        "date": "2026-07-07",
-        "predicted_price_cents": 2809,
-        "lower_bound_cents": 1933,
-        "upper_bound_cents": 3685,
-        "predicted_severity": "GREEN",
-        "confidence": 51
-      },
-      {
-        "date": "2026-07-08",
-        "predicted_price_cents": 2874,
-        "lower_bound_cents": 1931,
-        "upper_bound_cents": 3817,
-        "predicted_severity": "GREEN",
-        "confidence": 48
-      },
-      {
-        "date": "2026-07-09",
-        "predicted_price_cents": 2948,
-        "lower_bound_cents": 1934,
-        "upper_bound_cents": 3962,
-        "predicted_severity": "GREEN",
-        "confidence": 45
       }
     ],
     "stats": {
@@ -3664,115 +3664,115 @@
     "forecast": [
       {
         "date": "2026-06-26",
-        "predicted_price_cents": 11834,
-        "lower_bound_cents": 10225,
-        "upper_bound_cents": 13443,
-        "predicted_severity": "RED",
-        "confidence": 89
+        "predicted_price_cents": 10168,
+        "lower_bound_cents": 9225,
+        "upper_bound_cents": 11111,
+        "predicted_severity": "GREEN",
+        "confidence": 92
       },
       {
         "date": "2026-06-27",
-        "predicted_price_cents": 9863,
-        "lower_bound_cents": 8364,
-        "upper_bound_cents": 11362,
-        "predicted_severity": "AMBER",
-        "confidence": 85
+        "predicted_price_cents": 10218,
+        "lower_bound_cents": 9196,
+        "upper_bound_cents": 11240,
+        "predicted_severity": "GREEN",
+        "confidence": 89
       },
       {
         "date": "2026-06-28",
-        "predicted_price_cents": 7676,
-        "lower_bound_cents": 6386,
-        "upper_bound_cents": 8966,
+        "predicted_price_cents": 10269,
+        "lower_bound_cents": 9169,
+        "upper_bound_cents": 11369,
+        "predicted_severity": "GREEN",
+        "confidence": 87
+      },
+      {
+        "date": "2026-06-29",
+        "predicted_price_cents": 10320,
+        "lower_bound_cents": 9141,
+        "upper_bound_cents": 11499,
+        "predicted_severity": "GREEN",
+        "confidence": 84
+      },
+      {
+        "date": "2026-06-30",
+        "predicted_price_cents": 10370,
+        "lower_bound_cents": 9113,
+        "upper_bound_cents": 11627,
         "predicted_severity": "GREEN",
         "confidence": 82
       },
       {
-        "date": "2026-06-29",
-        "predicted_price_cents": 7782,
-        "lower_bound_cents": 6350,
-        "upper_bound_cents": 9214,
-        "predicted_severity": "GREEN",
-        "confidence": 78
-      },
-      {
-        "date": "2026-06-30",
-        "predicted_price_cents": 8219,
-        "lower_bound_cents": 6575,
-        "upper_bound_cents": 9863,
-        "predicted_severity": "GREEN",
-        "confidence": 75
-      },
-      {
         "date": "2026-07-01",
-        "predicted_price_cents": 8127,
-        "lower_bound_cents": 6372,
-        "upper_bound_cents": 9882,
+        "predicted_price_cents": 10421,
+        "lower_bound_cents": 9085,
+        "upper_bound_cents": 11757,
         "predicted_severity": "GREEN",
-        "confidence": 72
+        "confidence": 79
       },
       {
         "date": "2026-07-02",
-        "predicted_price_cents": 7838,
-        "lower_bound_cents": 6020,
-        "upper_bound_cents": 9656,
+        "predicted_price_cents": 10472,
+        "lower_bound_cents": 9057,
+        "upper_bound_cents": 11887,
         "predicted_severity": "GREEN",
-        "confidence": 68
+        "confidence": 76
       },
       {
         "date": "2026-07-03",
-        "predicted_price_cents": 7957,
-        "lower_bound_cents": 5984,
-        "upper_bound_cents": 9930,
+        "predicted_price_cents": 10433,
+        "lower_bound_cents": 8940,
+        "upper_bound_cents": 11926,
         "predicted_severity": "GREEN",
-        "confidence": 65
+        "confidence": 74
       },
       {
         "date": "2026-07-04",
-        "predicted_price_cents": 6198,
-        "lower_bound_cents": 4562,
-        "upper_bound_cents": 7834,
+        "predicted_price_cents": 10395,
+        "lower_bound_cents": 8823,
+        "upper_bound_cents": 11967,
+        "predicted_severity": "GREEN",
+        "confidence": 71
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 10357,
+        "lower_bound_cents": 8707,
+        "upper_bound_cents": 12007,
+        "predicted_severity": "GREEN",
+        "confidence": 69
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 10852,
+        "lower_bound_cents": 9123,
+        "upper_bound_cents": 12581,
+        "predicted_severity": "GREEN",
+        "confidence": 66
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 10827,
+        "lower_bound_cents": 9020,
+        "upper_bound_cents": 12634,
+        "predicted_severity": "GREEN",
+        "confidence": 63
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 10801,
+        "lower_bound_cents": 8915,
+        "upper_bound_cents": 12687,
         "predicted_severity": "GREEN",
         "confidence": 61
       },
       {
-        "date": "2026-07-05",
-        "predicted_price_cents": 5388,
-        "lower_bound_cents": 3879,
-        "upper_bound_cents": 6897,
+        "date": "2026-07-09",
+        "predicted_price_cents": 10776,
+        "lower_bound_cents": 8811,
+        "upper_bound_cents": 12741,
         "predicted_severity": "GREEN",
         "confidence": 58
-      },
-      {
-        "date": "2026-07-06",
-        "predicted_price_cents": 5139,
-        "lower_bound_cents": 3618,
-        "upper_bound_cents": 6660,
-        "predicted_severity": "GREEN",
-        "confidence": 55
-      },
-      {
-        "date": "2026-07-07",
-        "predicted_price_cents": 5196,
-        "lower_bound_cents": 3575,
-        "upper_bound_cents": 6817,
-        "predicted_severity": "GREEN",
-        "confidence": 51
-      },
-      {
-        "date": "2026-07-08",
-        "predicted_price_cents": 5229,
-        "lower_bound_cents": 3514,
-        "upper_bound_cents": 6944,
-        "predicted_severity": "GREEN",
-        "confidence": 48
-      },
-      {
-        "date": "2026-07-09",
-        "predicted_price_cents": 5444,
-        "lower_bound_cents": 3571,
-        "upper_bound_cents": 7317,
-        "predicted_severity": "GREEN",
-        "confidence": 45
       }
     ],
     "stats": {
@@ -4421,115 +4421,115 @@
     "forecast": [
       {
         "date": "2026-06-26",
-        "predicted_price_cents": 3532,
-        "lower_bound_cents": 3052,
-        "upper_bound_cents": 4012,
-        "predicted_severity": "GREEN",
-        "confidence": 89
+        "predicted_price_cents": 4001,
+        "lower_bound_cents": 3744,
+        "upper_bound_cents": 4258,
+        "predicted_severity": "RED",
+        "confidence": 92
       },
       {
         "date": "2026-06-27",
-        "predicted_price_cents": 3020,
-        "lower_bound_cents": 2561,
-        "upper_bound_cents": 3479,
-        "predicted_severity": "GREEN",
-        "confidence": 85
+        "predicted_price_cents": 3955,
+        "lower_bound_cents": 3676,
+        "upper_bound_cents": 4234,
+        "predicted_severity": "RED",
+        "confidence": 89
       },
       {
         "date": "2026-06-28",
-        "predicted_price_cents": 2418,
-        "lower_bound_cents": 2012,
-        "upper_bound_cents": 2824,
-        "predicted_severity": "GREEN",
-        "confidence": 82
+        "predicted_price_cents": 3910,
+        "lower_bound_cents": 3610,
+        "upper_bound_cents": 4210,
+        "predicted_severity": "RED",
+        "confidence": 87
       },
       {
         "date": "2026-06-29",
-        "predicted_price_cents": 2532,
-        "lower_bound_cents": 2066,
-        "upper_bound_cents": 2998,
-        "predicted_severity": "GREEN",
-        "confidence": 78
+        "predicted_price_cents": 3865,
+        "lower_bound_cents": 3543,
+        "upper_bound_cents": 4187,
+        "predicted_severity": "RED",
+        "confidence": 84
       },
       {
         "date": "2026-06-30",
-        "predicted_price_cents": 2611,
-        "lower_bound_cents": 2089,
-        "upper_bound_cents": 3133,
-        "predicted_severity": "GREEN",
-        "confidence": 75
+        "predicted_price_cents": 3820,
+        "lower_bound_cents": 3477,
+        "upper_bound_cents": 4163,
+        "predicted_severity": "RED",
+        "confidence": 82
       },
       {
         "date": "2026-07-01",
-        "predicted_price_cents": 2693,
-        "lower_bound_cents": 2111,
-        "upper_bound_cents": 3275,
-        "predicted_severity": "GREEN",
-        "confidence": 72
+        "predicted_price_cents": 3775,
+        "lower_bound_cents": 3410,
+        "upper_bound_cents": 4140,
+        "predicted_severity": "RED",
+        "confidence": 79
       },
       {
         "date": "2026-07-02",
-        "predicted_price_cents": 2703,
-        "lower_bound_cents": 2076,
-        "upper_bound_cents": 3330,
-        "predicted_severity": "GREEN",
-        "confidence": 68
+        "predicted_price_cents": 3730,
+        "lower_bound_cents": 3344,
+        "upper_bound_cents": 4116,
+        "predicted_severity": "RED",
+        "confidence": 76
       },
       {
         "date": "2026-07-03",
-        "predicted_price_cents": 2670,
-        "lower_bound_cents": 2008,
-        "upper_bound_cents": 3332,
-        "predicted_severity": "GREEN",
-        "confidence": 65
+        "predicted_price_cents": 3739,
+        "lower_bound_cents": 3332,
+        "upper_bound_cents": 4146,
+        "predicted_severity": "RED",
+        "confidence": 74
       },
       {
         "date": "2026-07-04",
-        "predicted_price_cents": 2212,
-        "lower_bound_cents": 1628,
-        "upper_bound_cents": 2796,
+        "predicted_price_cents": 3747,
+        "lower_bound_cents": 3318,
+        "upper_bound_cents": 4176,
+        "predicted_severity": "RED",
+        "confidence": 71
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 3756,
+        "lower_bound_cents": 3306,
+        "upper_bound_cents": 4206,
+        "predicted_severity": "RED",
+        "confidence": 69
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 3512,
+        "lower_bound_cents": 3040,
+        "upper_bound_cents": 3984,
+        "predicted_severity": "GREEN",
+        "confidence": 66
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 3515,
+        "lower_bound_cents": 3022,
+        "upper_bound_cents": 4008,
+        "predicted_severity": "GREEN",
+        "confidence": 63
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 3518,
+        "lower_bound_cents": 3003,
+        "upper_bound_cents": 4033,
         "predicted_severity": "GREEN",
         "confidence": 61
       },
       {
-        "date": "2026-07-05",
-        "predicted_price_cents": 1833,
-        "lower_bound_cents": 1320,
-        "upper_bound_cents": 2346,
+        "date": "2026-07-09",
+        "predicted_price_cents": 3521,
+        "lower_bound_cents": 2985,
+        "upper_bound_cents": 4057,
         "predicted_severity": "GREEN",
         "confidence": 58
-      },
-      {
-        "date": "2026-07-06",
-        "predicted_price_cents": 1837,
-        "lower_bound_cents": 1293,
-        "upper_bound_cents": 2381,
-        "predicted_severity": "GREEN",
-        "confidence": 55
-      },
-      {
-        "date": "2026-07-07",
-        "predicted_price_cents": 1781,
-        "lower_bound_cents": 1225,
-        "upper_bound_cents": 2337,
-        "predicted_severity": "GREEN",
-        "confidence": 51
-      },
-      {
-        "date": "2026-07-08",
-        "predicted_price_cents": 1727,
-        "lower_bound_cents": 1161,
-        "upper_bound_cents": 2293,
-        "predicted_severity": "GREEN",
-        "confidence": 48
-      },
-      {
-        "date": "2026-07-09",
-        "predicted_price_cents": 1764,
-        "lower_bound_cents": 1157,
-        "upper_bound_cents": 2371,
-        "predicted_severity": "GREEN",
-        "confidence": 45
       }
     ],
     "stats": {
@@ -5178,115 +5178,115 @@
     "forecast": [
       {
         "date": "2026-06-26",
-        "predicted_price_cents": 2992,
-        "lower_bound_cents": 2585,
-        "upper_bound_cents": 3399,
+        "predicted_price_cents": 3081,
+        "lower_bound_cents": 2899,
+        "upper_bound_cents": 3263,
+        "predicted_severity": "AMBER",
+        "confidence": 92
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 3082,
+        "lower_bound_cents": 2885,
+        "upper_bound_cents": 3279,
         "predicted_severity": "AMBER",
         "confidence": 89
       },
       {
-        "date": "2026-06-27",
-        "predicted_price_cents": 2429,
-        "lower_bound_cents": 2060,
-        "upper_bound_cents": 2798,
-        "predicted_severity": "GREEN",
-        "confidence": 85
-      },
-      {
         "date": "2026-06-28",
-        "predicted_price_cents": 1992,
-        "lower_bound_cents": 1657,
-        "upper_bound_cents": 2327,
-        "predicted_severity": "GREEN",
-        "confidence": 82
+        "predicted_price_cents": 3083,
+        "lower_bound_cents": 2871,
+        "upper_bound_cents": 3295,
+        "predicted_severity": "AMBER",
+        "confidence": 87
       },
       {
         "date": "2026-06-29",
-        "predicted_price_cents": 1985,
-        "lower_bound_cents": 1620,
-        "upper_bound_cents": 2350,
-        "predicted_severity": "GREEN",
-        "confidence": 78
+        "predicted_price_cents": 3084,
+        "lower_bound_cents": 2856,
+        "upper_bound_cents": 3312,
+        "predicted_severity": "AMBER",
+        "confidence": 84
       },
       {
         "date": "2026-06-30",
-        "predicted_price_cents": 2016,
-        "lower_bound_cents": 1613,
-        "upper_bound_cents": 2419,
-        "predicted_severity": "GREEN",
-        "confidence": 75
+        "predicted_price_cents": 3084,
+        "lower_bound_cents": 2841,
+        "upper_bound_cents": 3327,
+        "predicted_severity": "AMBER",
+        "confidence": 82
       },
       {
         "date": "2026-07-01",
-        "predicted_price_cents": 1995,
-        "lower_bound_cents": 1564,
-        "upper_bound_cents": 2426,
-        "predicted_severity": "GREEN",
-        "confidence": 72
+        "predicted_price_cents": 3085,
+        "lower_bound_cents": 2827,
+        "upper_bound_cents": 3343,
+        "predicted_severity": "AMBER",
+        "confidence": 79
       },
       {
         "date": "2026-07-02",
-        "predicted_price_cents": 2049,
-        "lower_bound_cents": 1574,
-        "upper_bound_cents": 2524,
-        "predicted_severity": "GREEN",
-        "confidence": 68
+        "predicted_price_cents": 3086,
+        "lower_bound_cents": 2813,
+        "upper_bound_cents": 3359,
+        "predicted_severity": "AMBER",
+        "confidence": 76
       },
       {
         "date": "2026-07-03",
-        "predicted_price_cents": 2012,
-        "lower_bound_cents": 1513,
-        "upper_bound_cents": 2511,
-        "predicted_severity": "GREEN",
-        "confidence": 65
+        "predicted_price_cents": 3088,
+        "lower_bound_cents": 2800,
+        "upper_bound_cents": 3376,
+        "predicted_severity": "AMBER",
+        "confidence": 74
       },
       {
         "date": "2026-07-04",
-        "predicted_price_cents": 1621,
-        "lower_bound_cents": 1193,
-        "upper_bound_cents": 2049,
-        "predicted_severity": "GREEN",
-        "confidence": 61
+        "predicted_price_cents": 3090,
+        "lower_bound_cents": 2787,
+        "upper_bound_cents": 3393,
+        "predicted_severity": "AMBER",
+        "confidence": 71
       },
       {
         "date": "2026-07-05",
-        "predicted_price_cents": 1313,
-        "lower_bound_cents": 945,
-        "upper_bound_cents": 1681,
-        "predicted_severity": "GREEN",
-        "confidence": 58
+        "predicted_price_cents": 3092,
+        "lower_bound_cents": 2773,
+        "upper_bound_cents": 3411,
+        "predicted_severity": "AMBER",
+        "confidence": 69
       },
       {
         "date": "2026-07-06",
-        "predicted_price_cents": 1352,
-        "lower_bound_cents": 952,
-        "upper_bound_cents": 1752,
-        "predicted_severity": "GREEN",
-        "confidence": 55
+        "predicted_price_cents": 3691,
+        "lower_bound_cents": 3357,
+        "upper_bound_cents": 4025,
+        "predicted_severity": "RED",
+        "confidence": 66
       },
       {
         "date": "2026-07-07",
-        "predicted_price_cents": 1380,
-        "lower_bound_cents": 949,
-        "upper_bound_cents": 1811,
-        "predicted_severity": "GREEN",
-        "confidence": 51
+        "predicted_price_cents": 3703,
+        "lower_bound_cents": 3354,
+        "upper_bound_cents": 4052,
+        "predicted_severity": "RED",
+        "confidence": 63
       },
       {
         "date": "2026-07-08",
-        "predicted_price_cents": 1412,
-        "lower_bound_cents": 949,
-        "upper_bound_cents": 1875,
-        "predicted_severity": "GREEN",
-        "confidence": 48
+        "predicted_price_cents": 3715,
+        "lower_bound_cents": 3351,
+        "upper_bound_cents": 4079,
+        "predicted_severity": "RED",
+        "confidence": 61
       },
       {
         "date": "2026-07-09",
-        "predicted_price_cents": 1427,
-        "lower_bound_cents": 936,
-        "upper_bound_cents": 1918,
-        "predicted_severity": "GREEN",
-        "confidence": 45
+        "predicted_price_cents": 3728,
+        "lower_bound_cents": 3349,
+        "upper_bound_cents": 4107,
+        "predicted_severity": "RED",
+        "confidence": 58
       }
     ],
     "stats": {
@@ -5935,115 +5935,115 @@
     "forecast": [
       {
         "date": "2026-06-26",
-        "predicted_price_cents": 7082,
-        "lower_bound_cents": 6119,
-        "upper_bound_cents": 8045,
+        "predicted_price_cents": 6827,
+        "lower_bound_cents": 6429,
+        "upper_bound_cents": 7225,
         "predicted_severity": "RED",
-        "confidence": 89
+        "confidence": 92
       },
       {
         "date": "2026-06-27",
-        "predicted_price_cents": 5902,
-        "lower_bound_cents": 5005,
-        "upper_bound_cents": 6799,
+        "predicted_price_cents": 6629,
+        "lower_bound_cents": 6197,
+        "upper_bound_cents": 7061,
         "predicted_severity": "AMBER",
-        "confidence": 85
+        "confidence": 89
       },
       {
         "date": "2026-06-28",
-        "predicted_price_cents": 4933,
-        "lower_bound_cents": 4104,
-        "upper_bound_cents": 5762,
-        "predicted_severity": "GREEN",
-        "confidence": 82
+        "predicted_price_cents": 6431,
+        "lower_bound_cents": 5966,
+        "upper_bound_cents": 6896,
+        "predicted_severity": "AMBER",
+        "confidence": 87
       },
       {
         "date": "2026-06-29",
-        "predicted_price_cents": 5081,
-        "lower_bound_cents": 4146,
-        "upper_bound_cents": 6016,
-        "predicted_severity": "GREEN",
-        "confidence": 78
+        "predicted_price_cents": 6234,
+        "lower_bound_cents": 5736,
+        "upper_bound_cents": 6732,
+        "predicted_severity": "AMBER",
+        "confidence": 84
       },
       {
         "date": "2026-06-30",
-        "predicted_price_cents": 5155,
-        "lower_bound_cents": 4124,
-        "upper_bound_cents": 6186,
-        "predicted_severity": "GREEN",
-        "confidence": 75
+        "predicted_price_cents": 6036,
+        "lower_bound_cents": 5505,
+        "upper_bound_cents": 6567,
+        "predicted_severity": "AMBER",
+        "confidence": 82
       },
       {
         "date": "2026-07-01",
-        "predicted_price_cents": 5282,
-        "lower_bound_cents": 4141,
-        "upper_bound_cents": 6423,
+        "predicted_price_cents": 5838,
+        "lower_bound_cents": 5274,
+        "upper_bound_cents": 6402,
         "predicted_severity": "AMBER",
-        "confidence": 72
+        "confidence": 79
       },
       {
         "date": "2026-07-02",
-        "predicted_price_cents": 5221,
-        "lower_bound_cents": 4010,
-        "upper_bound_cents": 6432,
+        "predicted_price_cents": 5640,
+        "lower_bound_cents": 5042,
+        "upper_bound_cents": 6238,
         "predicted_severity": "AMBER",
-        "confidence": 68
+        "confidence": 76
       },
       {
         "date": "2026-07-03",
-        "predicted_price_cents": 5430,
-        "lower_bound_cents": 4083,
-        "upper_bound_cents": 6777,
+        "predicted_price_cents": 5627,
+        "lower_bound_cents": 4996,
+        "upper_bound_cents": 6258,
         "predicted_severity": "AMBER",
-        "confidence": 65
+        "confidence": 74
       },
       {
         "date": "2026-07-04",
-        "predicted_price_cents": 4556,
-        "lower_bound_cents": 3353,
-        "upper_bound_cents": 5759,
-        "predicted_severity": "GREEN",
-        "confidence": 61
+        "predicted_price_cents": 5614,
+        "lower_bound_cents": 4950,
+        "upper_bound_cents": 6278,
+        "predicted_severity": "AMBER",
+        "confidence": 71
       },
       {
         "date": "2026-07-05",
-        "predicted_price_cents": 3872,
-        "lower_bound_cents": 2788,
-        "upper_bound_cents": 4956,
-        "predicted_severity": "GREEN",
-        "confidence": 58
+        "predicted_price_cents": 5601,
+        "lower_bound_cents": 4904,
+        "upper_bound_cents": 6298,
+        "predicted_severity": "AMBER",
+        "confidence": 69
       },
       {
         "date": "2026-07-06",
-        "predicted_price_cents": 3863,
-        "lower_bound_cents": 2720,
-        "upper_bound_cents": 5006,
-        "predicted_severity": "GREEN",
-        "confidence": 55
+        "predicted_price_cents": 5936,
+        "lower_bound_cents": 5206,
+        "upper_bound_cents": 6666,
+        "predicted_severity": "AMBER",
+        "confidence": 66
       },
       {
         "date": "2026-07-07",
-        "predicted_price_cents": 3865,
-        "lower_bound_cents": 2659,
-        "upper_bound_cents": 5071,
-        "predicted_severity": "GREEN",
-        "confidence": 51
+        "predicted_price_cents": 5929,
+        "lower_bound_cents": 5166,
+        "upper_bound_cents": 6692,
+        "predicted_severity": "AMBER",
+        "confidence": 63
       },
       {
         "date": "2026-07-08",
-        "predicted_price_cents": 3890,
-        "lower_bound_cents": 2614,
-        "upper_bound_cents": 5166,
-        "predicted_severity": "GREEN",
-        "confidence": 48
+        "predicted_price_cents": 5921,
+        "lower_bound_cents": 5124,
+        "upper_bound_cents": 6718,
+        "predicted_severity": "AMBER",
+        "confidence": 61
       },
       {
         "date": "2026-07-09",
-        "predicted_price_cents": 3928,
-        "lower_bound_cents": 2577,
-        "upper_bound_cents": 5279,
-        "predicted_severity": "GREEN",
-        "confidence": 45
+        "predicted_price_cents": 5914,
+        "lower_bound_cents": 5084,
+        "upper_bound_cents": 6744,
+        "predicted_severity": "AMBER",
+        "confidence": 58
       }
     ],
     "stats": {
@@ -6692,115 +6692,115 @@
     "forecast": [
       {
         "date": "2026-06-26",
-        "predicted_price_cents": 2549,
-        "lower_bound_cents": 2202,
-        "upper_bound_cents": 2896,
+        "predicted_price_cents": 2470,
+        "lower_bound_cents": 2323,
+        "upper_bound_cents": 2617,
+        "predicted_severity": "AMBER",
+        "confidence": 92
+      },
+      {
+        "date": "2026-06-27",
+        "predicted_price_cents": 2448,
+        "lower_bound_cents": 2289,
+        "upper_bound_cents": 2607,
         "predicted_severity": "AMBER",
         "confidence": 89
       },
       {
-        "date": "2026-06-27",
-        "predicted_price_cents": 2039,
-        "lower_bound_cents": 1729,
-        "upper_bound_cents": 2349,
-        "predicted_severity": "GREEN",
-        "confidence": 85
-      },
-      {
         "date": "2026-06-28",
-        "predicted_price_cents": 1712,
-        "lower_bound_cents": 1424,
-        "upper_bound_cents": 2000,
-        "predicted_severity": "GREEN",
-        "confidence": 82
+        "predicted_price_cents": 2425,
+        "lower_bound_cents": 2253,
+        "upper_bound_cents": 2597,
+        "predicted_severity": "AMBER",
+        "confidence": 87
       },
       {
         "date": "2026-06-29",
-        "predicted_price_cents": 1692,
-        "lower_bound_cents": 1381,
-        "upper_bound_cents": 2003,
-        "predicted_severity": "GREEN",
-        "confidence": 78
+        "predicted_price_cents": 2403,
+        "lower_bound_cents": 2219,
+        "upper_bound_cents": 2587,
+        "predicted_severity": "AMBER",
+        "confidence": 84
       },
       {
         "date": "2026-06-30",
-        "predicted_price_cents": 1698,
-        "lower_bound_cents": 1358,
-        "upper_bound_cents": 2038,
-        "predicted_severity": "GREEN",
-        "confidence": 75
+        "predicted_price_cents": 2381,
+        "lower_bound_cents": 2185,
+        "upper_bound_cents": 2577,
+        "predicted_severity": "AMBER",
+        "confidence": 82
       },
       {
         "date": "2026-07-01",
-        "predicted_price_cents": 1676,
-        "lower_bound_cents": 1314,
-        "upper_bound_cents": 2038,
-        "predicted_severity": "GREEN",
-        "confidence": 72
+        "predicted_price_cents": 2359,
+        "lower_bound_cents": 2150,
+        "upper_bound_cents": 2568,
+        "predicted_severity": "AMBER",
+        "confidence": 79
       },
       {
         "date": "2026-07-02",
-        "predicted_price_cents": 1695,
-        "lower_bound_cents": 1302,
-        "upper_bound_cents": 2088,
+        "predicted_price_cents": 2336,
+        "lower_bound_cents": 2115,
+        "upper_bound_cents": 2557,
         "predicted_severity": "GREEN",
-        "confidence": 68
+        "confidence": 76
       },
       {
         "date": "2026-07-03",
-        "predicted_price_cents": 1721,
-        "lower_bound_cents": 1294,
-        "upper_bound_cents": 2148,
+        "predicted_price_cents": 2335,
+        "lower_bound_cents": 2102,
+        "upper_bound_cents": 2568,
         "predicted_severity": "GREEN",
-        "confidence": 65
+        "confidence": 74
       },
       {
         "date": "2026-07-04",
-        "predicted_price_cents": 1399,
-        "lower_bound_cents": 1030,
-        "upper_bound_cents": 1768,
+        "predicted_price_cents": 2334,
+        "lower_bound_cents": 2089,
+        "upper_bound_cents": 2579,
+        "predicted_severity": "GREEN",
+        "confidence": 71
+      },
+      {
+        "date": "2026-07-05",
+        "predicted_price_cents": 2334,
+        "lower_bound_cents": 2076,
+        "upper_bound_cents": 2592,
+        "predicted_severity": "GREEN",
+        "confidence": 69
+      },
+      {
+        "date": "2026-07-06",
+        "predicted_price_cents": 2129,
+        "lower_bound_cents": 1859,
+        "upper_bound_cents": 2399,
+        "predicted_severity": "GREEN",
+        "confidence": 66
+      },
+      {
+        "date": "2026-07-07",
+        "predicted_price_cents": 2123,
+        "lower_bound_cents": 1841,
+        "upper_bound_cents": 2405,
+        "predicted_severity": "GREEN",
+        "confidence": 63
+      },
+      {
+        "date": "2026-07-08",
+        "predicted_price_cents": 2118,
+        "lower_bound_cents": 1824,
+        "upper_bound_cents": 2412,
         "predicted_severity": "GREEN",
         "confidence": 61
       },
       {
-        "date": "2026-07-05",
-        "predicted_price_cents": 1153,
-        "lower_bound_cents": 830,
-        "upper_bound_cents": 1476,
+        "date": "2026-07-09",
+        "predicted_price_cents": 2113,
+        "lower_bound_cents": 1806,
+        "upper_bound_cents": 2420,
         "predicted_severity": "GREEN",
         "confidence": 58
-      },
-      {
-        "date": "2026-07-06",
-        "predicted_price_cents": 1178,
-        "lower_bound_cents": 829,
-        "upper_bound_cents": 1527,
-        "predicted_severity": "GREEN",
-        "confidence": 55
-      },
-      {
-        "date": "2026-07-07",
-        "predicted_price_cents": 1154,
-        "lower_bound_cents": 794,
-        "upper_bound_cents": 1514,
-        "predicted_severity": "GREEN",
-        "confidence": 51
-      },
-      {
-        "date": "2026-07-08",
-        "predicted_price_cents": 1138,
-        "lower_bound_cents": 765,
-        "upper_bound_cents": 1511,
-        "predicted_severity": "GREEN",
-        "confidence": 48
-      },
-      {
-        "date": "2026-07-09",
-        "predicted_price_cents": 1140,
-        "lower_bound_cents": 748,
-        "upper_bound_cents": 1532,
-        "predicted_severity": "GREEN",
-        "confidence": 45
       }
     ],
     "stats": {
@@ -7449,115 +7449,115 @@
     "forecast": [
       {
         "date": "2026-06-26",
-        "predicted_price_cents": 11021,
-        "lower_bound_cents": 9522,
-        "upper_bound_cents": 12520,
-        "predicted_severity": "AMBER",
-        "confidence": 89
+        "predicted_price_cents": 11449,
+        "lower_bound_cents": 10390,
+        "upper_bound_cents": 12508,
+        "predicted_severity": "GREEN",
+        "confidence": 92
       },
       {
         "date": "2026-06-27",
-        "predicted_price_cents": 8999,
-        "lower_bound_cents": 7631,
-        "upper_bound_cents": 10367,
-        "predicted_severity": "AMBER",
-        "confidence": 85
+        "predicted_price_cents": 11614,
+        "lower_bound_cents": 10467,
+        "upper_bound_cents": 12761,
+        "predicted_severity": "GREEN",
+        "confidence": 89
       },
       {
         "date": "2026-06-28",
-        "predicted_price_cents": 7129,
-        "lower_bound_cents": 5931,
-        "upper_bound_cents": 8327,
+        "predicted_price_cents": 11779,
+        "lower_bound_cents": 10544,
+        "upper_bound_cents": 13014,
         "predicted_severity": "GREEN",
-        "confidence": 82
+        "confidence": 87
       },
       {
         "date": "2026-06-29",
-        "predicted_price_cents": 7375,
-        "lower_bound_cents": 6018,
-        "upper_bound_cents": 8732,
-        "predicted_severity": "GREEN",
-        "confidence": 78
+        "predicted_price_cents": 11943,
+        "lower_bound_cents": 10619,
+        "upper_bound_cents": 13267,
+        "predicted_severity": "RED",
+        "confidence": 84
       },
       {
         "date": "2026-06-30",
-        "predicted_price_cents": 7412,
-        "lower_bound_cents": 5930,
-        "upper_bound_cents": 8894,
-        "predicted_severity": "GREEN",
-        "confidence": 75
+        "predicted_price_cents": 12108,
+        "lower_bound_cents": 10696,
+        "upper_bound_cents": 13520,
+        "predicted_severity": "RED",
+        "confidence": 82
       },
       {
         "date": "2026-07-01",
-        "predicted_price_cents": 7688,
-        "lower_bound_cents": 6027,
-        "upper_bound_cents": 9349,
-        "predicted_severity": "GREEN",
-        "confidence": 72
+        "predicted_price_cents": 12272,
+        "lower_bound_cents": 10772,
+        "upper_bound_cents": 13772,
+        "predicted_severity": "RED",
+        "confidence": 79
       },
       {
         "date": "2026-07-02",
-        "predicted_price_cents": 7356,
-        "lower_bound_cents": 5649,
-        "upper_bound_cents": 9063,
-        "predicted_severity": "GREEN",
-        "confidence": 68
+        "predicted_price_cents": 12436,
+        "lower_bound_cents": 10848,
+        "upper_bound_cents": 14024,
+        "predicted_severity": "RED",
+        "confidence": 76
       },
       {
         "date": "2026-07-03",
-        "predicted_price_cents": 7489,
-        "lower_bound_cents": 5632,
-        "upper_bound_cents": 9346,
-        "predicted_severity": "GREEN",
-        "confidence": 65
+        "predicted_price_cents": 12430,
+        "lower_bound_cents": 10753,
+        "upper_bound_cents": 14107,
+        "predicted_severity": "RED",
+        "confidence": 74
       },
       {
         "date": "2026-07-04",
-        "predicted_price_cents": 6514,
-        "lower_bound_cents": 4794,
-        "upper_bound_cents": 8234,
-        "predicted_severity": "GREEN",
-        "confidence": 61
+        "predicted_price_cents": 12423,
+        "lower_bound_cents": 10658,
+        "upper_bound_cents": 14188,
+        "predicted_severity": "RED",
+        "confidence": 71
       },
       {
         "date": "2026-07-05",
-        "predicted_price_cents": 5218,
-        "lower_bound_cents": 3757,
-        "upper_bound_cents": 6679,
-        "predicted_severity": "GREEN",
-        "confidence": 58
+        "predicted_price_cents": 12416,
+        "lower_bound_cents": 10563,
+        "upper_bound_cents": 14269,
+        "predicted_severity": "RED",
+        "confidence": 69
       },
       {
         "date": "2026-07-06",
-        "predicted_price_cents": 5160,
-        "lower_bound_cents": 3633,
-        "upper_bound_cents": 6687,
-        "predicted_severity": "GREEN",
-        "confidence": 55
+        "predicted_price_cents": 12149,
+        "lower_bound_cents": 10208,
+        "upper_bound_cents": 14090,
+        "predicted_severity": "RED",
+        "confidence": 66
       },
       {
         "date": "2026-07-07",
-        "predicted_price_cents": 5371,
-        "lower_bound_cents": 3695,
-        "upper_bound_cents": 7047,
-        "predicted_severity": "GREEN",
-        "confidence": 51
+        "predicted_price_cents": 12144,
+        "lower_bound_cents": 10114,
+        "upper_bound_cents": 14174,
+        "predicted_severity": "RED",
+        "confidence": 63
       },
       {
         "date": "2026-07-08",
-        "predicted_price_cents": 5697,
-        "lower_bound_cents": 3828,
-        "upper_bound_cents": 7566,
-        "predicted_severity": "GREEN",
-        "confidence": 48
+        "predicted_price_cents": 12138,
+        "lower_bound_cents": 10020,
+        "upper_bound_cents": 14256,
+        "predicted_severity": "RED",
+        "confidence": 61
       },
       {
         "date": "2026-07-09",
-        "predicted_price_cents": 5712,
-        "lower_bound_cents": 3747,
-        "upper_bound_cents": 7677,
-        "predicted_severity": "GREEN",
-        "confidence": 45
+        "predicted_price_cents": 12133,
+        "lower_bound_cents": 9927,
+        "upper_bound_cents": 14339,
+        "predicted_severity": "RED",
+        "confidence": 58
       }
     ],
     "stats": {
